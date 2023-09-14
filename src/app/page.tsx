@@ -2,7 +2,7 @@ export default function Home() {
     return (
         <div className="z-20 flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
             <div className="flex flex-col px-16">
-                <h1 className="text-5xl leading-tight uppercase text-neutral">
+                <h1 className="text-5xl leading-tight uppercase text-text-neutral">
                     Mozilla Campus Club <br /> And FOSS Community Of IIT
                 </h1>
                 <span className="mt-8 text-lg font-medium font-italic">
