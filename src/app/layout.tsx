@@ -3,8 +3,10 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 
-import Nav from "@/components/nav";
 import { poppins } from "@/constants/fonts";
+
+import Nav from "@/components/nav";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
     title: "Mozilla IIT",
@@ -16,7 +18,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en" className={`${poppins.variable}`}>
             <body className="relative h-[100vh] w-[100vw]">
                 <Nav />
-                <div className="absolute top-0 z-10 mt-32">{children}</div>
+                <div className="absolute top-0 z-10 mt-32">
+                    {children}
+                    <Footer />
+                </div>
                 <div className="absolute top-0 z-0 h-[100vh] w-[100vw]">
                     <Image
                         alt=""

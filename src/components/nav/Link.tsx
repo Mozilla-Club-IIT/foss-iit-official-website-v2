@@ -13,7 +13,7 @@ export default function NavLink({ href, label }: Props) {
     const pathname = usePathname();
 
     return (
-        <Link href={href} className={clsx({ "text-accent": pathname === href })}>
+        <Link href={href} className={clsx({ "text-accent-dark": pathname === href })}>
             {label}
         </Link>
     );

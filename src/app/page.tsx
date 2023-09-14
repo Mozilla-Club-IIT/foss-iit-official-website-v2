@@ -23,7 +23,7 @@ const Hero: FC = () => {
                 </span>
 
                 <div className="mt-24 inline-flex gap-8">
-                    <button className="h-10 rounded-xl bg-accent px-6 font-medium shadow">
+                    <button className="h-10 rounded-xl bg-accent-dark px-6 font-medium shadow">
                         Join Us
                     </button>
                     <button className="h-10 inline-flex items-center">
@@ -77,7 +77,7 @@ const OurVision: FC = () => {
 
 const OurMission: FC = () => {
     return (
-        <div className="mt-24 max-w-3xl flex flex-col px-16 prose">
+        <div className="my-24 max-w-3xl flex flex-col px-16 prose">
             <h1 className="uppercase">Our Mission</h1>
             <p>
                 To acquire software freedom and to make the Internet free and accessible to all

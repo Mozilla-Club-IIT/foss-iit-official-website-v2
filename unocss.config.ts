@@ -1,5 +1,12 @@
 import { Theme } from "unocss/preset-mini";
-import { defineConfig, presetUno, presetTypography, presetIcons, Awaitable } from "unocss";
+import {
+    defineConfig,
+    presetUno,
+    presetTypography,
+    presetIcons,
+    Awaitable,
+    transformerVariantGroup,
+} from "unocss";
 import type { IconifyJSON } from "@iconify/types";
 
 const importIconCollection = (name: string): (() => Awaitable<IconifyJSON>) => {
@@ -16,18 +23,28 @@ export default defineConfig<Theme>({
         presetIcons({
             collections: {
                 mdi: importIconCollection("mdi"),
+                bxl: importIconCollection("bxl"),
             },
         }),
     ],
+    transformers: [transformerVariantGroup()],
 
     theme: {
         fontFamily: {
             sans: "var(--font-sans)",
         },
         colors: {
-            accent: "#E50013",
+            accent: {
+                dark: "#E50013",
+                light: "#FC2222",
+                border: "#CA0000",
+            },
             bg: {
                 dark: "#161616",
+                lighter: "#1B1B1B",
+            },
+            surface: {
+                light: "#EBEBEB",
             },
             border: {
                 nav: "#FFD4CF",
