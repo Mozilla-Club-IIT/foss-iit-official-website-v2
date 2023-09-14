@@ -15,6 +15,9 @@ const config: Config = {
                 bg: {
                     dark: "#161616",
                 },
+                border: {
+                    nav: "#FFD4CF",
+                },
                 text: {
                     primary: "#FFFFFF",
                     secondary: "#D7D7D7",
