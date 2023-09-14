@@ -1,6 +1,16 @@
 import Image from "next/image";
+import { FC } from "react";
 
 export default function Devs() {
+    return (
+        <>
+            <MeetTheDevs />
+            <TechnologiesUsed />
+        </>
+    );
+}
+
+const MeetTheDevs: FC = () => {
     return (
         <div
             className="z-20 flex items-center justify-between"
@@ -37,4 +47,29 @@ export default function Devs() {
             </div>
         </div>
     );
-}
+};
+const TechnologiesUsed: FC = () => {
+    return (
+        <div className="w-full flex flex-col px-16">
+            <h1 className="text-6xl font-600 leading-relaxed font-sans uppercase">
+                Technologies Used
+            </h1>
+            <div className="my-8 flex flex-wrap justify-center gap-6">
+                <TechnologyCard />
+                <TechnologyCard />
+                <TechnologyCard />
+                <TechnologyCard />
+                <TechnologyCard />
+                <TechnologyCard />
+            </div>
+            <button className="mx-auto inline-flex text-center text-3xl font-300 leading-relaxed font-sans">
+                Take a peek inside the code
+                <div className="i-mdi-arrow-top-right mt-2 h-4 w-4"></div>
+            </button>
+        </div>
+    );
+};
+
+const TechnologyCard: FC = () => {
+    return <div className="min-h-56 min-w-56 rounded-2xl bg-[#fff]/10">fgfdh</div>;
+};
