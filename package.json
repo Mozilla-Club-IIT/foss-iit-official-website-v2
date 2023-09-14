@@ -10,6 +10,7 @@
         "fmt": "prettier -c .prettierrc --write ./**/*.{ts,tsx,css,md,json}"
     },
     "dependencies": {
+        "@iconify-json/mdi": "^1.1.54",
         "@types/node": "20.6.0",
         "@types/react": "18.2.21",
         "@types/react-dom": "18.2.7",
@@ -26,6 +27,7 @@
         "unocss": "^0.55.7"
     },
     "devDependencies": {
+        "@iconify/types": "^2.0.0",
         "@unocss/eslint-config": "^0.55.7",
         "prettier": "^3.0.3"
     }
