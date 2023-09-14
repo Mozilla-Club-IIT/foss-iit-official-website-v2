@@ -6,5 +6,6 @@ html,
 body {
     width: 100vw;
     overflow-x: hidden;
+    color-scheme: dark;
     @apply bg-bg-dark;
 }
