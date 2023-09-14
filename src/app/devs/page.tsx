@@ -1,6 +1,11 @@
+import Image from "next/image";
+
 export default function Devs() {
     return (
-        <div className="z-20 flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
+        <div
+            className="z-20 flex items-center justify-between"
+            style={{ height: "calc(100vh - 8rem)" }}
+        >
             <div className="flex flex-col px-16">
                 <h1 className="text-5xl leading-tight uppercase text-neutral">
                     MEET THE <br />
@@ -19,6 +24,16 @@ export default function Devs() {
                         <div className="i-mdi-arrow-top-right mb-1 ml-1 h-4 w-4" />
                     </button>
                 </div>
+            </div>
+            <div className="h-full w-1/3 pr-20">
+                <Image
+                    width={510}
+                    height={768}
+                    src={"/opensource-code.png"}
+                    alt="Open Source"
+                    className="!h-full"
+                    style={{ objectFit: "contain" }}
+                />
             </div>
         </div>
     );
