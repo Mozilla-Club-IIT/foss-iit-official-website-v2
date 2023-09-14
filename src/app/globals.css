@@ -1,4 +1,4 @@
-@import '@unocss/reset/tailwind.css';
+@import "@unocss/reset/tailwind.css";
 @unocss all;
 
 html,
@@ -6,5 +6,6 @@ body {
     width: 100vw;
     overflow-x: hidden;
     color-scheme: dark;
+    font-family: var(--font-sans);
     @apply bg-bg-dark;
 }

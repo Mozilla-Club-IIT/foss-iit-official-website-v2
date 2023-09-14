@@ -8,6 +8,7 @@ export default defineConfig<Theme>({
             sans: "var(--font-sans)",
         },
         colors: {
+            accent: "#E50013",
             bg: {
                 dark: "#161616",
             },
@@ -17,7 +18,7 @@ export default defineConfig<Theme>({
             text: {
                 primary: "#FFFFFF",
                 secondary: "#D7D7D7",
-                muted: "#E6E6E6",
+                neutral: "#E6E6E6",
             },
         },
     },
