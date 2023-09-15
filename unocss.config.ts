@@ -57,4 +57,8 @@ export default defineConfig<Theme>({
             },
         },
     },
+
+    shortcuts: {
+        containerify: "px-12 2xl:(container mx-auto px-0)",
+    },
 });
