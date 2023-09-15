@@ -8,7 +8,7 @@ import cn from "@/utils/cn";
 
 export default function About() {
     return (
-        <div className="z-20 flex flex-col">
+        <div className="containerify z-20 flex flex-col">
             <Hero />
             <MemberTree />
         </div>
