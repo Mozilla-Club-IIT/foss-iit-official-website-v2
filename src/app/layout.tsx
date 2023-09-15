@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en" className={`${poppins.variable}`}>
             <body className="relative h-[100vh] w-[100vw]">
                 <Nav />
-                <div className="absolute top-0 z-10 mt-32">
+                <div className="absolute top-0 z-10 pt-32">
                     {children}
                     <Footer />
                 </div>
