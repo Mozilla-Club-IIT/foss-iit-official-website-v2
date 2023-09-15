@@ -1,11 +1,13 @@
 import Image from "next/image";
 import type { FC } from "react";
 
-import DeveloperCard from "@/components/cards/DeveloperCard";
+import type { Member } from "@/types/internal";
+
 import TechnologyCard from "@/components/cards/TechnologyCard";
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import HeroLayout from "@/components/hero/HeroLayout";
+import MemberCard from "@/components/cards/MemberCard";
 
 export default function Devs() {
     return (
@@ -47,20 +49,20 @@ const Hero: FC = () => {
 
 const TechnologiesUsed: FC = () => {
     return (
-        <div className="mt-24 w-full flex flex-col px-16">
-            <h1 className="text-5xl leading-tight uppercase text-text-neutral">
+        <div className="mt-24 w-full flex flex-col gap-8 px-16">
+            <h1 className="text-5xl font-medium leading-tight uppercase text-text-primary">
                 Technologies Used
             </h1>
-            <div className="my-8 flex flex-wrap justify-center gap-6">
+            <div className="grid grid-cols-5">
                 <TechnologyCard name="Sanity" icon="i-logos-sanity" />
                 <TechnologyCard name="React" icon="i-logos-react" />
                 <TechnologyCard name="NextJS" icon="i-logos-nextjs invert" />
                 <TechnologyCard name="Typescript" icon="i-logos-typescript-icon" />
-                <TechnologyCard name="UNOCSS" icon="i-logos-unocss invert" />
+                <TechnologyCard name="UnoCSS" icon="i-logos-unocss invert" />
             </div>
-            <button className="mx-auto inline-flex text-center text-3xl font-300 leading-relaxed">
+            <button className="mx-auto inline-flex text-center text-2xl">
                 Take a peek inside the code
-                <div className="i-mdi-arrow-top-right mt-2 text-xl"></div>
+                <div className="i-mdi-arrow-top-right text-xl"></div>
             </button>
         </div>
     );
@@ -68,16 +70,18 @@ const TechnologiesUsed: FC = () => {
 
 const Developers: FC = () => {
     return (
-        <div className="mt-24 w-full flex flex-col px-16">
-            <h1 className="text-5xl leading-tight uppercase text-text-neutral">Developers</h1>
-            <div className="my-8 flex flex-wrap gap-6">
-                {developers.map((developer, index) => {
+        <div className="mb-24 mt-26 flex flex-col gap-8 px-16">
+            <h1 className="text-5xl font-medium leading-tight uppercase text-text-primary">
+                Developers
+            </h1>
+            <div className="grid grid-cols-3 gap-6">
+                {developers.map((developer) => {
                     return (
-                        <DeveloperCard
-                            key={index}
-                            imgURL={developer.imgURL}
-                            name={developer.fullname}
-                            role={developer.title}
+                        <MemberCard
+                            key={developer.name}
+                            name={developer.name}
+                            role={developer.role}
+                            imageURL={developer.imageURL}
                         />
                     );
                 })}
@@ -86,38 +90,30 @@ const Developers: FC = () => {
     );
 };
 
-const technologies = [
-    { imgURL: "/MongoDB-logo.png", name: "Sanity" },
-    { imgURL: "/react-logo.png", name: "React" },
-    { imgURL: "/express-logo.png", name: "NextJS" },
-    { imgURL: "/typescript-logo.png", name: "TypeScript" },
-    { imgURL: "/nodejs-logo.png", name: "UNOCSS" },
-];
-
-const developers = [
+const developers: Member[] = [
     {
-        fullname: "Sahan Dissanayake",
-        title: "UI/UX Designer",
-        imgURL: "/react-logo.png",
+        name: "Sahan Dissanayake",
+        role: "UI/UX Designer",
+        imageURL: "/react-logo.png",
     },
     {
-        fullname: "Sahan Dissanayake",
-        title: "UI/UX Designer",
-        imgURL: "/react-logo.png",
+        name: "Sahan Dissanayake",
+        role: "UI/UX Designer",
+        imageURL: "/react-logo.png",
     },
     {
-        fullname: "Sahan Dissanayake",
-        title: "UI/UX Designer",
-        imgURL: "/react-logo.png",
+        name: "Sahan Dissanayake",
+        role: "UI/UX Designer",
+        imageURL: "/react-logo.png",
     },
     {
-        fullname: "Sahan Dissanayake",
-        title: "UI/UX Designer",
-        imgURL: "/react-logo.png",
+        name: "Sahan Dissanayake",
+        role: "UI/UX Designer",
+        imageURL: "/react-logo.png",
     },
     {
-        fullname: "Sahan Dissanayake",
-        title: "UI/UX Designer",
-        imgURL: "/react-logo.png",
+        name: "Sahan Dissanayake",
+        role: "UI/UX Designer",
+        imageURL: "/react-logo.png",
     },
 ];

@@ -1,9 +1,10 @@
 import type { FC } from "react";
 
-import MemberCard, { type Props as MemberCardProps } from "@/components/cards/MemberCard";
 import cn from "@/utils/cn";
-import HeroLayout from "@/components/hero/HeroLayout";
+import type { Member } from "@/types/internal";
 
+import MemberCard from "@/components/cards/MemberCard";
+import HeroLayout from "@/components/hero/HeroLayout";
 // import AccentedButton from "@/components/buttons/AccentedButton";
 // import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 
@@ -30,7 +31,6 @@ const Hero: FC = () => {
     );
 };
 
-type Member = Omit<MemberCardProps, "position">;
 const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
     0: {
         name: "Sahan Ekanayake",
