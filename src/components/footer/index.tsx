@@ -43,7 +43,10 @@ export default function Footer() {
             </div>
             <div className="h-10 flex items-center justify-center bg-bg-dark text-center text-base font-medium uppercase">
                 <p className="text-center">
-                    Copyright © 2022 | Meet the <span className="text-accent-light">devs</span>
+                    Copyright © 2022 | Meet the{" "}
+                    <Link href="/devs" className="text-accent-light">
+                        devs
+                    </Link>
                 </p>
             </div>
         </footer>

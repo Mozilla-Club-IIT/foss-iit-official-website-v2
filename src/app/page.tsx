@@ -1,5 +1,8 @@
 import { FC } from "react";
 
+import AccentedButton from "@/components/buttons/AccentedButton";
+import TrailingIconButton from "@/components/buttons/TrailingIconButton";
+
 export default function Home() {
     return (
         <div className="z-20 flex flex-col">
@@ -23,13 +26,8 @@ const Hero: FC = () => {
                 </span>
 
                 <div className="mt-24 inline-flex gap-8">
-                    <button className="h-10 rounded-xl bg-accent-dark px-6 font-medium shadow">
-                        Join Us
-                    </button>
-                    <button className="h-10 inline-flex items-center">
-                        Learn More
-                        <div className="i-mdi-arrow-top-right mb-1 ml-1 h-4 w-4" />
-                    </button>
+                    <AccentedButton label="Join Us" />
+                    <TrailingIconButton icon="i-mdi-arrow-top-right" label="Learn More" />
                 </div>
             </div>
         </div>
