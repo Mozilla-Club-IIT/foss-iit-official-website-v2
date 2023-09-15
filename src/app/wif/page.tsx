@@ -1,9 +1,11 @@
 import type { FC } from "react";
 import Image from "next/image";
 
+import type { WIFBoardOfficial } from "@/types/internal";
+
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
-import MemberSquareCard from "@/components/cards/MemberSquareCard";
+import WIFMemberCard from "@/components/cards/WIFMemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";
 
 export default function Home() {
@@ -121,40 +123,38 @@ const BoardOfOfficials: FC = () => {
                 Board Officials
             </h1>
             <div className="grid grid-cols-4 gap-6">
-                {wifBoard.map((member, index) => {
-                    return (
-                        <MemberSquareCard
-                            key={index}
-                            imgURL={member.imgURL}
-                            name={member.name}
-                            socials={member.socials}
-                        />
-                    );
-                })}
+                {wifBoard.map((member) => (
+                    <WIFMemberCard
+                        key={member.name}
+                        name={member.name}
+                        imageURL={member.imageURL}
+                        externalLinks={member.externalLinks}
+                    />
+                ))}
             </div>
         </div>
     );
 };
 
-const wifBoard = [
+const wifBoard: WIFBoardOfficial[] = [
     {
-        imgURL: "/nadul.png",
         name: "Nadul Jayasundera",
-        socials: { linkedin: "http://linkedin.com" },
+        imageURL: "/portraits/nadul.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
-        imgURL: "/nadul.png",
         name: "Nadul Jayasundera",
-        socials: { linkedin: "http://linkedin.com" },
+        imageURL: "/portraits/nadul.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
-        imgURL: "/nadul.png",
         name: "Nadul Jayasundera",
-        socials: { linkedin: "http://linkedin.com" },
+        imageURL: "/portraits/nadul.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
-        imgURL: "/nadul.png",
         name: "Nadul Jayasundera",
-        socials: { linkedin: "http://linkedin.com" },
+        imageURL: "/portraits/nadul.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
 ];
