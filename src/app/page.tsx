@@ -8,8 +8,8 @@ export default function Home() {
         <div className="containerify z-20 flex flex-col">
             <Hero />
             <WhoAreWe />
-            <OurVision />
             <OurMission />
+            <OurVision />
         </div>
     );
 }
@@ -36,8 +36,8 @@ const Hero: FC = () => {
 
 const WhoAreWe: FC = () => {
     return (
-        <div className="mt-24 max-w-3xl flex flex-col px-16 prose">
-            <h1 className="uppercase">Who are we</h1>
+        <div className="mt-24 max-w-3xl flex flex-col px-16 text-text-secondary prose">
+            <h1 className="uppercase text-text-primary">Who are we</h1>
             <p>
                 FOSS (Free and Open-Source Software) community of IIT was initiated in our
                 university in November 2020 to promote the use and development of free and
@@ -58,10 +58,10 @@ const WhoAreWe: FC = () => {
     );
 };
 
-const OurVision: FC = () => {
+const OurMission: FC = () => {
     return (
-        <div className="mt-24 max-w-3xl flex flex-col px-16 prose">
-            <h1 className="uppercase">Our Vision</h1>
+        <div className="mt-24 max-w-3xl flex flex-col px-16 text-text-secondary prose">
+            <h1 className="uppercase text-text-primary">Our Mission</h1>
             <p>
                 To advocate for the innovation and development of open-source projects and strive to
                 make the information on the web accessible and free for all. Vision - To acquire
@@ -73,10 +73,10 @@ const OurVision: FC = () => {
     );
 };
 
-const OurMission: FC = () => {
+const OurVision: FC = () => {
     return (
-        <div className="my-24 max-w-3xl flex flex-col px-16 prose">
-            <h1 className="uppercase">Our Mission</h1>
+        <div className="my-24 max-w-3xl flex flex-col px-16 text-text-secondary prose">
+            <h1 className="uppercase text-text-primary">Our Vision</h1>
             <p>
                 To acquire software freedom and to make the Internet free and accessible to all
                 spark a movement a loud voice, a breeding ground for new ideas, a massive force, and
