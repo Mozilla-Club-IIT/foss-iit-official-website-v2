@@ -18,7 +18,7 @@ const Hero: FC = () => {
     return (
         <div className="flex items-center justify-between" style={{ height: "calc(100vh - 8rem)" }}>
             <div className="flex flex-col px-16">
-                <h1 className="text-5xl leading-tight uppercase text-neutral">
+                <h1 className="text-5xl leading-tight uppercase text-text-neutral">
                     MEET THE <br />
                     DEVELOPERS
                 </h1>
