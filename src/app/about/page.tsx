@@ -1,6 +1,7 @@
 import type { FC } from "react";
 
 import MemberCard, { type Props as MemberCardProps } from "@/components/cards/MemberCard";
+import cn from "@/utils/cn";
 
 // import AccentedButton from "@/components/buttons/AccentedButton";
 // import TrailingIconButton from "@/components/buttons/TrailingIconButton";
@@ -60,9 +61,17 @@ const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
     ],
 };
 
+const TreeSpacer: FC<{ className?: string }> = ({ className }) => {
+    return (
+        <div className={cn("col-span-full h-48 flex items-center justify-center py-8", className)}>
+            <div className="b-x-border-separator/49 h-full b-x-1" />
+        </div>
+    );
+};
+
 const MemberTree: FC = () => {
     return (
-        <div className="grid grid-cols-8 my-24 justify-items-center gap-x-6 gap-y-24 px-12">
+        <div className="grid grid-cols-8 my-24 justify-items-center gap-x-6 px-12">
             <div className="col-span-full flex justify-center">
                 <MemberCard
                     name={(members[0] as Member).name}
@@ -72,6 +81,8 @@ const MemberTree: FC = () => {
                 />
             </div>
 
+            <TreeSpacer />
+
             <div className="col-span-full flex justify-center">
                 <MemberCard
                     name={(members[1] as Member).name}
@@ -80,6 +91,8 @@ const MemberTree: FC = () => {
                     className="w-104"
                 />
             </div>
+
+            <TreeSpacer className="h-32" />
 
             {(members[2] as Member[]).map((member, i) => {
                 return (
@@ -92,6 +105,8 @@ const MemberTree: FC = () => {
                     />
                 );
             })}
+
+            <TreeSpacer className="h-32" />
 
             {(members[3] as Member[]).map((member, i) => {
                 return (

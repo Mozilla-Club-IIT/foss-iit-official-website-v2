@@ -49,6 +49,7 @@ export default defineConfig<Theme>({
             },
             border: {
                 nav: "#FFD4CF",
+                separator: "#A8A8A8",
             },
             text: {
                 primary: "#FFFFFF",
