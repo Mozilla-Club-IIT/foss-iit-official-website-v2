@@ -23,7 +23,10 @@ const Hero: FC = () => {
         <div className="relative flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
             <HeroLayout
                 title="WOMEN IN FOSS COMMUNITY OF IIT"
-                subtitle="Empowering Diversity, Fostering Collaboration, and Building a Stronger FOSS Community Together"
+                subtitle={[
+                    "Empowering Diversity, Fostering Collaboration,",
+                    "and Building a Stronger FOSS Community Together",
+                ]}
             >
                 <AccentedButton label="Join Us" />
                 <TrailingIconButton icon="i-mdi-arrow-top-right" label="Board of Officials" />
