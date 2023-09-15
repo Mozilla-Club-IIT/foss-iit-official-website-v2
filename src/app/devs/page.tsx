@@ -11,7 +11,7 @@ import MemberCard from "@/components/cards/MemberCard";
 
 export default function Devs() {
     return (
-        <div className="containerify z-20 flex flex-col">
+        <div className="z-20 flex flex-col containerify">
             <Hero />
             <TechnologiesUsed />
             <Developers />

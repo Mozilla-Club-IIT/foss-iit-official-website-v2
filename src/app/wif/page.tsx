@@ -113,9 +113,11 @@ const OurVision: FC = () => {
 
 const BoardOfOfficials: FC = () => {
     return (
-        <div className="my-24 max-w-full flex flex-col px-16 prose">
-            <h1 className="uppercase">Board of Officials</h1>
-            <div className="mt-10 flex flex-wrap gap-10">
+        <div className="mb-24 mt-26 flex flex-col gap-8 px-16">
+            <h1 className="text-5xl font-medium leading-tight uppercase text-text-primary">
+                Board Officials
+            </h1>
+            <div className="grid grid-cols-4 gap-6">
                 {wifBoard.map((member, index) => {
                     return (
                         <MemberSquareCard
