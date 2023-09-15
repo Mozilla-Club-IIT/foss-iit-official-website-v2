@@ -2,6 +2,7 @@ import { FC } from "react";
 
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
+import HeroLayout from "@/components/hero/HeroLayout";
 
 export default function Home() {
     return (
@@ -17,19 +18,13 @@ export default function Home() {
 const Hero: FC = () => {
     return (
         <div className="flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
-            <div className="flex flex-col px-16">
-                <h1 className="text-5xl leading-tight uppercase text-text-neutral">
-                    Mozilla Campus Club <br /> And FOSS Community Of IIT
-                </h1>
-                <span className="mt-8 text-lg font-medium font-italic">
-                    Contribute, Inspire and Innovate
-                </span>
-
-                <div className="mt-24 inline-flex gap-8">
-                    <AccentedButton label="Join Us" />
-                    <TrailingIconButton icon="i-mdi-arrow-top-right" label="Learn More" />
-                </div>
-            </div>
+            <HeroLayout
+                title={["Mozilla Campus Club","And FOSS Community Of IIT"]}
+                subtitle="Contribute, Inspire and Innovate"
+            >
+                <AccentedButton label="Join Us" />
+                <TrailingIconButton icon="i-mdi-arrow-top-right" label="Learn More" />
+            </HeroLayout>
         </div>
     );
 };

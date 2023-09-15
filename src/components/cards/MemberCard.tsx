@@ -1,10 +1,7 @@
 import cn from "@/utils/cn";
-import clsx from "clsx";
+import type { Member } from "@/types/internal";
 
-export type Props = {
-    name: string;
-    role: string;
-    imageURL: string;
+type Props = Member & {
     className?: string;
 };
 

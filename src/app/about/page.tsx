@@ -1,8 +1,10 @@
 import type { FC } from "react";
 
-import MemberCard, { type Props as MemberCardProps } from "@/components/cards/MemberCard";
 import cn from "@/utils/cn";
+import type { Member } from "@/types/internal";
 
+import MemberCard from "@/components/cards/MemberCard";
+import HeroLayout from "@/components/hero/HeroLayout";
 // import AccentedButton from "@/components/buttons/AccentedButton";
 // import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 
@@ -18,25 +20,17 @@ export default function About() {
 const Hero: FC = () => {
     return (
         <div className="flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
-            <div className="flex flex-col px-16">
-                <h1 className="text-5xl leading-tight uppercase text-text-neutral">
-                    GET TO KNOW <br /> THE Board of officials
-                </h1>
-                <span className="mt-8 text-lg font-medium font-italic">
-                    Meet the Minds Behind Mozilla Campus Club and FOSS Community at IIT: <br />
-                    Our Distinguished Board of Officials
-                </span>
-
-                <div className="mt-24 h-10 inline-flex gap-8">
-                    {/* <AccentedButton label="Join Us" /> */}
-                    {/* <TrailingIconButton icon="i-mdi-arrow-top-right" label="Learn More" /> */}
-                </div>
-            </div>
+            <HeroLayout
+                title={["GET TO KNOW", "THE BOARD of officials"]}
+                subtitle={[
+                    "Meet the Minds Behind Mozilla Campus Club and FOSS Community at IIT: ",
+                    "Our Distinguished Board of Officials",
+                ]}
+            />
         </div>
     );
 };
 
-type Member = Omit<MemberCardProps, "position">;
 const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
     0: {
         name: "Sahan Ekanayake",
