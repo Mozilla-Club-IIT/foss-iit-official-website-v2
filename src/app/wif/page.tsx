@@ -3,6 +3,7 @@ import { FC } from "react";
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import Image from "next/image";
+import MemberSquareCard from "@/components/cards/MemberSquareCard";
 
 export default function Home() {
     return (
@@ -120,6 +121,41 @@ const BoardOfOfficials: FC = () => {
     return (
         <div className="my-24 max-w-full flex flex-col px-16 prose">
             <h1 className="uppercase">Board of Officials</h1>
+            <div className="mt-10 flex flex-wrap gap-10">
+                {wifBoard.map((member, index) => {
+                    return (
+                        <MemberSquareCard
+                            key={index}
+                            imgURL={member.imgURL}
+                            name={member.name}
+                            socials={member.socials}
+                        />
+                    );
+                })}
+            </div>
         </div>
     );
 };
+
+const wifBoard = [
+    {
+        imgURL: "/nadul.png",
+        name: "Nadul Jayasundera",
+        socials: { linkedin: "http://linkedin.com" },
+    },
+    {
+        imgURL: "/nadul.png",
+        name: "Nadul Jayasundera",
+        socials: { linkedin: "http://linkedin.com" },
+    },
+    {
+        imgURL: "/nadul.png",
+        name: "Nadul Jayasundera",
+        socials: { linkedin: "http://linkedin.com" },
+    },
+    {
+        imgURL: "/nadul.png",
+        name: "Nadul Jayasundera",
+        socials: { linkedin: "http://linkedin.com" },
+    },
+];

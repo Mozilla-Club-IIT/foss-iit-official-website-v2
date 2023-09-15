@@ -4,7 +4,7 @@ import { FACEBOOK, INSTAGRAM, LINKEDIN, TWITTER } from "@/constants/links";
 
 import CategoryHeader from "@/components/footer/CategoryHeader";
 import EmailInput from "@/components/footer/EmailInput";
-import SocialLink from "@/components/footer/SocialLink";
+import SocialLink from "@/components/buttons/SocialLink";
 
 export default function Footer() {
     return (
