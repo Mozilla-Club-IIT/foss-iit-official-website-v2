@@ -8,6 +8,9 @@ dependencies:
   '@iconify-json/bxl':
     specifier: ^1.1.7
     version: 1.1.7
+  '@iconify-json/logos':
+    specifier: ^1.1.37
+    version: 1.1.37
   '@iconify-json/mdi':
     specifier: ^1.1.54
     version: 1.1.54
@@ -677,6 +680,12 @@ packages:
 
   /@iconify-json/bxl@1.1.7:
     resolution: {integrity: sha512-lvhC6+HQ/Fx/H81ekRASgIWVcNt5CRBVyvvhA2BEmdOBlNZmgZA1LdDrhzooZLIR4iRESLpETc0x9cJklGBSzw==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/logos@1.1.37:
+    resolution: {integrity: sha512-H2S8frTEznk6paX2kMzeUGn4KSiykghvO0b8UvEDd1fFFzt0WxCXpP1tBv67XaWK99e6JgA34hhv4lRGAm1hJg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false

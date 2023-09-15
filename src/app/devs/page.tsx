@@ -54,19 +54,15 @@ const TechnologiesUsed: FC = () => {
                 Technologies Used
             </h1>
             <div className="my-8 flex flex-wrap justify-center gap-6">
-                {technologies.map((technology, index) => {
-                    return (
-                        <TechnologyCard
-                            key={index}
-                            imgURL={technology.imgURL}
-                            name={technology.name}
-                        />
-                    );
-                })}
+                <TechnologyCard name="Sanity" icon="i-logos-sanity" />
+                <TechnologyCard name="React" icon="i-logos-react" />
+                <TechnologyCard name="NextJS" icon="i-logos-nextjs invert" />
+                <TechnologyCard name="Typescript" icon="i-logos-typescript-icon" />
+                <TechnologyCard name="UNOCSS" icon="i-logos-unocss invert" />
             </div>
             <button className="mx-auto inline-flex text-center text-3xl font-300 leading-relaxed">
                 Take a peek inside the code
-                <div className="i-mdi-arrow-top-right mt-2 text-3xl"></div>
+                <div className="i-mdi-arrow-top-right mt-2 text-xl"></div>
             </button>
         </div>
     );

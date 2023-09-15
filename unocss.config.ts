@@ -24,6 +24,7 @@ export default defineConfig<Theme>({
             collections: {
                 mdi: importIconCollection("mdi"),
                 bxl: importIconCollection("bxl"),
+                logos: importIconCollection("logos"),
             },
         }),
     ],
