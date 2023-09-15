@@ -62,7 +62,7 @@ const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
 
 const MemberTree: FC = () => {
     return (
-        <div className="grid grid-cols-8 my-24 justify-items-center gap-x-4 gap-y-24 px-12">
+        <div className="grid grid-cols-8 my-24 justify-items-center gap-x-6 gap-y-24 px-12">
             <div className="col-span-full flex justify-center">
                 <MemberCard
                     name={(members[0] as Member).name}

@@ -12,7 +12,7 @@ export default function MemberCard({ name, role, imageURL, className }: Props) {
     return (
         <div
             className={cn(
-                "h-24 w-full flex gap-4 items-center rounded-3xl px-3 bg-white/9 ",
+                "h-22 w-full flex gap-4 items-center rounded-3xl px-3 bg-white/9 ",
                 className,
             )}
         >
