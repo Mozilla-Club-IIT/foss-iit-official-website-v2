@@ -49,6 +49,7 @@ export default defineConfig<Theme>({
             },
             border: {
                 nav: "#FFD4CF",
+                separator: "#A8A8A8",
             },
             text: {
                 primary: "#FFFFFF",
@@ -56,5 +57,9 @@ export default defineConfig<Theme>({
                 neutral: "#E6E6E6",
             },
         },
+    },
+
+    shortcuts: {
+        containerify: "px-12 2xl:(container mx-auto px-0)",
     },
 });

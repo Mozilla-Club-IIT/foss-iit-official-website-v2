@@ -8,8 +8,8 @@ import SocialLink from "@/components/footer/SocialLink";
 
 export default function Footer() {
     return (
-        <footer className="bg-bg-lighter z-10 w-[100vw] flex flex-col">
-            <div className="grid grid-cols-8 min-h-72 gap-12 px-12 py-8">
+        <footer className="z-10 w-[100vw] flex flex-col bg-bg-lighter">
+            <div className="containerify grid grid-cols-8 min-h-72 gap-12 px-12 py-8">
                 <div className="col-span-4 flex flex-col">
                     <span className="text-3xl capitalize">
                         Mozilla campus club and FOSS community of IIT
