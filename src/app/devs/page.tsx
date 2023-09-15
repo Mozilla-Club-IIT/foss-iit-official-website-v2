@@ -5,6 +5,7 @@ import DeveloperCard from "@/components/cards/DeveloperCard";
 import TechnologyCard from "@/components/cards/TechnologyCard";
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
+import HeroLayout from "@/components/hero/HeroLayout";
 
 export default function Devs() {
     return (
@@ -19,20 +20,17 @@ export default function Devs() {
 const Hero: FC = () => {
     return (
         <div className="flex items-center justify-between" style={{ height: "calc(100vh - 8rem)" }}>
-            <div className="flex flex-col px-16">
-                <h1 className="text-5xl leading-tight uppercase text-text-neutral">
-                    MEET THE <br />
-                    DEVELOPERS
-                </h1>
-                <span className="mt-8 text-3xl leading-relaxed capitalize font-italic">
-                    Get to the know the ins and outs of the website <br /> and the team behind it
-                </span>
+            <HeroLayout
+                title={["MEET THE", "DEVELOPERS"]}
+                subtitle={[
+                    "Get to the know the ins and out of the website",
+                    "and the team behind it",
+                ]}
+            >
+                <AccentedButton label="The Team" />
+                <TrailingIconButton label="Tech used" icon="i-mdi-arrow-top-right" />
+            </HeroLayout>
 
-                <div className="mt-24 inline-flex gap-8">
-                    <AccentedButton label="The Team" />
-                    <TrailingIconButton label="Tech used" icon="i-mdi-arrow-top-right" />
-                </div>
-            </div>
             <div className="h-full w-1/3 pr-20">
                 <Image
                     width={510}
