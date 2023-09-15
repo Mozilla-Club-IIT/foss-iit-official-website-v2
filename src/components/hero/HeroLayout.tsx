@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 type Props = {
-    title: string[];
+    title: string | string[];
     subtitle: string | string[];
     children?: ReactNode;
 };
@@ -14,7 +14,7 @@ export default function HeroLayout({ title, subtitle, children }: Props) {
     return (
         <div className="flex flex-col px-16">
             <h1 className="text-5xl leading-tight uppercase text-text-neutral">
-                {makeLine(title)}
+                {Array.isArray(title) ? makeLine(title) : title}
             </h1>
             <span className="mt-8 text-lg font-medium font-italic">
                 {Array.isArray(subtitle) ? makeLine(subtitle) : subtitle}

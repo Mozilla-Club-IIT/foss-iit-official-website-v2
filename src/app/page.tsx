@@ -6,7 +6,7 @@ import HeroLayout from "@/components/hero/HeroLayout";
 
 export default function Home() {
     return (
-        <div className="containerify z-20 flex flex-col">
+        <div className="z-20 flex flex-col containerify">
             <Hero />
             <WhoAreWe />
             <OurMission />
@@ -19,7 +19,7 @@ const Hero: FC = () => {
     return (
         <div className="flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
             <HeroLayout
-                title={["Mozilla Campus Club","And FOSS Community Of IIT"]}
+                title={["Mozilla Campus Club", "And FOSS Community Of IIT"]}
                 subtitle="Contribute, Inspire and Innovate"
             >
                 <AccentedButton label="Join Us" />

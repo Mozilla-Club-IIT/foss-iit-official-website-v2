@@ -9,7 +9,7 @@ import SocialLink from "@/components/buttons/SocialLink";
 export default function Footer() {
     return (
         <footer className="z-10 w-[100vw] flex flex-col bg-bg-lighter">
-            <div className="containerify grid grid-cols-8 min-h-72 gap-12 px-12 py-8">
+            <div className="grid grid-cols-8 min-h-72 gap-12 px-12 py-8 containerify">
                 <div className="col-span-4 flex flex-col">
                     <span className="text-3xl capitalize">
                         Mozilla campus club and FOSS community of IIT
@@ -34,10 +34,10 @@ export default function Footer() {
 
                     <span className="mt-8 capitalize">Connect with us</span>
                     <div className="mt-1 w-full flex gap-2">
-                        <SocialLink href={FACEBOOK} icon="i-bxl-facebook" />
-                        <SocialLink href={TWITTER} icon="i-bxl-twitter" />
-                        <SocialLink href={LINKEDIN} icon="i-bxl-linkedin" />
-                        <SocialLink href={INSTAGRAM} icon="i-bxl-instagram" />
+                        <SocialLink type="facebook" href={FACEBOOK} />
+                        <SocialLink type="twitter" href={TWITTER} />
+                        <SocialLink type="linkedin" href={LINKEDIN} />
+                        <SocialLink type="instagram" href={INSTAGRAM} />
                     </div>
                 </div>
             </div>

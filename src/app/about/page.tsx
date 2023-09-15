@@ -10,7 +10,7 @@ import HeroLayout from "@/components/hero/HeroLayout";
 
 export default function About() {
     return (
-        <div className="containerify z-20 flex flex-col">
+        <div className="z-20 flex flex-col containerify">
             <Hero />
             <MemberTree />
         </div>
@@ -58,7 +58,7 @@ const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
 const TreeSpacer: FC<{ className?: string }> = ({ className }) => {
     return (
         <div className={cn("col-span-full h-48 flex items-center justify-center py-8", className)}>
-            <div className="b-x-border-separator/49 h-full b-x-1" />
+            <div className="h-full b-x-1 b-x-border-separator/49" />
         </div>
     );
 };

@@ -1,9 +1,12 @@
-import { FC } from "react";
+import type { FC } from "react";
+import Image from "next/image";
+
+import type { WIFBoardOfficial } from "@/types/internal";
 
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
-import Image from "next/image";
-import MemberSquareCard from "@/components/cards/MemberSquareCard";
+import WIFMemberCard from "@/components/cards/WIFMemberCard";
+import HeroLayout from "@/components/hero/HeroLayout";
 
 export default function Home() {
     return (
@@ -20,20 +23,16 @@ export default function Home() {
 const Hero: FC = () => {
     return (
         <div className="relative flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
-            <div className="flex flex-col px-16">
-                <h1 className="text-5xl leading-tight uppercase text-text-neutral">
-                    WOMEN IN FOSS COMMUNITY OF IIT
-                </h1>
-                <span className="mt-8 max-w-40ch text-lg font-medium leading-loose uppercase font-italic">
-                    Empowering Diversity, Fostering Collaboration, and Building a Stronger FOSS
-                    Community Together
-                </span>
-
-                <div className="mt-24 inline-flex gap-8">
-                    <AccentedButton label="Join Us" />
-                    <TrailingIconButton icon="i-mdi-arrow-top-right" label="Board of Officials" />
-                </div>
-            </div>
+            <HeroLayout
+                title="WOMEN IN FOSS COMMUNITY OF IIT"
+                subtitle={[
+                    "Empowering Diversity, Fostering Collaboration,",
+                    "and Building a Stronger FOSS Community Together",
+                ]}
+            >
+                <AccentedButton label="Join Us" />
+                <TrailingIconButton icon="i-mdi-arrow-top-right" label="Board of Officials" />
+            </HeroLayout>
             <div className="absolute bottom-0 right-20 w-2/5">
                 <Image
                     src="/wif-developer.png"
@@ -48,8 +47,8 @@ const Hero: FC = () => {
 
 const AboutUs: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col px-16 prose">
-            <h1 className="uppercase">ABOUT US</h1>
+        <div className="mt-24 max-w-full flex flex-col px-16 text-text-secondary prose">
+            <h1 className="uppercase text-text-primary">ABOUT US</h1>
             <p>
                 The Women in FOSS (Free and Open-Source Software) Community of IIT is an affinity
                 group within the FOSS Community dedicated to advancing women’s involvement in free
@@ -75,8 +74,8 @@ const AboutUs: FC = () => {
 
 const OurMission: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col px-16 prose">
-            <h1 className="uppercase">Our Mission</h1>
+        <div className="mt-24 max-w-full flex flex-col px-16 text-text-secondary prose">
+            <h1 className="uppercase text-text-primary">Our Mission</h1>
             <p>
                 The mission of the Women in FOSS Community of IIT is to empower women to become
                 active members of the open-source software development community, foster
@@ -96,8 +95,8 @@ const OurMission: FC = () => {
 
 const OurVision: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col px-16 prose">
-            <h1 className="uppercase">Our Vision</h1>
+        <div className="mt-24 max-w-full flex flex-col px-16 text-text-secondary prose">
+            <h1 className="uppercase text-text-primary">Our Vision</h1>
             <p>
                 The Women in FOSS community of IIT seeks to foster a diverse and inclusive community
                 that promotes and encourages the participation of women in open-source software
@@ -119,43 +118,43 @@ const OurVision: FC = () => {
 
 const BoardOfOfficials: FC = () => {
     return (
-        <div className="my-24 max-w-full flex flex-col px-16 prose">
-            <h1 className="uppercase">Board of Officials</h1>
-            <div className="mt-10 flex flex-wrap gap-10">
-                {wifBoard.map((member, index) => {
-                    return (
-                        <MemberSquareCard
-                            key={index}
-                            imgURL={member.imgURL}
-                            name={member.name}
-                            socials={member.socials}
-                        />
-                    );
-                })}
+        <div className="mb-24 mt-26 flex flex-col gap-8 px-16">
+            <h1 className="text-5xl font-medium leading-tight uppercase text-text-primary">
+                Board Officials
+            </h1>
+            <div className="grid grid-cols-4 gap-6">
+                {wifBoard.map((member) => (
+                    <WIFMemberCard
+                        key={member.name}
+                        name={member.name}
+                        imageURL={member.imageURL}
+                        externalLinks={member.externalLinks}
+                    />
+                ))}
             </div>
         </div>
     );
 };
 
-const wifBoard = [
+const wifBoard: WIFBoardOfficial[] = [
     {
-        imgURL: "/nadul.png",
         name: "Nadul Jayasundera",
-        socials: { linkedin: "http://linkedin.com" },
+        imageURL: "/portraits/nadul.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
-        imgURL: "/nadul.png",
         name: "Nadul Jayasundera",
-        socials: { linkedin: "http://linkedin.com" },
+        imageURL: "/portraits/nadul.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
-        imgURL: "/nadul.png",
         name: "Nadul Jayasundera",
-        socials: { linkedin: "http://linkedin.com" },
+        imageURL: "/portraits/nadul.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
-        imgURL: "/nadul.png",
         name: "Nadul Jayasundera",
-        socials: { linkedin: "http://linkedin.com" },
+        imageURL: "/portraits/nadul.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
 ];
