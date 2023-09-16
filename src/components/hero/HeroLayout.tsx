@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { mapToLines } from "@/utils/react";
+import { mapToLines } from "@/utils/react/shared";
 
 type Props = {
     title: string | string[];
