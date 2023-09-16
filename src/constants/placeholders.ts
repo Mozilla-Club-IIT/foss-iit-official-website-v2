@@ -18,23 +18,43 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
     0: {
         name: "Sahan Ekanayake",
         role: "President - Mozzila Campus club of IIT",
-        imageURL: "",
+        imageURL: "/portraits/nadul.png",
     },
     1: {
         name: "Sachith Arianatha",
         role: "President - Mozilla Campus club of IIT",
-        imageURL: "",
+        imageURL: "/portraits/nadul.png",
     },
     2: [
-        { name: "Bhagya", role: "President - Mozilla Campus club of IIT", imageURL: "" },
-        { name: "Vinuja", role: "President - Mozilla Campus club of IIT", imageURL: "" },
-        { name: "Devmal", role: "President - Mozilla Campus club of IIT", imageURL: "" },
+        {
+            name: "Bhagya",
+            role: "President - Mozilla Campus club of IIT",
+            imageURL: "/portraits/nadul.png",
+        },
+        {
+            name: "Vinuja",
+            role: "President - Mozilla Campus club of IIT",
+            imageURL: "/portraits/nadul.png",
+        },
+        {
+            name: "Devmal",
+            role: "President - Mozilla Campus club of IIT",
+            imageURL: "/portraits/nadul.png",
+        },
     ],
     3: [
-        { name: "Media Directors", role: "President - Mozilla Campus club of IIT", imageURL: "" },
-        { name: "Manupa Chathurwara", role: "Director of IIT", imageURL: "" },
-        { name: "Abrar", role: "Director Membership & Club Growth", imageURL: "" },
-        { name: "Shakthi ", role: "Editor", imageURL: "" },
+        {
+            name: "Media Directors",
+            role: "President - Mozilla Campus club of IIT",
+            imageURL: "/portraits/nadul.png",
+        },
+        { name: "Manupa Chathurwara", role: "Director of IIT", imageURL: "/portraits/nadul.png" },
+        {
+            name: "Abrar",
+            role: "Director Membership & Club Growth",
+            imageURL: "/portraits/nadul.png",
+        },
+        { name: "Shakthi ", role: "Editor", imageURL: "/portraits/nadul.png" },
     ],
 };
 
