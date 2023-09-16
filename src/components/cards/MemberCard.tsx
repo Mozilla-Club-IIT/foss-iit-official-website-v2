@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC, useEffect, useState, useRef } from "react";
 import { animated, useSpring } from "@react-spring/web";
 
 import cn from "@/utils/cn";
@@ -88,13 +88,28 @@ const MemberExpandedDetailsRow: FC<Pick<Member, "externalLinks">> = ({ externalL
     );
 };
 export default function MemberCard({ name, role, imageURL, externalLinks, className }: Props) {
+    const ref = useRef<HTMLDivElement>(null);
     const [isVisible, setVisibility] = useState(false);
 
+    useEffect(() => {
+        const listener = (e: MouseEvent) => {
+            const target = e.target as HTMLElement;
+            if (ref.current?.contains(target)) return;
+            setVisibility(false);
+        };
+
+        /**
+         * NOTE(Curstantine):
+         * Why? I wouldn't know!!
+         * Apparently an element that has absolute + unconstrained height can't bubble onBlur event.
+         * So we listen to click events in the dom and respond to it.
+         */
+        document.addEventListener("click", listener);
+        return () => document.removeEventListener("click", listener);
+    }, []);
+
     return (
-        <div
-            className={cn("relative w-full min-h-22", className)}
-            onBlur={() => setVisibility(false)}
-        >
+        <div ref={ref} className={cn("relative w-full min-h-22", className)}>
             <div
                 className={cn(
                     "absolute inset-0 max-h-22 flex flex-col rounded-3xl bg-white/9 px-3",
