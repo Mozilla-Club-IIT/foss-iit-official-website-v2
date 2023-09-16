@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en" className={`${poppins.variable} max-w-[100vw] overflow-x-hidden`}>
+        <html lang="en" className={`${poppins.variable} max-w-full `}>
             <body className="relative h-[100vh] w-[100vw]">
                 <Nav />
                 <div className="absolute top-0 z-10 pt-32">
