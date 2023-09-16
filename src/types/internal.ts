@@ -17,3 +17,10 @@ export type WIFBoardOfficial = {
     imageURL: string;
     externalLinks?: Partial<Record<ExternalLink, string>>;
 };
+
+export type Event = {
+    name: string;
+    description: string[];
+    startingDate: Date;
+    imageURL: string;
+};

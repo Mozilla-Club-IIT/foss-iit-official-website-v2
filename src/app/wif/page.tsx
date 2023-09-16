@@ -1,16 +1,16 @@
 import type { FC } from "react";
 import Image from "next/image";
 
-import type { WIFBoardOfficial } from "@/types/internal";
-
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import WIFMemberCard from "@/components/cards/WIFMemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";
 
+import { wifBoard } from "@/constants/placeholders";
+
 export default function Home() {
     return (
-        <div className="z-20 flex flex-col">
+        <div className="z-20 flex flex-col containerify">
             <Hero />
             <AboutUs />
             <OurMission />
@@ -116,45 +116,20 @@ const OurVision: FC = () => {
     );
 };
 
-const BoardOfOfficials: FC = () => {
-    return (
-        <div className="mb-24 mt-26 flex flex-col gap-8 px-16">
-            <h1 className="text-5xl font-medium leading-tight uppercase text-text-primary">
-                Board Officials
-            </h1>
-            <div className="grid grid-cols-4 gap-6">
-                {wifBoard.map((member) => (
-                    <WIFMemberCard
-                        key={member.name}
-                        name={member.name}
-                        imageURL={member.imageURL}
-                        externalLinks={member.externalLinks}
-                    />
-                ))}
-            </div>
+const BoardOfOfficials: FC = () => (
+    <div className="mb-24 mt-26 flex flex-col gap-8 px-16">
+        <h1 className="text-5xl font-medium leading-tight uppercase text-text-primary">
+            Board Officials
+        </h1>
+        <div className="grid grid-cols-4 gap-6">
+            {wifBoard.map((member) => (
+                <WIFMemberCard
+                    key={member.name}
+                    name={member.name}
+                    imageURL={member.imageURL}
+                    externalLinks={member.externalLinks}
+                />
+            ))}
         </div>
-    );
-};
-
-const wifBoard: WIFBoardOfficial[] = [
-    {
-        name: "Nadul Jayasundera",
-        imageURL: "/portraits/nadul.png",
-        externalLinks: { linkedin: "http://linkedin.com" },
-    },
-    {
-        name: "Nadul Jayasundera",
-        imageURL: "/portraits/nadul.png",
-        externalLinks: { linkedin: "http://linkedin.com" },
-    },
-    {
-        name: "Nadul Jayasundera",
-        imageURL: "/portraits/nadul.png",
-        externalLinks: { linkedin: "http://linkedin.com" },
-    },
-    {
-        name: "Nadul Jayasundera",
-        imageURL: "/portraits/nadul.png",
-        externalLinks: { linkedin: "http://linkedin.com" },
-    },
-];
+    </div>
+);

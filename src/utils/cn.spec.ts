@@ -1,4 +1,4 @@
-import cn from "./cn";
+import cn from "@/utils/cn";
 
 describe("test cn compat with tw and uno", () => {
     test("cn should merge int palettes", () => {

@@ -8,7 +8,7 @@ import SocialLink from "@/components/buttons/SocialLink";
 
 export default function Footer() {
     return (
-        <footer className="z-10 w-[100vw] flex flex-col bg-bg-lighter">
+        <footer className="z-10 w-full flex flex-col bg-bg-lighter">
             <div className="grid grid-cols-8 min-h-72 gap-12 px-12 py-8 containerify">
                 <div className="col-span-4 flex flex-col">
                     <span className="text-3xl capitalize">

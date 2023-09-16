@@ -31,6 +31,14 @@ export default defineConfig<Theme>({
     transformers: [transformerVariantGroup()],
 
     theme: {
+        duration: {
+            emphasized: "500ms",
+            standard: "300ms",
+        },
+        easing: {
+            emphasized: "cubic-bezier(0.4, 0.0, 0.2, 1.0)",
+            standard: "cubic-bezier(0.2, 0.0, 0, 1.0)",
+        },
         fontFamily: {
             sans: "var(--font-sans)",
         },
@@ -61,5 +69,7 @@ export default defineConfig<Theme>({
 
     shortcuts: {
         containerify: "px-12 2xl:(container mx-auto px-0)",
+        "use-transition-standard": "ease-standard duration-standard",
+        "use-transition-emphasized": "ease-emphasized duration-emphasized",
     },
 });

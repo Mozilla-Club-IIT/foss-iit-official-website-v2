@@ -8,6 +8,8 @@ import HeroLayout from "@/components/hero/HeroLayout";
 // import AccentedButton from "@/components/buttons/AccentedButton";
 // import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 
+import { members } from "@/constants/placeholders";
+
 export default function About() {
     return (
         <div className="z-20 flex flex-col containerify">
@@ -29,30 +31,6 @@ const Hero: FC = () => {
             />
         </div>
     );
-};
-
-const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
-    0: {
-        name: "Sahan Ekanayake",
-        role: "President - Mozzila Campus club of IIT",
-        imageURL: "",
-    },
-    1: {
-        name: "Sachith Arianatha",
-        role: "President - Mozilla Campus club of IIT",
-        imageURL: "",
-    },
-    2: [
-        { name: "Bhagya", role: "President - Mozilla Campus club of IIT", imageURL: "" },
-        { name: "Vinuja", role: "President - Mozilla Campus club of IIT", imageURL: "" },
-        { name: "Devmal", role: "President - Mozilla Campus club of IIT", imageURL: "" },
-    ],
-    3: [
-        { name: "Media Directors", role: "President - Mozilla Campus club of IIT", imageURL: "" },
-        { name: "Manupa Chathurwara", role: "Director of IIT", imageURL: "" },
-        { name: "Abrar", role: "Director Membership & Club Growth", imageURL: "" },
-        { name: "Shakthi ", role: "Editor", imageURL: "" },
-    ],
 };
 
 const TreeSpacer: FC<{ className?: string }> = ({ className }) => {
