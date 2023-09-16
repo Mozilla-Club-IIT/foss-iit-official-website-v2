@@ -10,7 +10,7 @@ import HeroLayout from "@/components/hero/HeroLayout";
 
 export default function Home() {
     return (
-        <div className="z-20 flex flex-col">
+        <div className="z-20 flex flex-col containerify">
             <Hero />
             <AboutUs />
             <OurMission />
