@@ -19,27 +19,32 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
         name: "Sahan Ekanayake",
         role: "President - Mozzila Campus club of IIT",
         imageURL: "/portraits/nadul.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     1: {
         name: "Sachith Arianatha",
         role: "President - Mozilla Campus club of IIT",
         imageURL: "/portraits/nadul.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     2: [
         {
             name: "Bhagya",
             role: "President - Mozilla Campus club of IIT",
             imageURL: "/portraits/nadul.png",
+            externalLinks: { linkedin: "http://linkedin.com" },
         },
         {
             name: "Vinuja",
             role: "President - Mozilla Campus club of IIT",
             imageURL: "/portraits/nadul.png",
+            externalLinks: { linkedin: "http://linkedin.com" },
         },
         {
             name: "Devmal",
             role: "President - Mozilla Campus club of IIT",
             imageURL: "/portraits/nadul.png",
+            externalLinks: { linkedin: "http://linkedin.com" },
         },
     ],
     3: [
@@ -47,14 +52,26 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
             name: "Media Directors",
             role: "President - Mozilla Campus club of IIT",
             imageURL: "/portraits/nadul.png",
+            externalLinks: { linkedin: "http://linkedin.com" },
         },
-        { name: "Manupa Chathurwara", role: "Director of IIT", imageURL: "/portraits/nadul.png" },
+        {
+            name: "Manupa Chathurwara",
+            role: "Director of IIT",
+            imageURL: "/portraits/nadul.png",
+            externalLinks: { linkedin: "http://linkedin.com" },
+        },
         {
             name: "Abrar",
             role: "Director Membership & Club Growth",
             imageURL: "/portraits/nadul.png",
+            externalLinks: { linkedin: "http://linkedin.com" },
         },
-        { name: "Shakthi ", role: "Editor", imageURL: "/portraits/nadul.png" },
+        {
+            name: "Shakthi ",
+            role: "Editor",
+            imageURL: "/portraits/nadul.png",
+            externalLinks: { linkedin: "http://linkedin.com" },
+        },
     ],
 };
 
@@ -63,26 +80,31 @@ export const developers: Member[] = [
         name: "Sahan Dissanayake",
         role: "UI/UX Designer",
         imageURL: "/react-logo.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
         name: "Sahan Dissanayake",
         role: "UI/UX Designer",
         imageURL: "/react-logo.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
         name: "Sahan Dissanayake",
         role: "UI/UX Designer",
         imageURL: "/react-logo.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
         name: "Sahan Dissanayake",
         role: "UI/UX Designer",
         imageURL: "/react-logo.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
         name: "Sahan Dissanayake",
         role: "UI/UX Designer",
         imageURL: "/react-logo.png",
+        externalLinks: { linkedin: "http://linkedin.com" },
     },
 ];
 

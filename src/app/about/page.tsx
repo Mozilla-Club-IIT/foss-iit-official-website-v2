@@ -49,6 +49,7 @@ const MemberTree: FC = () => {
                     name={(members[0] as Member).name}
                     role={(members[0] as Member).role}
                     imageURL={(members[0] as Member).imageURL}
+                    externalLinks={(members[0] as Member).externalLinks}
                     className="w-104"
                 />
             </div>
@@ -60,6 +61,7 @@ const MemberTree: FC = () => {
                     name={(members[1] as Member).name}
                     role={(members[1] as Member).role}
                     imageURL={(members[1] as Member).imageURL}
+                    externalLinks={(members[1] as Member).externalLinks}
                     className="w-104"
                 />
             </div>
@@ -73,6 +75,7 @@ const MemberTree: FC = () => {
                         name={member.name}
                         role={member.role}
                         imageURL={member.imageURL}
+                        externalLinks={member.externalLinks}
                         className={`col-span-2 ${i === 0 ? "col-start-2" : ""}`}
                     />
                 );
@@ -87,6 +90,7 @@ const MemberTree: FC = () => {
                         name={member.name}
                         role={member.role}
                         imageURL={member.imageURL}
+                        externalLinks={member.externalLinks}
                         className={`col-span-2 ${i === 0 ? "col-start-1" : ""}`}
                     />
                 );

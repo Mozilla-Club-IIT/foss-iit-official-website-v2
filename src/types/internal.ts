@@ -2,7 +2,7 @@ export type Member = {
     name: string;
     role: string;
     imageURL: string;
-    externalLinks?: Partial<Record<ExternalLink, string>>;
+    externalLinks: Partial<Record<ExternalLink, string>>;
 };
 
 export type Technology = {
