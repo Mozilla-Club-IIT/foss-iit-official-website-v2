@@ -1,13 +1,13 @@
 import Image from "next/image";
 import type { FC } from "react";
 
-import type { Member } from "@/types/internal";
-
 import TechnologyCard from "@/components/cards/TechnologyCard";
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import HeroLayout from "@/components/hero/HeroLayout";
 import MemberCard from "@/components/cards/MemberCard";
+
+import { developers } from "@/constants/placeholders";
 
 export default function Devs() {
     return (
@@ -89,31 +89,3 @@ const Developers: FC = () => {
         </div>
     );
 };
-
-const developers: Member[] = [
-    {
-        name: "Sahan Dissanayake",
-        role: "UI/UX Designer",
-        imageURL: "/react-logo.png",
-    },
-    {
-        name: "Sahan Dissanayake",
-        role: "UI/UX Designer",
-        imageURL: "/react-logo.png",
-    },
-    {
-        name: "Sahan Dissanayake",
-        role: "UI/UX Designer",
-        imageURL: "/react-logo.png",
-    },
-    {
-        name: "Sahan Dissanayake",
-        role: "UI/UX Designer",
-        imageURL: "/react-logo.png",
-    },
-    {
-        name: "Sahan Dissanayake",
-        role: "UI/UX Designer",
-        imageURL: "/react-logo.png",
-    },
-];
