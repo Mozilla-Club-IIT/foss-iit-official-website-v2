@@ -43,7 +43,7 @@ const TreeSpacer: FC<{ className?: string }> = ({ className }) => {
 
 const MemberTree: FC = () => {
     return (
-        <div className="grid grid-cols-8 my-24 justify-items-center gap-x-6 px-12">
+        <div className="grid grid-cols-8 my-24 justify-items-center gap-x-6">
             <div className="col-span-full flex justify-center">
                 <MemberCard
                     name={(members[0] as Member).name}
