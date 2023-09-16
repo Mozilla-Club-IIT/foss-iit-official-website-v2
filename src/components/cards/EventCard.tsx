@@ -1,56 +1,26 @@
-"use client";
+import Image from "next/image";
 
-import clsx from "clsx";
-import type { FC } from "react";
-import { type SpringValue, animated } from "@react-spring/web";
+import type { ExternalLink, Event } from "@/types/internal";
 
-import type { Event } from "@/types/internal";
-import { getFancyDate } from "@/utils/date";
-import { mapToLines } from "@/utils/react/shared";
+import SocialLink from "@/components/buttons/SocialLink";
 
-type Props = Omit<Event, "startingDate"> & {
-    style: {
-        opacity: SpringValue<number>;
-    };
+type Props = Omit<Event, "startingDate" | "description"> & {
+    className?: string;
 };
 
-export default function EventCard({ name, description, style }: Props) {
+export default function EventCard({ name, imageURL, className }: Props) {
     return (
-        <animated.div className="h-36 w-full flex rounded-xl bg-white/10" style={style}>
-            <div className="h-36 min-w-36 w-36 rounded-l-xl bg-red" />
-            <div className="flex flex-col justify-center gap-1 px-4">
-                <span className="text-xl font-bold text-text-primary">{name}</span>
-                <span className="leading-tight text-text-secondary">{mapToLines(description)}</span>
+        <div className="flex flex-col items-center justify-between overflow-hidden rounded-6 bg-[#9B9B9B]/22">
+            <div className="relative h-64 w-76">
+                <Image
+                    src={imageURL}
+                    alt={`${name} picture`}
+                    layout="fill"
+                    className="bg-center object-cover"
+                />
             </div>
-        </animated.div>
+
+            <p className="inline-flex py-4 text-center text-xl font-bold">{name}</p>
+        </div>
     );
 }
-
-export const EventCardWrapper: FC<{ event: Event; isEven: boolean; style: Props["style"] }> = ({
-    event,
-    isEven,
-    style,
-}) => {
-    const elements = [
-        <EventCard
-            key="card"
-            name={event.name}
-            imageURL={event.imageURL}
-            description={event.description}
-            style={style}
-        />,
-        <span
-            key="label"
-            className={clsx("text-xl text-text-primary font-bold", { "text-right": isEven })}
-        >
-            {getFancyDate(event.startingDate)}
-        </span>,
-    ];
-
-    /**
-     * NOTE(Curstantine):
-     *  How cursed is this even? We can probably just reverse the layout using some div wrapper in grids,
-     *  but reversing the element would be so much cleaner, lel.
-     */
-    return isEven ? elements.reverse() : elements;
-};

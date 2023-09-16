@@ -13,25 +13,12 @@ import {
 import type { Event } from "@/types/internal";
 import { useIsVisible } from "@/utils/react/client";
 
-import { EventCardWrapper } from "@/components/cards/EventCard";
-
-const event: Event = {
-    name: "OpenHack 3.0",
-    imageURL: "",
-    description: [
-        "The signature event of the club was successfully held as an inter-university hackathon and a designathon in 2022. The event is expected to be held in 2023 as well.",
-    ],
-    startingDate: new Date("2023-08-18"),
-};
-
-const data: Event[] = Array.from({ length: 5 }).map((_, i) => ({
-    ...event,
-    name: `OpenHack ${i}`,
-}));
+import { EventTreeCardWrapper } from "@/components/cards/EventTreeCard";
+import { events } from "@/constants/placeholders";
 
 export default function EventTimeLine() {
     const divRef = useRef<HTMLDivElement>(null);
-    const isInView = useIsVisible(divRef, { cancelOnFirstHit: false });
+    const isInView = useIsVisible(divRef, { cancelOnFirstHit: true });
 
     const springRef = useSpringRef();
     const springs = useSpring({
@@ -44,7 +31,7 @@ export default function EventTimeLine() {
     });
 
     const transRef = useSpringRef();
-    const transition = useTransition(isInView ? data : [], {
+    const transition = useTransition(isInView ? events : [], {
         ref: transRef,
         trail: 50,
         from: { opacity: 0 },
@@ -58,10 +45,13 @@ export default function EventTimeLine() {
     useChain([springRef, transRef]);
 
     return (
-        <div ref={divRef} className="relative grid grid-cols-2 my-24 items-center gap-12 gap-x-16">
+        <div
+            ref={divRef}
+            className="relative grid grid-cols-2 mt-24 items-center gap-12 gap-x-16 px-12"
+        >
             {transition((style, item, _, i) => {
                 return (
-                    <EventCardWrapper
+                    <EventTreeCardWrapper
                         key={item.name}
                         event={item}
                         style={style}
@@ -76,7 +66,7 @@ export default function EventTimeLine() {
                         height: springs.x.to((y) => `${y}%`),
                     }}
                 />
-                {Array.from({ length: 5 }).map((_, i) => (
+                {events.map((_, i) => (
                     <animated.div
                         key={i}
                         // 9rem for the component and 3rem for the vertical gap
