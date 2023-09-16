@@ -1,15 +1,18 @@
-import cn from "@/utils/cn";
+import { mapToLines } from "@/utils/react/shared";
+import clsx from "clsx";
 
 type ContactCardProps = {
-    children: React.ReactNode;
     icon: string;
+    label: string | string[];
 };
 
-export default function ContactCard({ icon, children }: ContactCardProps) {
+export default function ContactCard({ icon, label }: ContactCardProps) {
     return (
-        <div className="h-20 w-full flex items-center gap-5 rounded-xl bg-white/10 px-5 py-3">
-            <div className={cn("h-7 w-7 shrink-0", icon)}></div>
-            <p className="font-500 leading-normal">{children}</p>
+        <div className="h-18 max-w-128 min-w-64 flex items-center gap-5 rounded-xl bg-white/10 px-5 py-3">
+            <div className={clsx("h-7 w-7 shrink-0", icon)} />
+            <span className="font-500 leading-normal">
+                {Array.isArray(label) ? mapToLines(label) : label}
+            </span>
         </div>
     );
 }
