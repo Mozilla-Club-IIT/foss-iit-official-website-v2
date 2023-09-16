@@ -16,13 +16,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" className={`${poppins.variable} max-w-full `}>
-            <body className="relative h-[100vh] w-[100vw]">
+            <body className="relative h-[100vh] w-full">
                 <Nav />
                 <div className="absolute top-0 z-10 pt-32">
                     {children}
                     <Footer />
                 </div>
-                <div className="absolute top-0 z-0 h-[100vh] w-[100vw]">
+                <div className="absolute top-0 z-0 h-[100vh] w-full">
                     <Image
                         alt=""
                         src="/background.png"
