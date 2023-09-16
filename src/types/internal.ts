@@ -3,6 +3,8 @@ export type Member = {
     role: string;
     imageURL: string;
     externalLinks: Partial<Record<ExternalLink, string>>;
+    occupations: string[];
+    underlings?: Pick<Member, "name" | "occupations" | "imageURL">[];
 };
 
 export type Technology = {

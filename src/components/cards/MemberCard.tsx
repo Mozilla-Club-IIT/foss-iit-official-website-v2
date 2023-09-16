@@ -8,13 +8,14 @@ import cn from "@/utils/cn";
 import type { ExternalLink, Member } from "@/types/internal";
 
 import SocialLink from "@/components/buttons/SocialLink";
+import { mapToLines } from "@/utils/react/shared";
 
 type Props = Member & {
     className?: string;
 };
 
 const MemberDetailRow: FC<
-    Omit<Member, "externalLinks"> & {
+    Pick<Member, "name" | "role" | "imageURL"> & {
         isExpanded: boolean;
         onPress: () => void;
     }
@@ -44,7 +45,12 @@ const MemberDetailRow: FC<
     );
 };
 
-const MemberExpandedDetailsRow: FC<Pick<Member, "externalLinks">> = ({ externalLinks }) => {
+const MemberExpandedDetailsRow: FC<Omit<Member, "imageURL" | "name">> = ({
+    role,
+    underlings,
+    occupations,
+    externalLinks,
+}) => {
     const springs = useSpring({
         from: { opacity: 0 },
         to: { opacity: 1 },
@@ -52,10 +58,7 @@ const MemberExpandedDetailsRow: FC<Pick<Member, "externalLinks">> = ({ externalL
 
     return (
         <animated.div className="flex flex-col gap-2 px-2 pb-4" style={springs}>
-            <span className="text-xs text-text-primary/60">
-                <p>Undergraduate trainee - Software Engineering @ IFS R&D</p>
-                <p>3rd Year undergraduate - IIT</p>
-            </span>
+            <span className="text-xs text-text-primary/60">{mapToLines(occupations)}</span>
             <div className="grid grid-cols-5 mt-1">
                 {Object.entries(externalLinks).map(([key, value]) => (
                     <SocialLink
@@ -66,28 +69,38 @@ const MemberExpandedDetailsRow: FC<Pick<Member, "externalLinks">> = ({ externalL
                     />
                 ))}
             </div>
-            <div className="my-2 h-0 b-t-2 b-t-border-separator/35" />
-            <span className="pb-1 font-bold leading-tight text-text-primary/50">
-                People Who Reports To Director of IT
-            </span>
-            <div className="flex gap-4">
-                {Array.from({ length: 5 })
-                    .fill("/portraits/nadul.png")
-                    .map((x, i) => (
-                        <Image
-                            key={i}
-                            src={x as string}
-                            height={32}
-                            width={32}
-                            alt="nadul"
-                            className="h-8 min-w-8 w-8 rounded-full object-cover"
-                        />
-                    ))}
-            </div>
+            {underlings && underlings.length > 0 && (
+                <>
+                    <div className="my-2 h-0 b-t-2 b-t-border-separator/35" />
+                    <span className="pb-1 font-bold leading-tight text-text-primary/50">
+                        People Who Reports To {role}
+                    </span>
+                    <div className="flex gap-4">
+                        {underlings.map((x) => (
+                            <Image
+                                key={x.name}
+                                alt={`${x.name}'s profile picture`}
+                                src={x.imageURL}
+                                height={32}
+                                width={32}
+                                className="h-8 min-w-8 w-8 rounded-full object-cover"
+                            />
+                        ))}
+                    </div>
+                </>
+            )}
         </animated.div>
     );
 };
-export default function MemberCard({ name, role, imageURL, externalLinks, className }: Props) {
+export default function MemberCard({
+    name,
+    role,
+    imageURL,
+    externalLinks,
+    occupations,
+    underlings,
+    className,
+}: Props) {
     const ref = useRef<HTMLDivElement>(null);
     const [isVisible, setVisibility] = useState(false);
 
@@ -124,7 +137,14 @@ export default function MemberCard({ name, role, imageURL, externalLinks, classN
                     isExpanded={isVisible}
                     onPress={() => setVisibility((x) => !x)}
                 />
-                {isVisible && <MemberExpandedDetailsRow externalLinks={externalLinks} />}
+                {isVisible && (
+                    <MemberExpandedDetailsRow
+                        role={role}
+                        underlings={underlings}
+                        occupations={occupations}
+                        externalLinks={externalLinks}
+                    />
+                )}
             </div>
         </div>
     );
