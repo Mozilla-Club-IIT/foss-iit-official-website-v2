@@ -10,7 +10,6 @@ import {
     config,
 } from "@react-spring/web";
 
-import type { Event } from "@/types/internal";
 import { useIsVisible } from "@/utils/react/client";
 
 import { EventTreeCardWrapper } from "@/components/cards/EventTreeCard";
