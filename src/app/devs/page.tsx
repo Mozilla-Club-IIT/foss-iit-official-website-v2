@@ -75,16 +75,9 @@ const Developers: FC = () => {
                 Developers
             </h1>
             <div className="grid grid-cols-3 gap-6">
-                {developers.map((developer) => {
-                    return (
-                        <MemberCard
-                            key={developer.name}
-                            name={developer.name}
-                            role={developer.role}
-                            imageURL={developer.imageURL}
-                        />
-                    );
-                })}
+                {developers.map((developer) => (
+                     <MemberCard key={developer.name} {...developer} />
+                ))}
             </div>
         </div>
     );

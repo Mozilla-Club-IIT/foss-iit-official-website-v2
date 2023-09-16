@@ -43,25 +43,15 @@ const TreeSpacer: FC<{ className?: string }> = ({ className }) => {
 
 const MemberTree: FC = () => {
     return (
-        <div className="grid grid-cols-8 my-24 justify-items-center gap-x-6 px-12">
+        <div className="grid grid-cols-8 my-24 justify-items-center gap-x-6">
             <div className="col-span-full flex justify-center">
-                <MemberCard
-                    name={(members[0] as Member).name}
-                    role={(members[0] as Member).role}
-                    imageURL={(members[0] as Member).imageURL}
-                    className="w-104"
-                />
+                <MemberCard {...(members[0] as Member)} className="w-104" />
             </div>
 
             <TreeSpacer />
 
             <div className="col-span-full flex justify-center">
-                <MemberCard
-                    name={(members[1] as Member).name}
-                    role={(members[1] as Member).role}
-                    imageURL={(members[1] as Member).imageURL}
-                    className="w-104"
-                />
+                <MemberCard {...(members[1] as Member)} className="w-104" />
             </div>
 
             <TreeSpacer className="h-32" />
@@ -70,9 +60,7 @@ const MemberTree: FC = () => {
                 return (
                     <MemberCard
                         key={member.name}
-                        name={member.name}
-                        role={member.role}
-                        imageURL={member.imageURL}
+                        {...member}
                         className={`col-span-2 ${i === 0 ? "col-start-2" : ""}`}
                     />
                 );
@@ -84,9 +72,7 @@ const MemberTree: FC = () => {
                 return (
                     <MemberCard
                         key={member.name}
-                        name={member.name}
-                        role={member.role}
-                        imageURL={member.imageURL}
+                        {...member}
                         className={`col-span-2 ${i === 0 ? "col-start-1" : ""}`}
                     />
                 );

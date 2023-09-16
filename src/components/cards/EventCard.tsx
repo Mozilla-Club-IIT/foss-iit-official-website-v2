@@ -1,14 +1,12 @@
 import Image from "next/image";
 
-import type { ExternalLink, Event } from "@/types/internal";
-
-import SocialLink from "@/components/buttons/SocialLink";
+import type { Event } from "@/types/internal";
 
 type Props = Omit<Event, "startingDate" | "description"> & {
     className?: string;
 };
 
-export default function EventCard({ name, imageURL, className }: Props) {
+export default function EventCard({ name, imageURL }: Props) {
     return (
         <div className="flex flex-col items-center justify-between overflow-hidden rounded-6 bg-[#9B9B9B]/22">
             <div className="relative h-64 w-76">

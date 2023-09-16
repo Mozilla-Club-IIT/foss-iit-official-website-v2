@@ -2,7 +2,9 @@ export type Member = {
     name: string;
     role: string;
     imageURL: string;
-    externalLinks?: Partial<Record<ExternalLink, string>>;
+    externalLinks: Partial<Record<ExternalLink, string>>;
+    occupations: string[];
+    underlings?: Pick<Member, "name" | "occupations" | "imageURL">[];
 };
 
 export type Technology = {
