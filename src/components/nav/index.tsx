@@ -4,7 +4,7 @@ import NavLink from "@/components/nav/Link";
 
 export default function Nav() {
     return (
-        <nav className="fixed inset-x-2 top-4 z-20 h-16 flex containerify 2xl:inset-x-6 2xl:top-8 2xl:h-20">
+        <nav className="fixed inset-x-6 top-6 z-20 h-16 flex px-0 containerify 2xl:top-8 2xl:h-20">
             <div className="h-16 w-full flex items-center rounded-2xl bg-black/[48%] pl-8 pr-12 ring-2 ring-border-nav/[4%] backdrop-blur-sm 2xl:h-20">
                 <Image
                     src="/textual-logo.png"
