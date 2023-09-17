@@ -8,13 +8,13 @@ import EventCard from "@/components/cards/EventCard";
 
 import { events } from "@/constants/placeholders";
 
-export default function Home() {
+export default function Events() {
     return (
-        <div className="z-20 flex flex-col containerify">
+        <>
             <Hero />
             <EventTimeLine />
             <PastEvents />
-        </div>
+        </>
     );
 }
 
