@@ -8,15 +8,14 @@ type Props = Omit<Event, "startingDate" | "description"> & {
 
 export default function EventCard({ name, imageURL }: Props) {
     return (
-        <div className="flex flex-col items-center justify-between overflow-hidden rounded-6 bg-[#9B9B9B]/22">
-            <div className="relative h-64 w-76">
-                <Image
-                    src={imageURL}
-                    alt={`${name} picture`}
-                    layout="fill"
-                    className="bg-center object-cover"
-                />
-            </div>
+        <div className="w-full flex flex-col items-center justify-between rounded-xl bg-white/10">
+            <Image
+                height={256}
+                width={256}
+                src={imageURL}
+                alt={`${name} picture`}
+                className="aspect-square w-full rounded-t-xl object-cover"
+            />
 
             <p className="inline-flex py-4 text-center text-xl font-bold">{name}</p>
         </div>

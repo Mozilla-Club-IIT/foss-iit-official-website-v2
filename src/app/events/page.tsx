@@ -39,11 +39,9 @@ const Hero: FC = () => {
 
 const PastEvents: FC = () => {
     return (
-        <div className="mb-24 mt-26 flex flex-col gap-8 px-16">
-            <h1 className="text-5xl font-medium leading-tight uppercase text-text-primary">
-                Past Events
-            </h1>
-            <div className="grid grid-cols-4 gap-6">
+        <div className="mb-24 gap-4 container-content-block">
+            <h1 className="text-style-heading">Past Events</h1>
+            <div className="grid grid-cols-1 justify-items-center gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:justify-items-start">
                 {events.map((event) => {
                     return (
                         <EventCard key={event.name} name={event.name} imageURL={event.imageURL} />
