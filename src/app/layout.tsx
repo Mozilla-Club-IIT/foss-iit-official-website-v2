@@ -18,11 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en" className={`${poppins.variable} max-w-full `}>
             <body className="relative h-[100vh] w-full">
                 <Nav />
-                <div className="absolute inset-x-0 top-0 z-10 pt-32">
-                    {children}
-                    <Footer />
-                </div>
-                <div className="absolute top-0 z-0 h-[100vh] w-full">
+                <main className="containerify">{children}</main>
+                <Footer />
+                {/* <div className="absolute top-0 z-0 h-[100vh] w-full">
                     <Image
                         alt=""
                         src="/background.png"
@@ -30,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         quality={100}
                         className="z-0 object-cover object-top"
                     />
-                </div>
+                </div> */}
             </body>
         </html>
     );
