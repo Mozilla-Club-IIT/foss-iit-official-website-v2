@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { FACEBOOK, INSTAGRAM, LINKEDIN, TWITTER } from "@/constants/links";
 
@@ -6,11 +7,14 @@ import CategoryHeader from "@/components/footer/CategoryHeader";
 import EmailInput from "@/components/footer/EmailInput";
 import SocialLink from "@/components/buttons/SocialLink";
 
+import dotLogo from "public/dot-logo.png";
+
 export default function Footer() {
     return (
-        <footer className="z-10 w-full flex flex-col bg-bg-lighter">
-            <div className="grid grid-cols-8 min-h-72 gap-12 px-12 py-8 containerify">
-                <div className="col-span-full flex flex-col md:col-span-4">
+        <footer className="z-10 flex flex-col bg-bg-lighter">
+            <div className="grid grid-cols-8 gap-0 gap-y-12 py-8 containerify md:gap-y-0">
+                <div className="col-span-full flex flex-col flex-wrap gap-4 md:col-span-4">
+                    <Image height={56} width={56} src={dotLogo} alt="logo" />
                     <span className="text-xl capitalize md:text-3xl">
                         Mozilla campus club and FOSS community of IIT
                     </span>
@@ -33,7 +37,7 @@ export default function Footer() {
                     <EmailInput />
 
                     <span className="mt-8 capitalize">Connect with us</span>
-                    <div className="mt-1 w-full flex gap-2">
+                    <div className="mt-1 flex gap-2">
                         <SocialLink type="facebook" href={FACEBOOK} />
                         <SocialLink type="twitter" href={TWITTER} />
                         <SocialLink type="linkedin" href={LINKEDIN} />
