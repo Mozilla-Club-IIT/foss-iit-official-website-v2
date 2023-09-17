@@ -11,11 +11,11 @@ import { developers } from "@/constants/placeholders";
 
 export default function Devs() {
     return (
-        <div className="z-20 flex flex-col containerify">
+        <>
             <Hero />
             <TechnologiesUsed />
             <Developers />
-        </div>
+        </>
     );
 }
 
@@ -33,7 +33,7 @@ const Hero: FC = () => {
                 <TrailingIconButton label="Tech used" icon="i-mdi-arrow-top-right" />
             </HeroLayout>
 
-            <div className="h-full w-1/3 pr-20">
+            <div className="hidden h-full w-1/3 pr-20 md:block">
                 <Image
                     width={510}
                     height={768}
@@ -49,18 +49,16 @@ const Hero: FC = () => {
 
 const TechnologiesUsed: FC = () => {
     return (
-        <div className="mt-24 w-full flex flex-col gap-8 px-16">
-            <h1 className="text-5xl font-medium leading-tight uppercase text-text-primary">
-                Technologies Used
-            </h1>
-            <div className="grid grid-cols-5">
+        <div className="gap-8 container-content-block">
+            <h1 className="text-style-heading">Technologies Used</h1>
+            <div className="grid grid-cols-2 justify-items-center gap-4 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 md:justify-items-start">
                 <TechnologyCard name="Sanity" icon="i-logos-sanity" />
                 <TechnologyCard name="React" icon="i-logos-react" />
                 <TechnologyCard name="NextJS" icon="i-logos-nextjs invert" />
                 <TechnologyCard name="Typescript" icon="i-logos-typescript-icon" />
                 <TechnologyCard name="UnoCSS" icon="i-logos-unocss invert" />
             </div>
-            <button className="mx-auto inline-flex text-center text-2xl">
+            <button className="mx-auto inline-flex text-center text-xl md:text-2xl">
                 Take a peek inside the code
                 <div className="i-mdi-arrow-top-right text-xl"></div>
             </button>
@@ -70,13 +68,11 @@ const TechnologiesUsed: FC = () => {
 
 const Developers: FC = () => {
     return (
-        <div className="mb-24 mt-26 flex flex-col gap-8 px-16">
-            <h1 className="text-5xl font-medium leading-tight uppercase text-text-primary">
-                Developers
-            </h1>
-            <div className="grid grid-cols-3 gap-6">
+        <div className="my-24 gap-8 container-content-block">
+            <h1 className="text-style-heading">Developers</h1>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 {developers.map((developer) => (
-                     <MemberCard key={developer.name} {...developer} />
+                    <MemberCard key={developer.name} {...developer} />
                 ))}
             </div>
         </div>

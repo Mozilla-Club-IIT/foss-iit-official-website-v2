@@ -71,5 +71,11 @@ export default defineConfig<Theme>({
         containerify: "px-12 2xl:(container mx-auto px-0)",
         "use-transition-standard": "ease-standard duration-standard",
         "use-transition-emphasized": "ease-emphasized duration-emphasized",
+        "container-content-block": "mt-24 flex flex-col md:px-16",
+        "container-content-prose": "container-content-block max-w-3xl text-text-secondary prose",
+
+        "text-style-heading":
+            "text-3xl font-medium leading-tight uppercase text-text-primary md:text-5xl",
+            
     },
 });

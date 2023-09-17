@@ -10,13 +10,13 @@ export default function Footer() {
     return (
         <footer className="z-10 w-full flex flex-col bg-bg-lighter">
             <div className="grid grid-cols-8 min-h-72 gap-12 px-12 py-8 containerify">
-                <div className="col-span-4 flex flex-col">
-                    <span className="text-3xl capitalize">
+                <div className="col-span-full flex flex-col md:col-span-4">
+                    <span className="text-xl capitalize md:text-3xl">
                         Mozilla campus club and FOSS community of IIT
                     </span>
                 </div>
 
-                <div className="col-span-2 flex flex-col">
+                <div className="col-span-full flex flex-col md:col-span-2">
                     <CategoryHeader label="Useful Links" />
                     <div className="grid grid-flow-col grid-rows-4 mt-6 gap-4 font-medium">
                         <Link href="/join">Join Us</Link>
@@ -28,7 +28,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="col-span-2 flex flex-col">
+                <div className="col-span-full flex flex-col md:col-span-2">
                     <CategoryHeader label="Subscribe" />
                     <EmailInput />
 
