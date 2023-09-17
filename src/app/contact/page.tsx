@@ -10,7 +10,7 @@ import DenseTextArea from "@/components/forms/DenseTextArea";
 export default function Contact() {
     return (
         <div
-            className="z-20 grid grid-cols-2 items-center containerify"
+            className="z-20 grid items-center justify-center containerify lg:grid-cols-2"
             style={{ height: "calc(100vh - 8rem)" }}
         >
             <Hero />
@@ -21,13 +21,15 @@ export default function Contact() {
 
 const Hero: FC = () => {
     return (
-        <div className="flex flex-col justify-center pl-16">
-            <h1 className="text-5xl leading-tight uppercase text-text-neutral">Contact us</h1>
-            <span className="text-lg font-medium font-italic">
+        <div className="flex flex-col justify-center gap-2 md:gap-0">
+            <h1 className="mt-8 text-3xl leading-tight uppercase text-text-neutral md:text-5xl">
+                Contact us
+            </h1>
+            <span className="mt-4 text-base font-medium font-italic md:text-lg">
                 Any questions or remarks? Don’t hesitate to contact us.
             </span>
 
-            <div className="mt-8 flex flex-col gap-5 pr-10">
+            <div className="mt-8 flex flex-col gap-5 md:pr-10">
                 <ContactCard
                     icon="i-mdi-location"
                     label="Informatics Institute of Technology, 57, Ramakrishna Road, Colombo 06."
@@ -52,7 +54,7 @@ const Hero: FC = () => {
 
 const Form = () => {
     return (
-        <div className="mx-12 flex flex-col gap-4 border-2 border-border-separator/50 rounded-2xl p-4">
+        <div className="my-10 flex flex-col gap-4 border-2 border-border-separator/50 rounded-2xl p-4 md:mx-12">
             <DenseInput
                 name="name"
                 type="text"

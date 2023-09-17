@@ -14,7 +14,7 @@ export default function DenseInput({ type, icon, name, placeholder }: Props) {
     const [value, setValue] = useState("");
 
     return (
-        <div className="w-full flex gap-5 border border-white/21 rounded-xl bg-white/10 px-5 py-3">
+        <div className="w-full flex gap-5 border border-white/21 rounded-xl bg-white/10 px-3 py-3 md:px-5">
             <div className={clsx("h-6 w-6 shrink-0", icon)} />
             <input
                 name={name}
@@ -22,7 +22,7 @@ export default function DenseInput({ type, icon, name, placeholder }: Props) {
                 value={value}
                 placeholder={placeholder}
                 onChange={(e) => setValue(e.target.value)}
-                className="w-full bg-transparent leading-tight outline-none placeholder:text-text-secondary"
+                className="w-full bg-transparent text-sm leading-tight outline-none md:text-base placeholder:text-text-secondary"
             />
         </div>
     );
