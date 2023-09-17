@@ -50,10 +50,8 @@ const Hero: FC = () => {
 const TechnologiesUsed: FC = () => {
     return (
         <div className="gap-8 container-content-block">
-            <h1 className="text-3xl font-medium leading-tight uppercase text-text-primary md:text-5xl">
-                Technologies Used
-            </h1>
-            <div className="grid grid-cols-2 items-center gap-4 md:grid-cols-5">
+            <h1 className="text-style-heading">Technologies Used</h1>
+            <div className="grid grid-cols-2 justify-items-center gap-4 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 md:justify-items-start">
                 <TechnologyCard name="Sanity" icon="i-logos-sanity" />
                 <TechnologyCard name="React" icon="i-logos-react" />
                 <TechnologyCard name="NextJS" icon="i-logos-nextjs invert" />
@@ -71,9 +69,7 @@ const TechnologiesUsed: FC = () => {
 const Developers: FC = () => {
     return (
         <div className="my-24 gap-8 container-content-block">
-            <h1 className="text-3xl font-medium leading-tight uppercase text-text-primary md:text-5xl">
-                Developers
-            </h1>
+            <h1 className="text-style-heading">Developers</h1>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 {developers.map((developer) => (
                     <MemberCard key={developer.name} {...developer} />
