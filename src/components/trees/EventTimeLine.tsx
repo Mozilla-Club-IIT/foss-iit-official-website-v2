@@ -1,56 +1,50 @@
 "use client";
 
-import { useRef } from "react";
-import {
-    useSpring,
-    animated,
-    useSpringRef,
-    useTransition,
-    useChain,
-    config,
-} from "@react-spring/web";
+import { FC, useEffect, useRef, useState } from "react";
+import { animated } from "@react-spring/web";
 
-import { useIsVisible } from "@/utils/react/client";
+import { useChainedTransition, useIsVisible } from "@/utils/react/client";
 
-import { EventTreeCardWrapper } from "@/components/cards/EventTreeCard";
+import EventTreeCard, {
+    EventTreeCardFlexWrapper,
+    EventTreeCardGridWrapper,
+} from "@/components/cards/EventTreeCard";
 import { events } from "@/constants/placeholders";
+import { Event } from "@/types/internal";
+import EventCard from "@/components/cards/EventCard";
 
 export default function EventTimeLine() {
-    const divRef = useRef<HTMLDivElement>(null);
-    const isInView = useIsVisible(divRef, { cancelOnFirstHit: true });
+    const [isMobile, setMobileStatus] = useState(false);
 
-    const springRef = useSpringRef();
-    const springs = useSpring({
-        ref: springRef,
-        x: isInView ? 100 : 0,
-        config: {
-            ...config.molasses,
-            duration: 500,
-        },
-    });
+    useEffect(() => {
+        const handleResize = () => {
+            setMobileStatus(window.innerWidth < 768);
+        };
 
-    const transRef = useSpringRef();
-    const transition = useTransition(isInView ? events : [], {
-        ref: transRef,
-        trail: 50,
-        from: { opacity: 0 },
-        enter: { opacity: 1 },
-        config: {
-            ...config.molasses,
-            duration: 500,
-        },
-    });
+        handleResize();
+        window.addEventListener("resize", handleResize);
 
-    useChain([springRef, transRef]);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    return isMobile ? <Mobile events={events} /> : <Desktop events={events} />;
+}
+
+const Desktop: FC<{ events: Event[] }> = ({ events }) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const isInView = useIsVisible(ref, { cancelOnFirstHit: true });
+    const [springs, transition] = useChainedTransition(isInView, events);
 
     return (
         <div
-            ref={divRef}
+            ref={ref}
             className="relative grid grid-cols-2 mt-24 items-center gap-12 gap-x-16 px-12"
         >
             {transition((style, item, _, i) => {
                 return (
-                    <EventTreeCardWrapper
+                    <EventTreeCardGridWrapper
                         key={item.name}
                         event={item}
                         style={style}
@@ -71,7 +65,7 @@ export default function EventTimeLine() {
                         // 9rem for the component and 3rem for the vertical gap
                         style={{
                             top: `${i * 12}rem`,
-                            opacity: springs.x.to((y) => (y >= i * 20 ? 1 : 0)),
+                            opacity: springs.x,
                         }}
                         className="absolute h-8 w-8 border-4 border-accent-border rounded-full bg-bg-dark transition-opacity -left-3"
                     />
@@ -79,4 +73,37 @@ export default function EventTimeLine() {
             </div>
         </div>
     );
-}
+};
+
+const Mobile: FC<{ events: Event[] }> = ({ events }) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const isInView = useIsVisible(ref, { cancelOnFirstHit: true });
+    const [springs, transition] = useChainedTransition(isInView, events);
+
+    return (
+        <div ref={ref} className="relative mt-24 flex flex-col items-center gap-12 pl-8">
+            {transition((style, item, _, i) => {
+                return (
+                    <div className="relative">
+                        <animated.div
+                            key={i}
+                            style={{
+                                opacity: springs.x,
+                            }}
+                            className="absolute z-10 h-8 w-8 border-4 border-accent-border rounded-full bg-bg-dark transition-opacity -left-11"
+                        />
+                        <EventTreeCardFlexWrapper key={item.name} style={style} event={item} />
+                    </div>
+                );
+            })}
+            <div className="absolute inset-y-0 left-0 w-2">
+                <animated.div
+                    className="h-full w-2 transform-gpu bg-text-secondary transition-transform"
+                    style={{
+                        height: springs.x.to((y) => `${y}%`),
+                    }}
+                />
+            </div>
+        </div>
+    );
+};
