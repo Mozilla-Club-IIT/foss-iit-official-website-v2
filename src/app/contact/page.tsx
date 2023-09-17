@@ -10,8 +10,8 @@ import DenseTextArea from "@/components/forms/DenseTextArea";
 export default function Contact() {
     return (
         <div
-            className="z-20 grid items-center justify-center containerify lg:grid-cols-2"
-            style={{ height: "calc(100vh - 8rem)" }}
+            className="z-20 grid items-center justify-center lg:grid-cols-2"
+            style={{ minHeight: "calc(100vh - 6rem)" }}
         >
             <Hero />
             <Form />
@@ -29,7 +29,7 @@ const Hero: FC = () => {
                 Any questions or remarks? Don’t hesitate to contact us.
             </span>
 
-            <div className="mt-8 flex flex-col gap-5 md:pr-10">
+            <div className="mt-8 flex flex-col gap-5">
                 <ContactCard
                     icon="i-mdi-location"
                     label="Informatics Institute of Technology, 57, Ramakrishna Road, Colombo 06."

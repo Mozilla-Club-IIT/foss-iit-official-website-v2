@@ -29,7 +29,13 @@ export default defineConfig<Theme>({
         }),
     ],
     transformers: [transformerVariantGroup()],
-
+	extendTheme: (theme) => ({
+		...theme,
+		breakpoints: {
+			xs: "375px",
+			...theme.breakpoints,
+		},
+	}),
     theme: {
         duration: {
             emphasized: "500ms",
