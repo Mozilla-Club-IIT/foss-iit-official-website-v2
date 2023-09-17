@@ -4,14 +4,13 @@ import { FC, useEffect, useRef, useState } from "react";
 import { animated } from "@react-spring/web";
 
 import { useChainedTransition, useIsVisible } from "@/utils/react/client";
+import { events } from "@/constants/placeholders";
+import { Event } from "@/types/internal";
 
-import EventTreeCard, {
+import {
     EventTreeCardFlexWrapper,
     EventTreeCardGridWrapper,
 } from "@/components/cards/EventTreeCard";
-import { events } from "@/constants/placeholders";
-import { Event } from "@/types/internal";
-import EventCard from "@/components/cards/EventCard";
 
 export default function EventTimeLine() {
     const [isMobile, setMobileStatus] = useState(false);
