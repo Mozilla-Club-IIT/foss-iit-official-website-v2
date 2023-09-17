@@ -8,7 +8,7 @@ import dotLogo from "public/dot-logo.png";
 export default function Nav() {
     return (
         <header
-            className="fixed inset-x-6 top-6 z-30 w-full"
+            className="fixed inset-x-6 top-6 z-50 w-full"
             style={{ maxWidth: "calc(100% - 3rem)" }}
         >
             <div className="h-16 flex items-center rounded-2xl bg-black/[48%] pl-8 pr-12 ring-2 ring-border-nav/[4%] backdrop-blur-sm containerify md:mr-48 2xl:h-20">

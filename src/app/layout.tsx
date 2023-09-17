@@ -8,6 +8,8 @@ import { poppins } from "@/constants/fonts";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
 
+import backgroundImage from "public/background.png";
+
 export const metadata: Metadata = {
     title: "Mozilla IIT",
     description: "",
@@ -18,17 +20,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en" className={`${poppins.variable} max-w-full `}>
             <body className="relative h-[100vh] w-full">
                 <Nav />
-                <main className="containerify">{children}</main>
+                <main className="flex flex-col pt-24 containerify">{children}</main>
                 <Footer />
-                {/* <div className="absolute top-0 z-0 h-[100vh] w-full">
-                    <Image
-                        alt=""
-                        src="/background.png"
-                        fill={true}
-                        quality={100}
-                        className="z-0 object-cover object-top"
-                    />
-                </div> */}
+                <Image
+                    alt=""
+                    src={backgroundImage}
+                    placeholder="blur"
+                    quality={100}
+                    fill
+                    sizes="100vw"
+                    style={{
+                        objectFit: "cover",
+                    }}
+                />
             </body>
         </html>
     );
