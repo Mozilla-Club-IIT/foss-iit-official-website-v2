@@ -1,21 +1,20 @@
 import type { FC } from "react";
 
+import clsx from "clsx";
 import cn from "@/utils/cn";
 import type { Member } from "@/types/internal";
 
 import MemberCard from "@/components/cards/MemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";
-// import AccentedButton from "@/components/buttons/AccentedButton";
-// import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 
 import { members } from "@/constants/placeholders";
 
 export default function About() {
     return (
-        <div className="z-20 flex flex-col containerify">
+        <>
             <Hero />
             <MemberTree />
-        </div>
+        </>
     );
 }
 
@@ -41,19 +40,20 @@ const TreeSpacer: FC<{ className?: string }> = ({ className }) => {
     );
 };
 
+const FlexibleMemberCard: FC<{ member: Member }> = ({ member }) => {
+    return (
+        <div className="col-span-full contents justify-center md:flex">
+            <MemberCard {...member} className="col-span-full md:w-104" />
+        </div>
+    );
+};
+
 const MemberTree: FC = () => {
     return (
-        <div className="grid grid-cols-8 my-24 justify-items-center gap-x-6">
-            <div className="col-span-full flex justify-center">
-                <MemberCard {...(members[0] as Member)} className="w-104" />
-            </div>
-
+        <div className="grid grid-cols-8 my-24 justify-items-center md:gap-x-6">
+            <FlexibleMemberCard member={members[0] as Member} />
             <TreeSpacer />
-
-            <div className="col-span-full flex justify-center">
-                <MemberCard {...(members[1] as Member)} className="w-104" />
-            </div>
-
+            <FlexibleMemberCard member={members[1] as Member} />
             <TreeSpacer className="h-32" />
 
             {(members[2] as Member[]).map((member, i) => {
@@ -61,7 +61,10 @@ const MemberTree: FC = () => {
                     <MemberCard
                         key={member.name}
                         {...member}
-                        className={`col-span-2 ${i === 0 ? "col-start-2" : ""}`}
+                        className={clsx(
+                            "col-span-full my-2 md:col-span-2 md:my-0",
+                            i === 0 ? "md:col-start-2" : "",
+                        )}
                     />
                 );
             })}
@@ -73,7 +76,10 @@ const MemberTree: FC = () => {
                     <MemberCard
                         key={member.name}
                         {...member}
-                        className={`col-span-2 ${i === 0 ? "col-start-1" : ""}`}
+                        className={clsx(
+                            "col-span-full my-2 md:col-span-2 md:my-0",
+                            i === 0 ? "md:col-start-1" : "",
+                        )}
                     />
                 );
             })}
