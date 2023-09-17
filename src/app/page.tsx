@@ -31,7 +31,7 @@ const Hero: FC = () => {
 
 const WhoAreWe: FC = () => {
     return (
-        <div className="mt-24 max-w-3xl flex flex-col px-16 text-text-secondary prose">
+        <div className="container-content-prose">
             <h1 className="uppercase text-text-primary">Who are we</h1>
             <p>
                 FOSS (Free and Open-Source Software) community of IIT was initiated in our
@@ -55,7 +55,7 @@ const WhoAreWe: FC = () => {
 
 const OurMission: FC = () => {
     return (
-        <div className="mt-24 max-w-3xl flex flex-col px-16 text-text-secondary prose">
+        <div className="container-content-prose">
             <h1 className="uppercase text-text-primary">Our Mission</h1>
             <p>
                 To advocate for the innovation and development of open-source projects and strive to
@@ -70,7 +70,7 @@ const OurMission: FC = () => {
 
 const OurVision: FC = () => {
     return (
-        <div className="my-24 max-w-3xl flex flex-col px-16 text-text-secondary prose">
+        <div className="my-24 container-content-prose">
             <h1 className="uppercase text-text-primary">Our Vision</h1>
             <p>
                 To acquire software freedom and to make the Internet free and accessible to all
