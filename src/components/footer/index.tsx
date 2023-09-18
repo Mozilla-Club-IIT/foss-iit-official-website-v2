@@ -45,7 +45,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="h-10 flex items-center justify-center bg-bg-dark text-center text-base font-medium uppercase">
+            <div className="h-10 flex items-center justify-center bg-bg-dark text-center text-sm font-medium uppercase md:text-base">
                 <p className="text-center">
                     Copyright © 2022 | Meet the{" "}
                     <Link href="/devs" className="text-accent-light">

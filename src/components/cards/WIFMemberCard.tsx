@@ -11,7 +11,7 @@ type Props = WIFBoardOfficial & {
 export default function WIFMemberCard({ name, imageURL, externalLinks = {} }: Props) {
     return (
         <div className="flex flex-col items-center justify-between overflow-hidden rounded-6 bg-[#9B9B9B]/22">
-            <div className="relative h-64 w-76">
+            <div className="relative h-64 w-full">
                 <Image
                     src={imageURL}
                     alt={`${name} picture`}
