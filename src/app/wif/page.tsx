@@ -10,13 +10,13 @@ import { wifBoard } from "@/constants/placeholders";
 
 export default function Home() {
     return (
-        <div className="z-20 flex flex-col containerify">
+        <>
             <Hero />
             <AboutUs />
             <OurMission />
             <OurVision />
             <BoardOfOfficials />
-        </div>
+        </>
     );
 }
 
@@ -33,7 +33,7 @@ const Hero: FC = () => {
                 <AccentedButton label="Join Us" />
                 <TrailingIconButton icon="i-mdi-arrow-top-right" label="Board of Officials" />
             </HeroLayout>
-            <div className="absolute bottom-0 right-20 w-2/5">
+            <div className="absolute bottom-0 right-0 z-10 hidden w-2/5 lg:right-20 md:block">
                 <Image
                     src="/wif-developer.png"
                     width={782}
@@ -47,7 +47,7 @@ const Hero: FC = () => {
 
 const AboutUs: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col px-16 text-text-secondary prose">
+        <div className="container-content-prose mt-24 max-w-full flex flex-col text-text-secondary">
             <h1 className="uppercase text-text-primary">ABOUT US</h1>
             <p>
                 The Women in FOSS (Free and Open-Source Software) Community of IIT is an affinity
@@ -74,7 +74,7 @@ const AboutUs: FC = () => {
 
 const OurMission: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col px-16 text-text-secondary prose">
+        <div className="container-content-prose mt-24 max-w-full flex flex-col text-text-secondary">
             <h1 className="uppercase text-text-primary">Our Mission</h1>
             <p>
                 The mission of the Women in FOSS Community of IIT is to empower women to become
@@ -95,7 +95,7 @@ const OurMission: FC = () => {
 
 const OurVision: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col px-16 text-text-secondary prose">
+        <div className="container-content-prose mt-24 max-w-full flex flex-col text-text-secondary">
             <h1 className="uppercase text-text-primary">Our Vision</h1>
             <p>
                 The Women in FOSS community of IIT seeks to foster a diverse and inclusive community
@@ -117,11 +117,11 @@ const OurVision: FC = () => {
 };
 
 const BoardOfOfficials: FC = () => (
-    <div className="mb-24 mt-26 flex flex-col gap-8 px-16">
+    <div className="container-content-prose my-24 max-w-full flex flex-col gap-8 text-text-secondary">
         <h1 className="text-5xl font-medium leading-tight uppercase text-text-primary">
             Board Officials
         </h1>
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] justify-center gap-6">
             {wifBoard.map((member) => (
                 <WIFMemberCard
                     key={member.name}
