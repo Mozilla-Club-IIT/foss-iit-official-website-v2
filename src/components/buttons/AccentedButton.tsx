@@ -4,6 +4,6 @@ type Props = {
 
 export default function AccentedButton({ label }: Props) {
     return (
-        <button className="h-10 rounded-xl bg-accent-dark px-6 font-medium shadow">{label}</button>
+        <button className="h-10 w-max rounded-xl bg-accent-dark px-8 font-medium shadow">{label}</button>
     );
 }
