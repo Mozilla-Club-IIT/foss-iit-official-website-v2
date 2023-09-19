@@ -15,7 +15,7 @@ export default function Footer() {
             <div className="grid grid-cols-8 gap-0 gap-y-12 py-8 containerify md:gap-y-0">
                 <div className="col-span-full flex flex-col flex-wrap gap-4 md:col-span-4">
                     <Image height={56} width={56} src={dotLogo} alt="logo" />
-                    <span className="text-xl capitalize md:text-3xl">
+                    <span className="max-w-md text-xl capitalize md:text-3xl">
                         Mozilla campus club and FOSS community of IIT
                     </span>
                 </div>
