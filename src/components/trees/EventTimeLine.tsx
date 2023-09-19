@@ -1,9 +1,7 @@
 "use client";
 
-import { FC, useEffect, useRef, useState } from "react";
-import { animated } from "@react-spring/web";
+import { type FC, useEffect, useRef, useState } from "react";
 
-import { useChainedTransition, useIsVisible } from "@/utils/react/client";
 import { events } from "@/constants/placeholders";
 import { Event } from "@/types/internal";
 
@@ -33,39 +31,22 @@ export default function EventTimeLine() {
 
 const Desktop: FC<{ events: Event[] }> = ({ events }) => {
     const ref = useRef<HTMLDivElement>(null);
-    const isInView = useIsVisible(ref, { cancelOnFirstHit: true });
-    const [springs, transition] = useChainedTransition(isInView, events);
 
     return (
         <div
             ref={ref}
             className="relative grid grid-cols-2 mt-24 items-center gap-12 gap-x-16 px-12"
         >
-            {transition((style, item, _, i) => {
-                return (
-                    <EventTreeCardGridWrapper
-                        key={item.name}
-                        event={item}
-                        style={style}
-                        isEven={i % 2 === 0}
-                    />
-                );
-            })}
+            {events.map((item, i) => (
+                <EventTreeCardGridWrapper key={item.name} event={item} isEven={i % 2 === 0} />
+            ))}
             <div className="absolute inset-x-1/2 inset-y-14 w-2">
-                <animated.div
-                    className="h-full w-2 transform-gpu bg-text-secondary transition-transform"
-                    style={{
-                        height: springs.x.to((y) => `${y}%`),
-                    }}
-                />
+                <div className="h-full w-2 transform-gpu bg-text-secondary transition-transform" />
                 {events.map((_, i) => (
-                    <animated.div
+                    <div
                         key={i}
                         // 9rem for the component and 3rem for the vertical gap
-                        style={{
-                            top: `${i * 12}rem`,
-                            opacity: springs.x,
-                        }}
+                        style={{ top: `${i * 12}rem` }}
                         className="absolute h-8 w-8 border-4 border-accent-border rounded-full bg-bg-dark transition-opacity -left-3"
                     />
                 ))}
@@ -76,32 +57,17 @@ const Desktop: FC<{ events: Event[] }> = ({ events }) => {
 
 const Mobile: FC<{ events: Event[] }> = ({ events }) => {
     const ref = useRef<HTMLDivElement>(null);
-    const isInView = useIsVisible(ref, { cancelOnFirstHit: true });
-    const [springs, transition] = useChainedTransition(isInView, events);
 
     return (
         <div ref={ref} className="relative mt-24 flex flex-col items-center gap-12 pl-8">
-            {transition((style, item, _, i) => {
-                return (
-                    <div className="relative">
-                        <animated.div
-                            key={i}
-                            style={{
-                                opacity: springs.x,
-                            }}
-                            className="absolute z-10 h-8 w-8 border-4 border-accent-border rounded-full bg-bg-dark transition-opacity -left-11"
-                        />
-                        <EventTreeCardFlexWrapper key={item.name} style={style} event={item} />
-                    </div>
-                );
-            })}
+            {events.map((item) => (
+                <div key={item.name} className="relative">
+                    <div className="absolute z-10 h-8 w-8 border-4 border-accent-border rounded-full bg-bg-dark transition-opacity -left-11" />
+                    <EventTreeCardFlexWrapper key={item.name} event={item} />
+                </div>
+            ))}
             <div className="absolute inset-y-0 left-0 w-2">
-                <animated.div
-                    className="h-full w-2 transform-gpu bg-text-secondary transition-transform"
-                    style={{
-                        height: springs.x.to((y) => `${y}%`),
-                    }}
-                />
+                <div className="h-full w-2 transform-gpu bg-text-secondary transition-transform" />
             </div>
         </div>
     );

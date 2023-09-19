@@ -2,23 +2,29 @@
 
 import clsx from "clsx";
 import type { FC } from "react";
-import { type SpringValue, animated } from "@react-spring/web";
+import { type SpringValue, animated, useInView } from "@react-spring/web";
 
 import type { Event } from "@/types/internal";
 import { getFancyDate } from "@/utils/date";
 import { mapToLines } from "@/utils/react/shared";
 
-type Props = Omit<Event, "startingDate"> & {
-    style: {
-        opacity: SpringValue<number>;
-    };
-};
+type Props = Omit<Event, "startingDate">;
 
-export default function EventTreeCard({ name, description, style }: Props) {
+export default function EventTreeCard({ name, description }: Props) {
+    const [ref, springs] = useInView(
+        () => ({
+            from: { y: 20, opacity: 0 },
+            to: { y: 0, opacity: 1 },
+            config: { tension: 300 },
+        }),
+        { once: true },
+    );
+
     return (
         <animated.div
+            ref={ref}
             className="h-fit w-full flex flex-col rounded-xl bg-white/10 backdrop-blur-lg md:h-36 md:flex-row"
-            style={style}
+            style={springs}
         >
             <div className="h-24 min-w-36 w-full rounded-t-xl bg-red md:h-36 md:w-36 md:rounded-l-xl md:rounded-tr-0" />
             <div className="flex flex-col justify-center gap-1 px-4 py-2 md:py-0">
@@ -31,10 +37,7 @@ export default function EventTreeCard({ name, description, style }: Props) {
     );
 }
 
-export const EventTreeCardFlexWrapper: FC<{
-    event: Event;
-    style: Props["style"];
-}> = ({ event, style }) => {
+export const EventTreeCardFlexWrapper: FC<{ event: Event }> = ({ event }) => {
     return (
         <div className="flex flex-col gap-2">
             <span className="text-lg font-bold text-text-primary">
@@ -44,23 +47,20 @@ export const EventTreeCardFlexWrapper: FC<{
                 name={event.name}
                 imageURL={event.imageURL}
                 description={event.description}
-                style={style}
             />
         </div>
     );
 };
-export const EventTreeCardGridWrapper: FC<{
-    event: Event;
-    isEven: boolean;
-    style: Props["style"];
-}> = ({ event, isEven, style }) => {
+export const EventTreeCardGridWrapper: FC<{ event: Event; isEven: boolean }> = ({
+    event,
+    isEven,
+}) => {
     const elements = [
         <EventTreeCard
             key="card"
             name={event.name}
             imageURL={event.imageURL}
             description={event.description}
-            style={style}
         />,
         <span
             key="label"
