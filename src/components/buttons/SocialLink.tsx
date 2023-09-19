@@ -20,7 +20,7 @@ export default function SocialLink({ type, href, className }: Props) {
             <div
                 className={cn("h-5 w-5", {
                     "i-bxl-facebook": type === "facebook",
-                    "i-bxl-twitter": type === "twitter",
+                    "i-bxl-tiktok": type === "tiktok",
                     "i-bxl-linkedin": type === "linkedin",
                     "i-bxl-instagram": type === "instagram",
                     "i-bxl-github": type === "github",
