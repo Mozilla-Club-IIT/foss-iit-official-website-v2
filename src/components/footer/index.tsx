@@ -20,12 +20,12 @@ export default function Footer() {
                     <Image
                         src={FooterLogoSet}
                         width={400}
-                        className="hidden w-full pr-8 lg:block"
+                        className="hidden max-w-lg lg:block"
                         alt="Mozilla Campus Club IIT"
                     />
-                    <TextualLogo className="h-12 max-w-full lg:hidden" />
-                    <FOSSTextualLogo className="h-12 max-w-full lg:hidden" />
-                    <WIFTextualLogo className="h-12 max-w-full lg:hidden" />
+                    <TextualLogo className="h-12 max-w-2/3 lg:hidden" />
+                    <FOSSTextualLogo className="max-2/3 h-12 lg:hidden" />
+                    <WIFTextualLogo className="max-2/3 h-12 lg:hidden" />
                 </div>
 
                 <div className="col-span-full flex flex-col md:col-span-2">
