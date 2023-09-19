@@ -20,7 +20,7 @@ export default function About() {
 
 const Hero: FC = () => {
     return (
-        <div className="max-h-3xl flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
+        <div className="max-h-xl flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
             <HeroLayout
                 title={["GET TO KNOW", "THE BOARD of officials"]}
                 subtitle={[
