@@ -110,7 +110,10 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
             name: "Shakthi Warnakulasuriya",
             role: "Editor",
             imageURL: "/portraits/Shakthi.jpg",
-            externalLinks: { linkedin: "https://www.linkedin.com/in/shakthi-warnakulasuriya-/" },
+            externalLinks: {
+                linkedin: "https://www.linkedin.com/in/shakthi-warnakulasuriya-/",
+                instagram: "https://www.instagram.com/_shakthi_raveen_/",
+            },
             occupations: ["Software Engineer", "UI/UX Designer"],
         },
     ],
