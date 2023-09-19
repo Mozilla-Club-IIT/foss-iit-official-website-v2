@@ -1,6 +1,6 @@
 export default function Background() {
     return (
-        <div className="fixed inset-0 w-full overflow-hidden">
+        <div className="fixed inset-0 w-full overflow-hidden -z-10">
             <div className="absolute inset-0 bg-[#1C4762]" />
 
             <div className="absolute right-96 h-256 w-36 rotate-48 bg-[#4C3033] blur-3xl -top-56" />
