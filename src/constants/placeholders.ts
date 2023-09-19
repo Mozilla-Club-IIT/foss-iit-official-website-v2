@@ -115,7 +115,7 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
             underlings: [
                 {
                     name: "Rachala Ovin",
-                    imageURL: "/portraits/nadul.jpg",
+                    imageURL: "/portraits/rachala.jpg",
                     occupations: ["Software Engineer", "UI/UX Designer"],
                 },
                 {
@@ -154,8 +154,8 @@ export const developers: Member[] = [
     {
         name: "Rachala Ovin",
         role: "Developer",
-        imageURL: "/portraits/Sahan.jpg",
-        externalLinks: { linkedin: "http://linkedin.com" },
+        imageURL: "/portraits/rachala.jpg",
+        externalLinks: { linkedin: "https://lk.linkedin.com/in/curstantine" },
         occupations: ["Software Engineer", "UI/UX Designer"],
     },
     {
