@@ -17,7 +17,7 @@ export const events: Event[] = Array.from({ length: 5 }).map((_, i) => ({
 export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
     0: {
         name: "Sahan Dissanayake",
-        role: "President - Mozzila Campus club of IIT",
+        role: "President",
         imageURL: "/portraits/Sahan.jpg",
         externalLinks: { linkedin: "https://www.linkedin.com/in/sahan-dissanayake-82291516a/" },
         occupations: [
@@ -58,13 +58,13 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
         {
             name: "Media Directors",
             role: "President ",
-            imageURL: "/portraits/nadul.jpg",
+            imageURL: "",
             externalLinks: { linkedin: "http://linkedin.com" },
             occupations: ["Man in FOSS. Free & open, just for you ;)"],
         },
         {
             name: "Manupa Samarawickrama",
-            role: "Director of IIT",
+            role: "Director of IT",
             imageURL: "/portraits/manupa.jpg",
             externalLinks: { linkedin: "https://www.linkedin.com/in/manupa-samarawickrama/" },
             occupations: ["Software Engineer", "UI/UX Designer"],
@@ -110,14 +110,14 @@ export const developers: Member[] = [
         name: "Chamidu Amarasinghe",
         role: "UI/UX Designer",
         imageURL: "/portraits/chamidu.jpg",
-        externalLinks: { linkedin: "http://linkedin.com" },
+        externalLinks: { linkedin: "https://www.linkedin.com/in/chamidu-amarasinghe-87a83b1b0/" },
         occupations: ["Software Engineer", "UI/UX Designer"],
     },
     {
         name: "Afeef Razick",
         role: "Developer",
         imageURL: "/portraits/afeef.jpg",
-        externalLinks: { linkedin: "http://linkedin.com" },
+        externalLinks: { linkedin: "https://www.linkedin.com/in/afeef-razick/" },
         occupations: ["Software Engineer", "UI/UX Designer"],
     },
 
@@ -125,8 +125,8 @@ export const developers: Member[] = [
         name: "Ravindu Senarathna",
         role: "Developer",
         imageURL: "/portraits/ravindu.jpg",
-        externalLinks: { linkedin: "http://linkedin.com" },
-        occupations: ["Software Engineer", "UI/UX Designer"],
+        externalLinks: { linkedin: "https://www.linkedin.com/in/ravindusenrathna" },
+        occupations: ["A person"],
     },
 ];
 
