@@ -21,7 +21,10 @@ export default function Devs() {
 
 const Hero: FC = () => {
     return (
-        <div className="flex items-center justify-between" style={{ height: "calc(100vh - 8rem)" }}>
+        <div
+            className="relative flex items-center justify-between"
+            style={{ height: "calc(100vh - 8rem)" }}
+        >
             <HeroLayout
                 title={["MEET THE", "DEVELOPERS"]}
                 subtitle={[
@@ -33,7 +36,7 @@ const Hero: FC = () => {
                 <TrailingIconButton label="Tech used" icon="i-mdi-arrow-top-right" />
             </HeroLayout>
 
-            <div className="hidden h-full w-1/3 pr-20 md:block">
+            <div className="absolute bottom-0 right-0 z-10 hidden h-full w-1/3 lg:right-16 md:block">
                 <Image
                     width={510}
                     height={768}
@@ -49,7 +52,7 @@ const Hero: FC = () => {
 
 const TechnologiesUsed: FC = () => {
     return (
-        <div className="gap-8 container-content-block">
+        <div className="container-content-block gap-8">
             <h1 className="text-style-heading">Technologies Used</h1>
             <div className="grid grid-cols-2 justify-items-center gap-4 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 md:justify-items-start">
                 <TechnologyCard name="Sanity" icon="i-logos-sanity" />
@@ -68,7 +71,7 @@ const TechnologiesUsed: FC = () => {
 
 const Developers: FC = () => {
     return (
-        <div className="my-24 gap-8 container-content-block">
+        <div className="container-content-block my-24 gap-8">
             <h1 className="text-style-heading">Developers</h1>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 {developers.map((developer) => (
