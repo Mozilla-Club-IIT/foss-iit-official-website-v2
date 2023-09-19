@@ -137,22 +137,22 @@ export const developers: Member[] = [
 export const wifBoard: WIFBoardOfficial[] = [
     {
         name: "Bhagya Semage",
-        imageURL: "/portraits/bhagya.png",
+        imageURL: "/portraits/Bhagya.jpg",
         externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
         name: "Stefania Hapuarachchi",
-        imageURL: "/portraits/stefania.png",
+        imageURL: "/portraits/Stef.jpg",
         externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
         name: "Buddhima Fernando",
-        imageURL: "/portraits/buddhima.png",
+        imageURL: "/portraits/buddhima.jpg",
         externalLinks: { linkedin: "http://linkedin.com" },
     },
     {
         name: "Nadul Jayasundera",
-        imageURL: "/portraits/nadul.png",
+        imageURL: "/portraits/Nadul.jpg",
         externalLinks: { linkedin: "http://linkedin.com" },
     },
 ];
