@@ -17,7 +17,9 @@ export default function HeroLayout({ title, subtitle, children }: Props) {
             <span className="text-md mt-8 font-medium font-italic md:text-lg">
                 {Array.isArray(subtitle) ? mapToLines(subtitle) : subtitle}
             </span>
-            <div className="mt-24 flex flex-col gap-8 sm:flex-row">{children}</div>
+            <div className="mt-24 w-max flex flex-col items-center gap-5 sm:flex-row sm:gap-8">
+                {children}
+            </div>
         </div>
     );
 }
