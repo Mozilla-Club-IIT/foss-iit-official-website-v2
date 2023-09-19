@@ -17,9 +17,6 @@ export default function Home() {
             <Hero />
             <WhoAreWe />
             <Projects />
-            {/* <div className="absolute bottom-0 right-0 hidden lg:block">
-                <Image src={CodeLines} width={350} alt="" />
-            </div> */}
         </>
     );
 }
