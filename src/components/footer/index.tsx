@@ -7,7 +7,7 @@ import CategoryHeader from "@/components/footer/CategoryHeader";
 import EmailInput from "@/components/footer/EmailInput";
 import SocialLink from "@/components/buttons/SocialLink";
 
-import dotLogo from "public/dot-logo.png";
+import dotLogo from "public/dot-logo.svg";
 
 export default function Footer() {
     return (
