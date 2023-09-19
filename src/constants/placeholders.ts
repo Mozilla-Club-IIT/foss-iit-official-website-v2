@@ -1,4 +1,4 @@
-import type { Event, Member, WIFBoardOfficial } from "@/types/internal";
+import type { Event, Member, Project, WIFBoardOfficial } from "@/types/internal";
 
 export const event: Event = {
     name: "OpenHack 3.0",
@@ -151,4 +151,20 @@ export const wifBoard: WIFBoardOfficial[] = [
         imageURL: "/portraits/Nadul.jpg",
         externalLinks: { linkedin: "https://www.linkedin.com/in/nadul-jayasundera-616021257/" },
     },
+];
+
+export const projects: Project[] = [
+    {
+        name: "OpenHack 3.0",
+        accent: "light",
+        imageURL: "/projects/openhack3.png",
+        date: new Date("2023-12-1"),
+    },
+    {
+        name: "Summer Bootcamp",
+        accent: "dark",
+        imageURL: "/projects/summer-bootcamp.png",
+        date: new Date("2023-08-14"),
+    },
+    { name: "Her.exe", accent: "light", imageURL: "/projects/her-exe.png", date: new Date() },
 ];
