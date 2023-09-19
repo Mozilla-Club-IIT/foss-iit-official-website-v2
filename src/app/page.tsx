@@ -34,7 +34,7 @@ const Hero: FC = () => {
                 <a href={REGISTER} target="_blank" className="button-accented">
                     Join Us
                 </a>
-                <TrailingIconButton icon="i-mdi-arrow-top-right" label="Learn More" />
+                <button className="button-layout">Learn More</button>
             </HeroLayout>
 
             <div className="absolute right-0 hidden w-2/5 -bottom-22 lg:block">
