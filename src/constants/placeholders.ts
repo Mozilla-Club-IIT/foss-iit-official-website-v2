@@ -118,13 +118,7 @@ export const developers: Member[] = [
         externalLinks: { linkedin: "http://linkedin.com" },
         occupations: ["Software Engineer", "UI/UX Designer"],
     },
-    {
-        name: "Sahan Dissanayake",
-        role: "UI/UX Designer",
-        imageURL: "/portraits/Sahan.jpg",
-        externalLinks: { linkedin: "http://linkedin.com" },
-        occupations: ["Software Engineer", "UI/UX Designer"],
-    },
+
     {
         name: "Ravindu Senarathna",
         role: "Developer",
