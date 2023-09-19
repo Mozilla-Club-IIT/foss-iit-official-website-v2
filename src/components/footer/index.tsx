@@ -7,12 +7,12 @@ import CategoryHeader from "@/components/footer/CategoryHeader";
 import EmailInput from "@/components/footer/EmailInput";
 import SocialLink from "@/components/buttons/SocialLink";
 
-import dotLogo from "public/dot-logo.png";
+import dotLogo from "public/dot-logo.svg";
 
 export default function Footer() {
     return (
         <footer className="flex flex-col bg-bg-lighter">
-            <div className="grid grid-cols-8 gap-0 gap-y-12 py-8 containerify md:gap-y-0">
+            <div className="grid grid-cols-8 gap-0 gap-y-12 py-8 md:gap-y-0 containerify">
                 <div className="col-span-full flex flex-col flex-wrap gap-4 md:col-span-4">
                     <Image height={56} width={56} src={dotLogo} alt="logo" />
                     <span className="max-w-md text-xl capitalize md:text-3xl">
