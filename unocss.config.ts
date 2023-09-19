@@ -82,5 +82,7 @@ export default defineConfig<Theme>({
 
         "text-style-heading":
             "text-3xl font-medium leading-tight uppercase text-text-primary md:text-5xl",
+
+        "button-accented": "h-10 w-max rounded-xl bg-accent-dark px-8 font-medium shadow inline-flex items-center",
     },
 });

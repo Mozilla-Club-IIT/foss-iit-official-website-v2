@@ -9,6 +9,7 @@ import HeroLayout from "@/components/hero/HeroLayout";
 import ProjectCard from "@/components/cards/ProjectCard";
 
 import IsometricCubeSet from "public/isometric-cubeset.png";
+import { REGISTER } from "@/constants/links";
 
 export default function Home() {
     return (
@@ -30,7 +31,9 @@ const Hero: FC = () => {
                 title={["Mozilla Campus Club", "And FOSS Community Of IIT"]}
                 subtitle="Contribute, Inspire and Innovate"
             >
-                <AccentedButton label="Join Us" />
+                <a href={REGISTER} target="_blank" className="button-accented">
+                    Join Us
+                </a>
                 <TrailingIconButton icon="i-mdi-arrow-top-right" label="Learn More" />
             </HeroLayout>
 
