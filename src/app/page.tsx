@@ -1,8 +1,11 @@
-import { FC } from "react";
+import type { FC } from "react";
+import Image from "next/image";
 
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import HeroLayout from "@/components/hero/HeroLayout";
+
+import IsometricCubeSet from "public/isometric-cubeset.png";
 
 export default function Home() {
     return (
@@ -25,6 +28,9 @@ const Hero: FC = () => {
                 <AccentedButton label="Join Us" />
                 <TrailingIconButton icon="i-mdi-arrow-top-right" label="Learn More" />
             </HeroLayout>
+            <div className="absolute right-0 z-10 hidden w-2/5 -bottom-36 lg:right-20 md:block">
+                <Image src={IsometricCubeSet} alt="" />
+            </div>
         </div>
     );
 };
