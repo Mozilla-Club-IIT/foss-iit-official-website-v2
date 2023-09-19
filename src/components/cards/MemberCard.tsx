@@ -189,7 +189,7 @@ const ExternalLinkList: FC<{ externalLinks: Partial<Record<ExternalLink, string>
     externalLinks,
 }) => {
     return (
-        <div className="grid grid-cols-5 mt-1">
+        <div className="grid grid-cols-5 mt-1 max-w-fit gap-2">
             {Object.entries(externalLinks).map(([key, value]) => (
                 <SocialLink
                     key={key}
