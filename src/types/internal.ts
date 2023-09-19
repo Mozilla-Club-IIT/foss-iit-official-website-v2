@@ -1,10 +1,18 @@
+export type MemberUnion = Member | MemberGroup;
+
 export type Member = {
     name: string;
     role: string;
     imageURL: string;
-    externalLinks: Partial<Record<ExternalLink, string>>;
     occupations: string[];
+    externalLinks: Partial<Record<ExternalLink, string>>;
     underlings?: Pick<Member, "name" | "occupations" | "imageURL">[];
+};
+
+export type MemberGroup = {
+    name: string;
+    members: Omit<Member, "underlings">[];
+    underlings?: Member["underlings"];
 };
 
 export type Technology = {

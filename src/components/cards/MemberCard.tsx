@@ -5,42 +5,95 @@ import { FC, useEffect, useState, useRef } from "react";
 import { animated, useSpring } from "@react-spring/web";
 
 import cn from "@/utils/cn";
-import type { ExternalLink, Member } from "@/types/internal";
+import type { ExternalLink, Member, MemberGroup } from "@/types/internal";
 
 import SocialLink from "@/components/buttons/SocialLink";
 import { mapToLines } from "@/utils/react/shared";
 
-type Props = Member & {
+type Props = {
+    member?: Member;
+    group?: MemberGroup;
     className?: string;
 };
 
 const MemberDetailRow: FC<
-    Pick<Member, "name" | "role" | "imageURL"> & {
-        isExpanded: boolean;
-        onPress: () => void;
+    Pick<Member, "name"> & {
+        role?: string;
+        imageURL?: string;
+        trailing?: {
+            active: boolean;
+            onPress: () => void;
+        };
     }
-> = ({ name, role, imageURL, isExpanded, onPress }) => {
+> = ({ name, role, imageURL, trailing: { active, onPress } = {} }) => {
     return (
-        <div className="h-22 min-h-22 flex items-center gap-3" onClick={() => onPress()}>
-            <Image
-                src={imageURL}
-                height={64}
-                width={64}
-                alt={`${name}'s profile picture`}
-                className="h-16 min-w-16 w-16 rounded-full object-cover"
-            />
+        <div className="h-22 min-h-22 flex items-center gap-3" onClick={onPress}>
+            {imageURL && (
+                <Image
+                    src={imageURL}
+                    height={64}
+                    width={64}
+                    alt={`${name}'s profile picture`}
+                    className="h-16 min-w-16 w-16 rounded-full object-cover"
+                />
+            )}
             <div className="flex flex-1 flex-col gap-1">
                 <span className="font-medium leading-tight text-text-primary">{name}</span>
                 <span className="text-xs leading-tight text-text-primary/50">{role} </span>
             </div>
-            <div className="inline-flex">
-                <div
-                    className={cn(
-                        "i-mdi-chevron-down h-6 w-6 text-text-secondary transition-transform transform-gpu use-transition-emphasized",
-                        { "rotate-180": isExpanded },
-                    )}
-                />
+            {active !== undefined && (
+                <div className="inline-flex">
+                    <div
+                        className={cn(
+                            "i-mdi-chevron-down h-6 w-6 text-text-secondary transition-transform transform-gpu use-transition-emphasized",
+                            { "rotate-180": active },
+                        )}
+                    />
+                </div>
+            )}
+        </div>
+    );
+};
+
+const MemberUnderlings: FC<{ underlings: Pick<Member, "name" | "imageURL">[]; to: string }> = ({
+    underlings,
+    to,
+}) => {
+    return (
+        <>
+            <div className="my-2 h-0 b-t-2 b-t-border-separator/35" />
+            <span className="pb-1 font-bold leading-tight text-text-primary/50">
+                People Who Reports To {to}
+            </span>
+            <div className="flex gap-4">
+                {underlings.map((x) => (
+                    <Image
+                        key={x.name}
+                        alt={`${x.name}'s profile picture`}
+                        src={x.imageURL}
+                        height={32}
+                        width={32}
+                        className="h-8 min-w-8 w-8 rounded-full object-cover"
+                    />
+                ))}
             </div>
+        </>
+    );
+};
+
+const ExternalLinkList: FC<{ externalLinks: Partial<Record<ExternalLink, string>> }> = ({
+    externalLinks,
+}) => {
+    return (
+        <div className="grid grid-cols-5 mt-1">
+            {Object.entries(externalLinks).map(([key, value]) => (
+                <SocialLink
+                    key={key}
+                    type={key as ExternalLink}
+                    href={value}
+                    className="border-[#D7D7D7]/14"
+                />
+            ))}
         </div>
     );
 };
@@ -59,48 +112,43 @@ const MemberExpandedDetailsRow: FC<Omit<Member, "imageURL" | "name">> = ({
     return (
         <animated.div className="flex flex-col gap-2 px-2 pb-4" style={springs}>
             <span className="text-xs text-text-primary/60">{mapToLines(occupations)}</span>
-            <div className="grid grid-cols-5 mt-1">
-                {Object.entries(externalLinks).map(([key, value]) => (
-                    <SocialLink
-                        key={key}
-                        type={key as ExternalLink}
-                        href={value}
-                        className="border-[#D7D7D7]/14"
-                    />
-                ))}
-            </div>
+            <ExternalLinkList externalLinks={externalLinks} />
             {underlings && underlings.length > 0 && (
-                <>
-                    <div className="my-2 h-0 b-t-2 b-t-border-separator/35" />
-                    <span className="pb-1 font-bold leading-tight text-text-primary/50">
-                        People Who Reports To {role}
-                    </span>
-                    <div className="flex gap-4">
-                        {underlings.map((x) => (
-                            <Image
-                                key={x.name}
-                                alt={`${x.name}'s profile picture`}
-                                src={x.imageURL}
-                                height={32}
-                                width={32}
-                                className="h-8 min-w-8 w-8 rounded-full object-cover"
-                            />
-                        ))}
-                    </div>
-                </>
+                <MemberUnderlings underlings={underlings} to={role} />
             )}
         </animated.div>
     );
 };
-export default function MemberCard({
-    name,
-    role,
-    imageURL,
-    externalLinks,
-    occupations,
-    underlings,
-    className,
-}: Props) {
+
+const MemberGroupExpandedDetailsRow: FC<MemberGroup> = ({ name, members, underlings }) => {
+    const springs = useSpring({
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+    });
+
+    return (
+        <animated.div className="flex flex-col gap-4 px-2 pb-4" style={springs}>
+            {members.map((member) => (
+                <div key={member.name} className="flex flex-col">
+                    <MemberDetailRow
+                        name={member.name}
+                        role={member.role}
+                        imageURL={member.imageURL}
+                    />
+                    <span className="text-xs text-text-primary/60">
+                        {mapToLines(member.occupations)}
+                    </span>
+                    <ExternalLinkList externalLinks={member.externalLinks} />
+                </div>
+            ))}
+            {underlings && underlings.length > 0 && (
+                <MemberUnderlings underlings={underlings} to={name} />
+            )}
+        </animated.div>
+    );
+};
+
+export default function MemberCard({ member, group, className }: Props) {
     const ref = useRef<HTMLDivElement>(null);
     const [isVisible, setVisibility] = useState(false);
 
@@ -125,26 +173,32 @@ export default function MemberCard({
         <div ref={ref} className={cn("relative w-full min-h-22", className)}>
             <div
                 className={cn(
-                    "absolute inset-0 max-h-22 flex flex-col rounded-3xl bg-white/9 px-3",
+                    "absolute inset-0 max-h-md flex flex-col rounded-3xl bg-white/9 px-3",
                     "transition-height transform-gpu use-transition-emphasized",
                     { "h-fit max-h-96 bg-[#2B2B2B]! z-30 shadow-lg": isVisible },
                 )}
             >
                 <MemberDetailRow
-                    name={name}
-                    role={role}
-                    imageURL={imageURL}
-                    isExpanded={isVisible}
-                    onPress={() => setVisibility((x) => !x)}
+                    name={(member?.name ?? group?.name)!}
+                    role={member?.role}
+                    imageURL={member?.imageURL}
+                    trailing={{ onPress: () => setVisibility((x) => !x), active: isVisible }}
                 />
-                {isVisible && (
-                    <MemberExpandedDetailsRow
-                        role={role}
-                        underlings={underlings}
-                        occupations={occupations}
-                        externalLinks={externalLinks}
-                    />
-                )}
+                {isVisible &&
+                    (member !== undefined ? (
+                        <MemberExpandedDetailsRow
+                            role={member.role}
+                            occupations={member.occupations}
+                            externalLinks={member.externalLinks}
+                            underlings={member.underlings}
+                        />
+                    ) : (
+                        <MemberGroupExpandedDetailsRow
+                            name={group!.name}
+                            members={group!.members}
+                            underlings={group!.underlings}
+                        />
+                    ))}
             </div>
         </div>
     );
