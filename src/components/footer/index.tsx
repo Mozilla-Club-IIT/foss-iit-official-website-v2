@@ -47,9 +47,9 @@ export default function Footer() {
                     <span className="mt-8 capitalize">Connect with us</span>
                     <div className="mt-1 flex gap-2">
                         <SocialLink type="facebook" href={FACEBOOK} />
-                        <SocialLink type="tiktok" href={TIKTOK} />
-                        <SocialLink type="linkedin" href={LINKEDIN} />
                         <SocialLink type="instagram" href={INSTAGRAM} />
+                        <SocialLink type="linkedin" href={LINKEDIN} />
+                        <SocialLink type="tiktok" href={TIKTOK} />
                     </div>
                 </div>
             </div>
