@@ -1,11 +1,4 @@
-import type {
-    Event,
-    Member,
-    MemberGroup,
-    MemberUnion,
-    Project,
-    WIFBoardOfficial,
-} from "@/types/internal";
+import type { Event, Member, MemberUnion, Project, WIFBoardOfficial } from "@/types/internal";
 
 export const event: Event = {
     name: "OpenHack 3.0",
@@ -37,7 +30,7 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
     1: {
         name: "Sachith Wickramasekara",
         role: "Vice President",
-        imageURL: "/portraits/sachith.jpg",
+        imageURL: "/portraits/sachith.webp",
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/sachith-wickramasekara/",
             instagram: "https://instagram.com/sach.cha_?igshid=MWZjMTM2ODFkZg==",
@@ -58,7 +51,7 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
         {
             name: "Vinuja Jayathilake",
             role: "Treasurer ",
-            imageURL: "/portraits/vinuja.jpg",
+            imageURL: "/portraits/vinuja.webp",
             externalLinks: {
                 linkedin: "https://www.linkedin.com/in/vinuja-jayathilake/",
                 instagram: "https://instagram.com/_vinuja_?igshid=MWZjMTM2ODFkZg==",
@@ -79,13 +72,12 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
     3: [
         {
             name: "Media Directors",
-            imageURL: "/portraits/nadul.jpg",
             underlings: [],
             members: [
                 {
                     name: "Ravindu Senarathna",
                     role: "Director of PR & Media",
-                    imageURL: "/portraits/ravindu.jpg",
+                    imageURL: "/portraits/ravindu.webp",
                     occupations: ["A person"],
                     externalLinks: {
                         linkedin: "https://www.linkedin.com/in/ravindusenrathna",
@@ -115,8 +107,8 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
             underlings: [
                 {
                     name: "Rachala Ovin",
-                    imageURL: "/portraits/rachala.jpg",
-                    occupations: ["Software Engineer", "UI/UX Designer"],
+                    imageURL: "/portraits/rachala.webp",
+                    occupations: ["SvelteKit in prod when?"],
                 },
                 {
                     name: "Chamidu Amarasinghe",
@@ -133,14 +125,14 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
         {
             name: "Abrar Ahmed",
             role: "Director Membership & Club Growth",
-            imageURL: "/portraits/abrar.jpg",
+            imageURL: "/portraits/abrar.webp",
             externalLinks: { linkedin: "https://www.linkedin.com/in/abrar-ahmed-028368255/" },
             occupations: ["Computer Science Enthusiast. Linux Enthusiast. Loves FOSS."],
         },
         {
             name: "Shakthi Warnakulasuriya",
             role: "Editor",
-            imageURL: "/portraits/Shakthi.jpg",
+            imageURL: "/portraits/Shakthi.webp",
             externalLinks: {
                 linkedin: "https://www.linkedin.com/in/shakthi-warnakulasuriya-/",
                 instagram: "https://www.instagram.com/_shakthi_raveen_/",
@@ -154,9 +146,9 @@ export const developers: Member[] = [
     {
         name: "Rachala Ovin",
         role: "Developer",
-        imageURL: "/portraits/rachala.jpg",
+        imageURL: "/portraits/rachala.webp",
         externalLinks: { linkedin: "https://lk.linkedin.com/in/curstantine" },
-        occupations: ["Software Engineer", "UI/UX Designer"],
+        occupations: ["SvelteKit in prod when?"],
     },
     {
         name: "Chamidu Amarasinghe",
@@ -175,7 +167,7 @@ export const developers: Member[] = [
     {
         name: "Ravindu Senarathna",
         role: "Developer",
-        imageURL: "/portraits/ravindu.jpg",
+        imageURL: "/portraits/ravindu.webp",
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/ravindusenrathna",
             instagram: "https://instagram.com/mrrevengerx?igshid=MWZjMTM2ODFkZg==",
@@ -195,7 +187,7 @@ export const wifBoard: WIFBoardOfficial[] = [
     },
     {
         name: "Stefania Hapuarachchi",
-        imageURL: "/portraits/Stef.jpg",
+        imageURL: "/portraits/Stef.webp",
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/stefania-hapuarachchi/",
             instagram: "https://instagram.com/_____shavini_____?igshid=MWZjMTM2ODFkZg==",
@@ -211,7 +203,7 @@ export const wifBoard: WIFBoardOfficial[] = [
     },
     {
         name: "Nadul Jayasundera",
-        imageURL: "/portraits/Nadul.jpg",
+        imageURL: "/portraits/Nadul.webp",
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/nadul-jayasundera-616021257/",
             instagram: "https://instagram.com/nadul.j?igshid=MWZjMTM2ODFkZg==",
