@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import Link from "next/link";
 import Image from "next/image";
 import { type FC, useMemo } from "react";
 
@@ -47,15 +46,19 @@ const DetailsRow: FC<Pick<Project, "date" | "accent" | "name">> = ({ name, accen
         >
             {isUpcoming && <p>Coming soon</p>}
             <div className="flex-1" />
-            <Link
-                href={`/projects/${name}`}
-                className={clsx("inline-flex items-center justify-center rounded-xl px-4 h-8", {
-                    "bg-bg-dark text-white": accent === "light",
-                    "bg-white text-bg-dark": accent === "dark",
-                })}
+            <button
+                // href={`/projects/${name}`}
+                disabled
+                className={clsx(
+                    "inline-flex items-center justify-center rounded-xl px-4 h-8 disabled:opacity-10",
+                    {
+                        "bg-bg-dark text-white": accent === "light",
+                        "bg-white text-bg-dark": accent === "dark",
+                    },
+                )}
             >
                 More
-            </Link>
+            </button>
         </div>
     );
 };
