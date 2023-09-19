@@ -19,7 +19,10 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
         name: "Sahan Dissanayake",
         role: "President",
         imageURL: "/portraits/Sahan.jpg",
-        externalLinks: { linkedin: "https://www.linkedin.com/in/sahan-dissanayake-82291516a/" },
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/sahan-dissanayake-82291516a/",
+            instagram: "https://instagram.com/sahandissanayakeee?igshid=MWZjMTM2ODFkZg==",
+        },
         occupations: [
             "Undergraduate trainee - Software Engineering @ IFS R&D | Software engineering undergraduate  @ IIT ",
         ],
@@ -28,7 +31,10 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
         name: "Sachith Wickramasekara",
         role: "Vice President",
         imageURL: "/portraits/sachith.jpg",
-        externalLinks: { linkedin: "https://www.linkedin.com/in/sachith-wickramasekara/" },
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/sachith-wickramasekara/",
+            instagram: "https://instagram.com/sach.cha_?igshid=MWZjMTM2ODFkZg==",
+        },
         occupations: ["Software Engineer", "UI/UX Designer"],
     },
     2: [
@@ -36,21 +42,30 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
             name: "Bhagya Semage",
             role: "Secretary ",
             imageURL: "/portraits/Bhagya.jpg",
-            externalLinks: { linkedin: "https://www.linkedin.com/in/bhagya-semage-311b7b237/" },
+            externalLinks: {
+                linkedin: "https://www.linkedin.com/in/bhagya-semage-311b7b237/",
+                instagram: "https://instagram.com/s.e.m.a.g.e.02?igshid=MWZjMTM2ODFkZg==",
+            },
             occupations: ["Software Engineer", "UI/UX Designer"],
         },
         {
             name: "Vinuja Jayathilake",
             role: "Treasurer ",
             imageURL: "/portraits/vinuja.jpg",
-            externalLinks: { linkedin: "https://www.linkedin.com/in/vinuja-jayathilake/" },
+            externalLinks: {
+                linkedin: "https://www.linkedin.com/in/vinuja-jayathilake/",
+                instagram: "https://instagram.com/_vinuja_?igshid=MWZjMTM2ODFkZg==",
+            },
             occupations: ["Software Engineer", "UI/UX Designer"],
         },
         {
             name: "Devmal Wijesinghe",
             role: "President ",
             imageURL: "/portraits/devmal.jpg",
-            externalLinks: { linkedin: "https://www.linkedin.com/in/devmalwije/" },
+            externalLinks: {
+                linkedin: "https://www.linkedin.com/in/devmalwije/",
+                instagram: "https://instagram.com/devmal.__?igshid=MWZjMTM2ODFkZg==",
+            },
             occupations: ["Software Engineer", "UI/UX Designer"],
         },
     ],
@@ -66,7 +81,10 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
             name: "Manupa Samarawickrama",
             role: "Director of IT",
             imageURL: "/portraits/manupa.jpg",
-            externalLinks: { linkedin: "https://www.linkedin.com/in/manupa-samarawickrama/" },
+            externalLinks: {
+                linkedin: "https://www.linkedin.com/in/manupa-samarawickrama/",
+                instagram: "https://instagram.com/__manupa__?igshid=MWZjMTM2ODFkZg==",
+            },
             occupations: ["Software Engineer", "UI/UX Designer"],
             underlings: [
                 {
@@ -125,7 +143,10 @@ export const developers: Member[] = [
         name: "Ravindu Senarathna",
         role: "Developer",
         imageURL: "/portraits/ravindu.jpg",
-        externalLinks: { linkedin: "https://www.linkedin.com/in/ravindusenrathna" },
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/ravindusenrathna",
+            instagram: "https://instagram.com/mrrevengerx?igshid=MWZjMTM2ODFkZg==",
+        },
         occupations: ["A person"],
     },
 ];
@@ -134,21 +155,33 @@ export const wifBoard: WIFBoardOfficial[] = [
     {
         name: "Bhagya Semage",
         imageURL: "/portraits/Bhagya.jpg",
-        externalLinks: { linkedin: "https://www.linkedin.com/in/bhagya-semage-311b7b237/" },
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/bhagya-semage-311b7b237/",
+            instagram: "https://instagram.com/s.e.m.a.g.e.02?igshid=MWZjMTM2ODFkZg==",
+        },
     },
     {
         name: "Stefania Hapuarachchi",
         imageURL: "/portraits/Stef.jpg",
-        externalLinks: { linkedin: "https://www.linkedin.com/in/stefania-hapuarachchi/" },
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/stefania-hapuarachchi/",
+            instagram: "https://instagram.com/_____shavini_____?igshid=MWZjMTM2ODFkZg==",
+        },
     },
     {
         name: "Buddhima Fernando",
         imageURL: "/portraits/buddhima.jpg",
-        externalLinks: { linkedin: "https://www.linkedin.com/in/buddhima-fernando/" },
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/buddhima-fernando/",
+            instagram: "https://instagram.com/buddhima_fernando?igshid=MWZjMTM2ODFkZg==",
+        },
     },
     {
         name: "Nadul Jayasundera",
         imageURL: "/portraits/Nadul.jpg",
-        externalLinks: { linkedin: "https://www.linkedin.com/in/nadul-jayasundera-616021257/" },
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/nadul-jayasundera-616021257/",
+            instagram: "https://instagram.com/nadul.j?igshid=MWZjMTM2ODFkZg==",
+        },
     },
 ];
