@@ -67,7 +67,7 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
         },
         {
             name: "Devmal Wijesinghe",
-            role: "President ",
+            role: "Director of Events ",
             imageURL: "/portraits/devmal.jpg",
             externalLinks: {
                 linkedin: "https://www.linkedin.com/in/devmalwije/",
@@ -83,18 +83,23 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
             underlings: [],
             members: [
                 {
-                    name: "Person one",
-                    role: "Director of IIT",
-                    imageURL: "/portraits/Shakthi.jpg",
-                    occupations: ["Main in FOSS, Free & open, just for you :)"],
-                    externalLinks: { linkedin: "http://linkedin.com" },
+                    name: "Ravindu Senarathna",
+                    role: "Director of PR & Media",
+                    imageURL: "/portraits/ravindu.jpg",
+                    occupations: ["A person"],
+                    externalLinks: {
+                        linkedin: "https://www.linkedin.com/in/ravindusenrathna",
+                        instagram: "https://instagram.com/mrrevengerx?igshid=MWZjMTM2ODFkZg==",
+                    },
                 },
                 {
-                    name: "Person one",
-                    role: "Director of IIT",
-                    imageURL: "/portraits/Shakthi.jpg",
-                    occupations: ["Main in FOSS, Free & open, just for you :)"],
-                    externalLinks: { linkedin: "http://linkedin.com" },
+                    name: "Pasan Deshapriya",
+                    role: "Director of PR & Media",
+                    imageURL: "/portraits/punsara.jpg",
+                    occupations: ["Ensuring everyone has a blast 👌"],
+                    externalLinks: {
+                        linkedin: "https://www.linkedin.com/in/pasan-deshapriya-163671267/",
+                    },
                 },
             ],
         },
@@ -109,14 +114,19 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
             occupations: ["Software Engineer", "UI/UX Designer"],
             underlings: [
                 {
-                    name: "Sahan Ekanayake",
-                    imageURL: "/portraits/nadul.jpg",
+                    name: "Rachala Ovin",
+                    imageURL: "/portraits/rachala.jpg",
                     occupations: ["Software Engineer", "UI/UX Designer"],
                 },
                 {
-                    name: "Sahan Ekanayake",
-                    imageURL: "/portraits/nadul.jpg",
+                    name: "Chamidu Amarasinghe",
+                    imageURL: "/portraits/chamidu.jpg",
                     occupations: ["Software Engineer", "UI/UX Designer"],
+                },
+                {
+                    name: "Afeef Razick",
+                    imageURL: "/portraits/afeef.jpg",
+                    occupations: ["Jiyuu 🕊️"],
                 },
             ],
         },
@@ -144,8 +154,8 @@ export const developers: Member[] = [
     {
         name: "Rachala Ovin",
         role: "Developer",
-        imageURL: "/portraits/Sahan.jpg",
-        externalLinks: { linkedin: "http://linkedin.com" },
+        imageURL: "/portraits/rachala.jpg",
+        externalLinks: { linkedin: "https://lk.linkedin.com/in/curstantine" },
         occupations: ["Software Engineer", "UI/UX Designer"],
     },
     {
@@ -160,9 +170,8 @@ export const developers: Member[] = [
         role: "Developer",
         imageURL: "/portraits/afeef.jpg",
         externalLinks: { linkedin: "https://www.linkedin.com/in/afeef-razick/" },
-        occupations: ["Software Engineer", "UI/UX Designer"],
+        occupations: ["Jiyuu 🕊️"],
     },
-
     {
         name: "Ravindu Senarathna",
         role: "Developer",
