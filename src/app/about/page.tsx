@@ -2,7 +2,7 @@ import type { FC } from "react";
 
 import clsx from "clsx";
 import cn from "@/utils/cn";
-import type { Member } from "@/types/internal";
+import type { Member, MemberGroup, MemberUnion } from "@/types/internal";
 
 import MemberCard from "@/components/cards/MemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";
@@ -40,7 +40,7 @@ const TreeSpacer: FC<{ className?: string }> = ({ className }) => {
 const FlexibleMemberCard: FC<{ member: Member }> = ({ member }) => {
     return (
         <div className="col-span-full contents justify-center md:flex">
-            <MemberCard {...member} className="col-span-full md:w-104" />
+            <MemberCard member={member} className="col-span-full md:w-104" />
         </div>
     );
 };
@@ -53,11 +53,15 @@ const MemberTree: FC = () => {
             <FlexibleMemberCard member={members[1] as Member} />
             <TreeSpacer className="h-32" />
 
-            {(members[2] as Member[]).map((member, i) => {
+            {(members[2] as MemberUnion[]).map((x, i) => {
+                // @ts-expect-error Check if item is a mem type or not.
+                const isMember = x["role"] !== undefined;
+
                 return (
                     <MemberCard
-                        key={member.name}
-                        {...member}
+                        key={x.name}
+                        member={isMember ? (x as Member) : undefined}
+                        group={isMember ? undefined : (x as MemberGroup)}
                         className={clsx(
                             "col-span-full my-2 md:col-span-2 md:my-0",
                             i === 0 ? "md:col-start-2" : "",
@@ -68,11 +72,15 @@ const MemberTree: FC = () => {
 
             <TreeSpacer className="h-32" />
 
-            {(members[3] as Member[]).map((member, i) => {
+            {(members[3] as MemberUnion[]).map((member, i) => {
+                // @ts-expect-error Check if item is a mem type or not.
+                const isMember = member["role"] !== undefined;
+
                 return (
                     <MemberCard
                         key={member.name}
-                        {...member}
+                        member={isMember ? (member as Member) : undefined}
+                        group={isMember ? undefined : (member as MemberGroup)}
                         className={clsx(
                             "col-span-full my-2 md:col-span-2 md:my-0",
                             i === 0 ? "md:col-start-1" : "",

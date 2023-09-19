@@ -1,4 +1,11 @@
-import type { Event, Member, Project, WIFBoardOfficial } from "@/types/internal";
+import type {
+    Event,
+    Member,
+    MemberGroup,
+    MemberUnion,
+    Project,
+    WIFBoardOfficial,
+} from "@/types/internal";
 
 export const event: Event = {
     name: "OpenHack 3.0",
@@ -14,7 +21,7 @@ export const events: Event[] = Array.from({ length: 5 }).map((_, i) => ({
     name: `OpenHack ${i}`,
 }));
 
-export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
+export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
     0: {
         name: "Sahan Dissanayake",
         role: "President",
@@ -72,10 +79,24 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
     3: [
         {
             name: "Media Directors",
-            role: "President ",
-            imageURL: "",
-            externalLinks: { linkedin: "http://linkedin.com" },
-            occupations: [""],
+            imageURL: "/portraits/nadul.jpg",
+            underlings: [],
+            members: [
+                {
+                    name: "Person one",
+                    role: "Director of IIT",
+                    imageURL: "/portraits/Shakthi.jpg",
+                    occupations: ["Main in FOSS, Free & open, just for you :)"],
+                    externalLinks: { linkedin: "http://linkedin.com" },
+                },
+                {
+                    name: "Person one",
+                    role: "Director of IIT",
+                    imageURL: "/portraits/Shakthi.jpg",
+                    occupations: ["Main in FOSS, Free & open, just for you :)"],
+                    externalLinks: { linkedin: "http://linkedin.com" },
+                },
+            ],
         },
         {
             name: "Manupa Samarawickrama",
