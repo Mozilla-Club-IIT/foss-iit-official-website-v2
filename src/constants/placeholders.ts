@@ -67,7 +67,7 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
         },
         {
             name: "Devmal Wijesinghe",
-            role: "President ",
+            role: "Director of Events ",
             imageURL: "/portraits/devmal.jpg",
             externalLinks: {
                 linkedin: "https://www.linkedin.com/in/devmalwije/",
@@ -114,14 +114,19 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
             occupations: ["Software Engineer", "UI/UX Designer"],
             underlings: [
                 {
-                    name: "Sahan Ekanayake",
+                    name: "Rachala Ovin",
                     imageURL: "/portraits/nadul.jpg",
                     occupations: ["Software Engineer", "UI/UX Designer"],
                 },
                 {
-                    name: "Sahan Ekanayake",
-                    imageURL: "/portraits/nadul.jpg",
+                    name: "Chamidu Amarasinghe",
+                    imageURL: "/portraits/chamidu.jpg",
                     occupations: ["Software Engineer", "UI/UX Designer"],
+                },
+                {
+                    name: "Afeef Razick",
+                    imageURL: "/portraits/afeef.jpg",
+                    occupations: ["Jiyuu 🕊️"],
                 },
             ],
         },
@@ -165,7 +170,7 @@ export const developers: Member[] = [
         role: "Developer",
         imageURL: "/portraits/afeef.jpg",
         externalLinks: { linkedin: "https://www.linkedin.com/in/afeef-razick/" },
-        occupations: ["Software Engineer", "UI/UX Designer"],
+        occupations: ["Jiyuu 🕊️"],
     },
 
     {
