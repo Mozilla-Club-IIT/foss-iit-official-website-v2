@@ -8,10 +8,10 @@ import dotLogo from "public/dot-logo.png";
 export default function Nav() {
     return (
         <header
-            className="fixed inset-x-6 top-6 z-50 w-full"
+            className="fixed inset-x-6 top-6 z-50 w-full md:pr-48"
             style={{ maxWidth: "calc(100% - 3rem)" }}
         >
-            <div className="h-16 flex items-center justify-center rounded-2xl bg-black/[48%] p-0 ring-2 ring-border-nav/[4%] backdrop-blur-sm containerify md:mr-48 2xl:h-20 sm:justify-start xs:px-8 sm:pl-8">
+            <div className="h-16 flex items-center justify-center rounded-2xl bg-black/[48%] p-0 ring-2 ring-border-nav/[4%] backdrop-blur-sm containerify 2xl:h-20 sm:justify-start xs:px-8 sm:pl-8">
                 <Image
                     src={textualLogo}
                     alt="Mozilla IIT"

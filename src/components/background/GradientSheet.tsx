@@ -10,7 +10,7 @@ export default function GradientSheet() {
             <div className="absolute h-128 w-128 rounded-full bg-[#571E20] blur-3xl -right-12 -top-12" />
             <div className="absolute right-24 h-128 w-128 rounded-full bg-[#571E20] blur-3xl -bottom-64" />
 
-            <div className="absolute inset-0 bg-black/75" />
+            <div className="absolute inset-0 bg-black/80" />
         </>
     );
 }
