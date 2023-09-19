@@ -7,7 +7,7 @@ import CategoryHeader from "@/components/footer/CategoryHeader";
 import EmailInput from "@/components/footer/EmailInput";
 import SocialLink from "@/components/buttons/SocialLink";
 
-import FooterLogoSet from "public/footer-logoset.png";
+import FooterLogoSet from "public/footer-logoset.webp";
 import TextualLogo from "@/assets/textual-logo.svg";
 import FOSSTextualLogo from "@/assets/foss-textual-logo.svg";
 import WIFTextualLogo from "@/assets/wif-textual-logo.svg";
@@ -31,7 +31,9 @@ export default function Footer() {
                 <div className="col-span-full flex flex-col md:col-span-2">
                     <CategoryHeader label="Useful Links" />
                     <div className="grid grid-flow-col grid-rows-4 mt-6 gap-4 font-medium">
-                        <a href={REGISTER} target="_blank">Join Us</a>
+                        <a href={REGISTER} target="_blank">
+                            Join Us
+                        </a>
                         <Link href="/events">Events</Link>
                         <Link href="/about">About</Link>
                         <Link href="/contact">Contact Us</Link>

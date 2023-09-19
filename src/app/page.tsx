@@ -2,14 +2,12 @@ import type { FC } from "react";
 import Image from "next/image";
 
 import { projects } from "@/constants/placeholders";
+import { REGISTER } from "@/constants/links";
 
-import AccentedButton from "@/components/buttons/AccentedButton";
-import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import HeroLayout from "@/components/hero/HeroLayout";
 import ProjectCard from "@/components/cards/ProjectCard";
 
-import IsometricCubeSet from "public/isometric-cubeset.png";
-import { REGISTER } from "@/constants/links";
+import IsometricCubeSet from "public/isometric-cubeset.webp";
 
 export default function Home() {
     return (

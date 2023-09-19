@@ -1,12 +1,12 @@
 import type { FC } from "react";
 import Image from "next/image";
 
+import { wifBoard } from "@/constants/placeholders";
+
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import WIFMemberCard from "@/components/cards/WIFMemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";
-
-import { wifBoard } from "@/constants/placeholders";
 
 export default function Home() {
     return (

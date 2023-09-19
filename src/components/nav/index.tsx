@@ -1,9 +1,11 @@
+import Link from "next/link";
+
+import { REGISTER } from "@/constants/links";
+
 import NavLink from "@/components/nav/Link";
 
 import TextualLogo from "@/assets/textual-logo.svg";
 import DotLogo from "@/assets/dot-logo.svg";
-import { REGISTER } from "@/constants/links";
-import Link from "next/link";
 
 export default function Nav() {
     return (

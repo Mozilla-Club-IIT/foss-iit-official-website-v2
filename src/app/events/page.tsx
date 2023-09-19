@@ -1,15 +1,15 @@
 import type { FC } from "react";
 import Image from "next/image";
 
+import { events } from "@/constants/placeholders";
+
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import HeroLayout from "@/components/hero/HeroLayout";
 import EventTimeLine from "@/components/trees/EventTimeLine";
 import EventCard from "@/components/cards/EventCard";
 
-import { events } from "@/constants/placeholders";
-
-import RedString from "public/onlygodknowswhatthisis.png";
+import RedString from "public/onlygodknowswhatthisis.webp";
 
 export default function Events() {
     return (

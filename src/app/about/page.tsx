@@ -1,13 +1,12 @@
 import type { FC } from "react";
-
 import clsx from "clsx";
+
 import cn from "@/utils/cn";
 import type { Member, MemberGroup, MemberUnion } from "@/types/internal";
+import { members } from "@/constants/placeholders";
 
 import MemberCard from "@/components/cards/MemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";
-
-import { members } from "@/constants/placeholders";
 
 export default function About() {
     return (
