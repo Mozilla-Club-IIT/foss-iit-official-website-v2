@@ -83,18 +83,23 @@ export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
             underlings: [],
             members: [
                 {
-                    name: "Person one",
-                    role: "Director of IIT",
-                    imageURL: "/portraits/Shakthi.jpg",
-                    occupations: ["Main in FOSS, Free & open, just for you :)"],
-                    externalLinks: { linkedin: "http://linkedin.com" },
+                    name: "Ravindu Senarathna",
+                    role: "Director of PR & Media",
+                    imageURL: "/portraits/ravindu.jpg",
+                    occupations: ["A person"],
+                    externalLinks: {
+                        linkedin: "https://www.linkedin.com/in/ravindusenrathna",
+                        instagram: "https://instagram.com/mrrevengerx?igshid=MWZjMTM2ODFkZg==",
+                    },
                 },
                 {
-                    name: "Person one",
-                    role: "Director of IIT",
-                    imageURL: "/portraits/Shakthi.jpg",
-                    occupations: ["Main in FOSS, Free & open, just for you :)"],
-                    externalLinks: { linkedin: "http://linkedin.com" },
+                    name: "Pasan Deshapriya",
+                    role: "Director of PR & Media",
+                    imageURL: "/portraits/punsara.jpg",
+                    occupations: ["Ensuring everyone has a blast 👌"],
+                    externalLinks: {
+                        linkedin: "https://www.linkedin.com/in/pasan-deshapriya-163671267/",
+                    },
                 },
             ],
         },
