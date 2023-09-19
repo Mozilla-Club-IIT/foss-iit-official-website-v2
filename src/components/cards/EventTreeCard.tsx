@@ -17,7 +17,7 @@ type Props = Omit<Event, "startingDate"> & {
 export default function EventTreeCard({ name, description, style }: Props) {
     return (
         <animated.div
-            className="h-fit w-full flex flex-col rounded-xl bg-white/10 md:h-36 md:flex-row"
+            className="h-fit w-full flex flex-col rounded-xl bg-white/10 backdrop-blur-lg md:h-36 md:flex-row"
             style={style}
         >
             <div className="h-24 min-w-36 w-full rounded-t-xl bg-red md:h-36 md:w-36 md:rounded-l-xl md:rounded-tr-0" />
