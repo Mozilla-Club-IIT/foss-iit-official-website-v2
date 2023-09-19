@@ -1,23 +1,24 @@
 import type { FC } from "react";
 import Image from "next/image";
 
+import { projects } from "@/constants/placeholders";
+
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import HeroLayout from "@/components/hero/HeroLayout";
+import ProjectCard from "@/components/cards/ProjectCard";
 
 import IsometricCubeSet from "public/isometric-cubeset.png";
-import CodeLines from "public/code-lines.png";
 
 export default function Home() {
     return (
         <>
             <Hero />
             <WhoAreWe />
-            <OurMission />
-            <OurVision />
-            <div className="absolute bottom-0 right-0 hidden lg:block">
+            <Projects />
+            {/* <div className="absolute bottom-0 right-0 hidden lg:block">
                 <Image src={CodeLines} width={350} alt="" />
-            </div>
+            </div> */}
         </>
     );
 }
@@ -43,7 +44,7 @@ const Hero: FC = () => {
 const WhoAreWe: FC = () => {
     return (
         <div className="container-content-prose">
-            <h1 className="uppercase text-text-primary">Who are we</h1>
+            <h1 className="text-style-heading">Who are we</h1>
             <p>
                 FOSS (Free and Open-Source Software) community of IIT was initiated in our
                 university in November 2020 to promote the use and development of free and
@@ -64,30 +65,15 @@ const WhoAreWe: FC = () => {
     );
 };
 
-const OurMission: FC = () => {
+const Projects: FC = () => {
     return (
-        <div className="container-content-prose">
-            <h1 className="uppercase text-text-primary">Our Mission</h1>
-            <p>
-                To advocate for the innovation and development of open-source projects and strive to
-                make the information on the web accessible and free for all. Vision - To acquire
-                software freedom and to make the Internet free and accessible to all spark a
-                movement a loud voice, a breeding ground for new ideas, a massive force, and a deep
-                talent pool that powers the open web to new heights.
-            </p>
-        </div>
-    );
-};
-
-const OurVision: FC = () => {
-    return (
-        <div className="my-24 container-content-prose">
-            <h1 className="uppercase text-text-primary">Our Vision</h1>
-            <p>
-                To acquire software freedom and to make the Internet free and accessible to all
-                spark a movement a loud voice, a breeding ground for new ideas, a massive force, and
-                a deep talent pool that powers the open web to new heights.
-            </p>
+        <div className="mb-24 gap-8 container-content-block">
+            <h1 className="text-style-heading">Projects</h1>
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 md:grid-cols-2">
+                {projects.map((project) => (
+                    <ProjectCard key={project.name} {...project} />
+                ))}
+            </div>
         </div>
     );
 };

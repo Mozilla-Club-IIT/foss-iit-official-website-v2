@@ -26,3 +26,10 @@ export type Event = {
     startingDate: Date;
     imageURL: string;
 };
+
+export type Project = {
+    name: string;
+    imageURL: string;
+    date: Date;
+    accent: "dark" | "light";
+};
