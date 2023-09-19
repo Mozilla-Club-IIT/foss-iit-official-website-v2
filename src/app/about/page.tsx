@@ -35,7 +35,7 @@ const Hero: FC = () => {
 const TreeSpacer: FC<{ className?: string }> = ({ className }) => {
     return (
         <div className={cn("col-span-full h-48 flex items-center justify-center py-8", className)}>
-            <div className="h-full b-x-1 b-x-border-separator/49" />
+            <div className="h-full w-[2px] rounded-2xl bg-border-separator/49" />
         </div>
     );
 };
