@@ -16,7 +16,63 @@ type Props = {
     className?: string;
 };
 
-const MemberDetailRow: FC<
+export default function MemberCard({ member, group, className }: Props) {
+    const ref = useRef<HTMLDivElement>(null);
+    const [isVisible, setVisibility] = useState(false);
+
+    useEffect(() => {
+        const listener = (e: MouseEvent) => {
+            const target = e.target as HTMLElement;
+            if (ref.current?.contains(target)) return;
+            setVisibility(false);
+        };
+
+        /**
+         * NOTE(Curstantine):
+         * Why? I wouldn't know!!
+         * Apparently an element that has absolute + unconstrained height can't bubble onBlur event.
+         * So we listen to click events in the dom and respond to it.
+         */
+        document.addEventListener("click", listener);
+        return () => document.removeEventListener("click", listener);
+    }, []);
+
+    return (
+        <div ref={ref} className={cn("relative w-full min-h-22", className)}>
+            <div
+                className={cn(
+                    "absolute inset-0 max-h-md flex flex-col rounded-3xl bg-white/9 px-3",
+                    "transition-height transform-gpu use-transition-emphasized",
+                    { "h-fit max-h-96 bg-[#2B2B2B]! z-30 shadow-lg": isVisible },
+                )}
+            >
+                <DetailsRow
+                    name={(member?.name ?? group?.name)!}
+                    role={member?.role}
+                    imageURL={member?.imageURL}
+                    trailing={{ onPress: () => setVisibility((x) => !x), active: isVisible }}
+                />
+                {isVisible &&
+                    (member !== undefined ? (
+                        <MemberExpandedDetailsRow
+                            role={member.role}
+                            occupations={member.occupations}
+                            externalLinks={member.externalLinks}
+                            underlings={member.underlings}
+                        />
+                    ) : (
+                        <MemberGroupExpandedDetailsRow
+                            name={group!.name}
+                            members={group!.members}
+                            underlings={group!.underlings}
+                        />
+                    ))}
+            </div>
+        </div>
+    );
+}
+
+const DetailsRow: FC<
     Pick<Member, "name"> & {
         role?: string;
         imageURL?: string;
@@ -28,7 +84,7 @@ const MemberDetailRow: FC<
 > = ({ name, role, imageURL, trailing: { active, onPress } = {} }) => {
     return (
         <div className="h-22 min-h-22 flex items-center gap-3" onClick={onPress}>
-            {imageURL && (
+            {imageURL !== undefined ? (
                 <Image
                     src={imageURL}
                     height={64}
@@ -36,6 +92,8 @@ const MemberDetailRow: FC<
                     alt={`${name}'s profile picture`}
                     className="h-16 min-w-16 w-16 rounded-full object-cover"
                 />
+            ) : (
+                <div className="w-1" />
             )}
             <div className="flex flex-1 flex-col gap-1">
                 <span className="font-medium leading-tight text-text-primary">{name}</span>
@@ -55,7 +113,53 @@ const MemberDetailRow: FC<
     );
 };
 
-const MemberUnderlings: FC<{ underlings: Pick<Member, "name" | "imageURL">[]; to: string }> = ({
+const MemberExpandedDetailsRow: FC<Omit<Member, "imageURL" | "name">> = ({
+    role,
+    underlings,
+    occupations,
+    externalLinks,
+}) => {
+    const springs = useSpring({
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+    });
+
+    return (
+        <animated.div className="flex flex-col gap-2 px-2 pb-4" style={springs}>
+            <span className="text-xs text-text-primary/60">{mapToLines(occupations)}</span>
+            <ExternalLinkList externalLinks={externalLinks} />
+            {underlings && underlings.length > 0 && (
+                <UnderlingList underlings={underlings} to={role} />
+            )}
+        </animated.div>
+    );
+};
+
+const MemberGroupExpandedDetailsRow: FC<MemberGroup> = ({ name, members, underlings }) => {
+    const springs = useSpring({
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+    });
+
+    return (
+        <animated.div className="flex flex-col gap-4 px-2 pb-4" style={springs}>
+            {members.map((member) => (
+                <div key={member.name} className="flex flex-col">
+                    <DetailsRow name={member.name} role={member.role} imageURL={member.imageURL} />
+                    <span className="text-xs text-text-primary/60">
+                        {mapToLines(member.occupations)}
+                    </span>
+                    <ExternalLinkList externalLinks={member.externalLinks} />
+                </div>
+            ))}
+            {underlings && underlings.length > 0 && (
+                <UnderlingList underlings={underlings} to={name} />
+            )}
+        </animated.div>
+    );
+};
+
+const UnderlingList: FC<{ underlings: Pick<Member, "name" | "imageURL">[]; to: string }> = ({
     underlings,
     to,
 }) => {
@@ -97,109 +201,3 @@ const ExternalLinkList: FC<{ externalLinks: Partial<Record<ExternalLink, string>
         </div>
     );
 };
-
-const MemberExpandedDetailsRow: FC<Omit<Member, "imageURL" | "name">> = ({
-    role,
-    underlings,
-    occupations,
-    externalLinks,
-}) => {
-    const springs = useSpring({
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-    });
-
-    return (
-        <animated.div className="flex flex-col gap-2 px-2 pb-4" style={springs}>
-            <span className="text-xs text-text-primary/60">{mapToLines(occupations)}</span>
-            <ExternalLinkList externalLinks={externalLinks} />
-            {underlings && underlings.length > 0 && (
-                <MemberUnderlings underlings={underlings} to={role} />
-            )}
-        </animated.div>
-    );
-};
-
-const MemberGroupExpandedDetailsRow: FC<MemberGroup> = ({ name, members, underlings }) => {
-    const springs = useSpring({
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-    });
-
-    return (
-        <animated.div className="flex flex-col gap-4 px-2 pb-4" style={springs}>
-            {members.map((member) => (
-                <div key={member.name} className="flex flex-col">
-                    <MemberDetailRow
-                        name={member.name}
-                        role={member.role}
-                        imageURL={member.imageURL}
-                    />
-                    <span className="text-xs text-text-primary/60">
-                        {mapToLines(member.occupations)}
-                    </span>
-                    <ExternalLinkList externalLinks={member.externalLinks} />
-                </div>
-            ))}
-            {underlings && underlings.length > 0 && (
-                <MemberUnderlings underlings={underlings} to={name} />
-            )}
-        </animated.div>
-    );
-};
-
-export default function MemberCard({ member, group, className }: Props) {
-    const ref = useRef<HTMLDivElement>(null);
-    const [isVisible, setVisibility] = useState(false);
-
-    useEffect(() => {
-        const listener = (e: MouseEvent) => {
-            const target = e.target as HTMLElement;
-            if (ref.current?.contains(target)) return;
-            setVisibility(false);
-        };
-
-        /**
-         * NOTE(Curstantine):
-         * Why? I wouldn't know!!
-         * Apparently an element that has absolute + unconstrained height can't bubble onBlur event.
-         * So we listen to click events in the dom and respond to it.
-         */
-        document.addEventListener("click", listener);
-        return () => document.removeEventListener("click", listener);
-    }, []);
-
-    return (
-        <div ref={ref} className={cn("relative w-full min-h-22", className)}>
-            <div
-                className={cn(
-                    "absolute inset-0 max-h-md flex flex-col rounded-3xl bg-white/9 px-3",
-                    "transition-height transform-gpu use-transition-emphasized",
-                    { "h-fit max-h-96 bg-[#2B2B2B]! z-30 shadow-lg": isVisible },
-                )}
-            >
-                <MemberDetailRow
-                    name={(member?.name ?? group?.name)!}
-                    role={member?.role}
-                    imageURL={member?.imageURL}
-                    trailing={{ onPress: () => setVisibility((x) => !x), active: isVisible }}
-                />
-                {isVisible &&
-                    (member !== undefined ? (
-                        <MemberExpandedDetailsRow
-                            role={member.role}
-                            occupations={member.occupations}
-                            externalLinks={member.externalLinks}
-                            underlings={member.underlings}
-                        />
-                    ) : (
-                        <MemberGroupExpandedDetailsRow
-                            name={group!.name}
-                            members={group!.members}
-                            underlings={group!.underlings}
-                        />
-                    ))}
-            </div>
-        </div>
-    );
-}
