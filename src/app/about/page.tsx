@@ -50,7 +50,7 @@ const FlexibleMemberCard: FC<{ member: Member }> = ({ member }) => {
 
 const MemberTree: FC = () => {
     return (
-        <div className="grid grid-cols-8 my-24 justify-items-center md:gap-x-6">
+        <div className="grid grid-cols-8 mb-36 mt-24 justify-items-center md:gap-x-6">
             <FlexibleMemberCard member={members[0] as Member} />
             <TreeSpacer />
             <FlexibleMemberCard member={members[1] as Member} />
