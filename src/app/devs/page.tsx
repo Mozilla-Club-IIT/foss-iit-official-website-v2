@@ -52,7 +52,7 @@ const Hero: FC = () => {
 
 const TechnologiesUsed: FC = () => {
     return (
-        <div className="container-content-block gap-8">
+        <div className="gap-8 container-content-block">
             <h1 className="text-style-heading">Technologies Used</h1>
             <div className="grid grid-cols-2 justify-items-center gap-4 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 md:justify-items-start">
                 <TechnologyCard name="Sanity" icon="i-logos-sanity" />
@@ -71,7 +71,7 @@ const TechnologiesUsed: FC = () => {
 
 const Developers: FC = () => {
     return (
-        <div className="container-content-block my-24 gap-8">
+        <div className="my-24 gap-8 container-content-block">
             <h1 className="text-style-heading">Developers</h1>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 {developers.map((developer) => (
