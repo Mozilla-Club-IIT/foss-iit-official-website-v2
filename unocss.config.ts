@@ -29,13 +29,13 @@ export default defineConfig<Theme>({
         }),
     ],
     transformers: [transformerVariantGroup()],
-	extendTheme: (theme) => ({
-		...theme,
-		breakpoints: {
-			xs: "375px",
-			...theme.breakpoints,
-		},
-	}),
+    extendTheme: (theme) => ({
+        ...theme,
+        breakpoints: {
+            xs: "375px",
+            ...theme.breakpoints,
+        },
+    }),
     theme: {
         duration: {
             emphasized: "500ms",
@@ -74,7 +74,7 @@ export default defineConfig<Theme>({
     },
 
     shortcuts: {
-        containerify: "px-12 2xl:(container mx-auto px-0)",
+        containerify: "px-12 2xl:(container! mx-auto px-0)",
         "use-transition-standard": "ease-standard duration-standard",
         "use-transition-emphasized": "ease-emphasized duration-emphasized",
         "container-content-block": "mt-24 flex flex-col md:px-16",
@@ -82,6 +82,5 @@ export default defineConfig<Theme>({
 
         "text-style-heading":
             "text-3xl font-medium leading-tight uppercase text-text-primary md:text-5xl",
-            
     },
 });

@@ -6,6 +6,7 @@ import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import HeroLayout from "@/components/hero/HeroLayout";
 
 import IsometricCubeSet from "public/isometric-cubeset.png";
+import CodeLines from "public/code-lines.png";
 
 export default function Home() {
     return (
@@ -14,13 +15,16 @@ export default function Home() {
             <WhoAreWe />
             <OurMission />
             <OurVision />
+            <div className="absolute bottom-0 right-0 hidden lg:block">
+                <Image src={CodeLines} width={350} alt="" />
+            </div>
         </>
     );
 }
 
 const Hero: FC = () => {
     return (
-        <div className="flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
+        <div className="relative flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
             <HeroLayout
                 title={["Mozilla Campus Club", "And FOSS Community Of IIT"]}
                 subtitle="Contribute, Inspire and Innovate"
@@ -28,7 +32,8 @@ const Hero: FC = () => {
                 <AccentedButton label="Join Us" />
                 <TrailingIconButton icon="i-mdi-arrow-top-right" label="Learn More" />
             </HeroLayout>
-            <div className="absolute right-0 z-10 hidden w-2/5 -bottom-36 lg:right-20 md:block">
+
+            <div className="absolute right-0 hidden w-2/5 -bottom-22 lg:block">
                 <Image src={IsometricCubeSet} alt="" />
             </div>
         </div>
