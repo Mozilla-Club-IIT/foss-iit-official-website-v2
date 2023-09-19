@@ -1,9 +1,9 @@
 "use client";
 
-import { type FC, useEffect, useRef, useState } from "react";
+import { type FC, useEffect, useState } from "react";
 
+import type { Event } from "@/types/internal";
 import { events } from "@/constants/placeholders";
-import { Event } from "@/types/internal";
 
 import {
     EventTreeCardFlexWrapper,
@@ -30,13 +30,8 @@ export default function EventTimeLine() {
 }
 
 const Desktop: FC<{ events: Event[] }> = ({ events }) => {
-    const ref = useRef<HTMLDivElement>(null);
-
     return (
-        <div
-            ref={ref}
-            className="relative grid grid-cols-2 mt-24 items-center gap-12 gap-x-16 px-12"
-        >
+        <div className="relative grid grid-cols-2 mt-24 items-center gap-12 gap-x-16 px-12">
             {events.map((item, i) => (
                 <EventTreeCardGridWrapper key={item.name} event={item} isEven={i % 2 === 0} />
             ))}
@@ -56,10 +51,8 @@ const Desktop: FC<{ events: Event[] }> = ({ events }) => {
 };
 
 const Mobile: FC<{ events: Event[] }> = ({ events }) => {
-    const ref = useRef<HTMLDivElement>(null);
-
     return (
-        <div ref={ref} className="relative mt-24 flex flex-col items-center gap-12 pl-8">
+        <div className="relative mt-24 flex flex-col items-center gap-12 pl-8">
             {events.map((item) => (
                 <div key={item.name} className="relative">
                     <div className="absolute z-10 h-8 w-8 border-4 border-accent-border rounded-full bg-bg-dark transition-opacity -left-11" />
