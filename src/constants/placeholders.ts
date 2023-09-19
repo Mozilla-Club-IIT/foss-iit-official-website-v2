@@ -98,9 +98,23 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
 
 export const developers: Member[] = [
     {
-        name: "Sahan Dissanayake",
-        role: "UI/UX Designer",
+        name: "Rachala Ovin",
+        role: "Developer",
         imageURL: "/portraits/Sahan.jpg",
+        externalLinks: { linkedin: "http://linkedin.com" },
+        occupations: ["Software Engineer", "UI/UX Designer"],
+    },
+    {
+        name: "Chamidu Amarasinghe",
+        role: "UI/UX Designer",
+        imageURL: "/portraits/chamidu.jpg",
+        externalLinks: { linkedin: "http://linkedin.com" },
+        occupations: ["Software Engineer", "UI/UX Designer"],
+    },
+    {
+        name: "Afeef Razick",
+        role: "Developer",
+        imageURL: "/portraits/afeef.jpg",
         externalLinks: { linkedin: "http://linkedin.com" },
         occupations: ["Software Engineer", "UI/UX Designer"],
     },
@@ -112,23 +126,9 @@ export const developers: Member[] = [
         occupations: ["Software Engineer", "UI/UX Designer"],
     },
     {
-        name: "Sahan Dissanayake",
-        role: "UI/UX Designer",
-        imageURL: "/portraits/Sahan.jpg",
-        externalLinks: { linkedin: "http://linkedin.com" },
-        occupations: ["Software Engineer", "UI/UX Designer"],
-    },
-    {
-        name: "Sahan Dissanayake",
-        role: "UI/UX Designer",
-        imageURL: "/portraits/Sahan.jpg",
-        externalLinks: { linkedin: "http://linkedin.com" },
-        occupations: ["Software Engineer", "UI/UX Designer"],
-    },
-    {
-        name: "Sahan Dissanayake",
-        role: "UI/UX Designer",
-        imageURL: "/portraits/Sahan.jpg",
+        name: "Ravindu Senarathna",
+        role: "Developer",
+        imageURL: "/portraits/ravindu.jpg",
         externalLinks: { linkedin: "http://linkedin.com" },
         occupations: ["Software Engineer", "UI/UX Designer"],
     },
