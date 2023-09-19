@@ -2,8 +2,8 @@ import Image from "next/image";
 
 import NavLink from "@/components/nav/Link";
 
-import textualLogo from "public/textual-logo.png";
-import dotLogo from "public/dot-logo.png";
+import textualLogo from "public/moz-textual-logo.svg";
+import dotLogo from "public/dot-logo.svg";
 
 export default function Nav() {
     return (
