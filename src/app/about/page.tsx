@@ -23,10 +23,7 @@ const Hero: FC = () => {
         <div className="max-h-xl flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
             <HeroLayout
                 title={["GET TO KNOW", "THE BOARD of officials"]}
-                subtitle={[
-                    "Meet the Minds Behind Mozilla Campus Club and FOSS Community at IIT: ",
-                    "Our Distinguished Board of Officials",
-                ]}
+                subtitle={["Meet the minds behind Mozilla Campus Club and FOSS Community at IIT: "]}
             />
         </div>
     );
