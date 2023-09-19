@@ -172,7 +172,6 @@ export const developers: Member[] = [
         externalLinks: { linkedin: "https://www.linkedin.com/in/afeef-razick/" },
         occupations: ["Jiyuu 🕊️"],
     },
-
     {
         name: "Ravindu Senarathna",
         role: "Developer",
