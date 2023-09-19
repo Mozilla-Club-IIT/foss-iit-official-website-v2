@@ -22,7 +22,7 @@ export default function Home() {
 
 const Hero: FC = () => {
     return (
-        <div className="relative flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
+        <div className="relative max-h-5xl flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
             <HeroLayout
                 title="WOMEN IN FOSS COMMUNITY OF IIT"
                 subtitle={[
