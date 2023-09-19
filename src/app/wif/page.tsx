@@ -47,7 +47,7 @@ const Hero: FC = () => {
 
 const AboutUs: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col text-text-secondary container-content-prose">
+        <div className="container-content-prose mt-24 max-w-full flex flex-col text-text-secondary">
             <h1 className="uppercase text-text-primary">ABOUT US</h1>
             <p>
                 The Women in FOSS (Free and Open-Source Software) Community of IIT is an affinity
@@ -74,7 +74,7 @@ const AboutUs: FC = () => {
 
 const OurMission: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col text-text-secondary container-content-prose">
+        <div className="container-content-prose mt-24 max-w-full flex flex-col text-text-secondary">
             <h1 className="uppercase text-text-primary">Our Mission</h1>
             <p>
                 The mission of the Women in FOSS Community of IIT is to empower women to become
@@ -95,7 +95,7 @@ const OurMission: FC = () => {
 
 const OurVision: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col text-text-secondary container-content-prose">
+        <div className="container-content-prose mt-24 max-w-full flex flex-col text-text-secondary">
             <h1 className="uppercase text-text-primary">Our Vision</h1>
             <p>
                 The Women in FOSS community of IIT seeks to foster a diverse and inclusive community
@@ -117,10 +117,8 @@ const OurVision: FC = () => {
 };
 
 const BoardOfOfficials: FC = () => (
-    <div className="my-24 max-w-full flex flex-col gap-8 text-text-secondary container-content-prose">
-        <h1 className="text-5xl font-medium leading-tight uppercase text-text-primary">
-            Board Officials
-        </h1>
+    <div className="container-content-prose my-24 max-w-full flex flex-col gap-8 text-text-secondary">
+        <h1 className="leading-tight uppercase text-text-primary">Board Of Officials</h1>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] justify-center gap-6">
             {wifBoard.map((member) => (
                 <WIFMemberCard
