@@ -20,7 +20,7 @@ export default function About() {
 
 const Hero: FC = () => {
     return (
-        <div className="max-h-3xl flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
+        <div className="max-h-xl flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
             <HeroLayout
                 title={["GET TO KNOW", "THE BOARD of officials"]}
                 subtitle={[
@@ -35,7 +35,7 @@ const Hero: FC = () => {
 const TreeSpacer: FC<{ className?: string }> = ({ className }) => {
     return (
         <div className={cn("col-span-full h-48 flex items-center justify-center py-8", className)}>
-            <div className="h-full b-x-1 b-x-border-separator/49" />
+            <div className="h-full w-[2px] rounded-2xl bg-border-separator/49" />
         </div>
     );
 };

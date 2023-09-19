@@ -39,7 +39,7 @@ const Hero: FC = () => {
                 <AccentedButton label="Latest Events" />
                 <TrailingIconButton icon="i-mdi-arrow-top-right" label="All Events" />
             </HeroLayout>
-            <div className="absolute hidden w-[calc(100%+12rem)] -right-24 -top-8 lg:block">
+            <div className="absolute hidden w-[calc(100%+12rem)] -right-24 -top-14 lg:block">
                 <Image src={RedString} alt="" />
             </div>
         </div>

@@ -1,9 +1,7 @@
-import Image from "next/image";
-
 import NavLink from "@/components/nav/Link";
 
-import textualLogo from "public/moz-textual-logo.svg";
-import dotLogo from "public/dot-logo.svg";
+import TextualLogo from "@/assets/textual-logo.svg";
+import DotLogo from "@/assets/dot-logo.svg";
 
 export default function Nav() {
     return (
@@ -11,19 +9,9 @@ export default function Nav() {
             className="fixed inset-x-6 top-6 z-50 w-full md:pr-48"
             style={{ maxWidth: "calc(100% - 3rem)" }}
         >
-            <div className="h-16 flex items-center justify-center rounded-2xl bg-black/[48%] p-0 ring-2 ring-border-nav/[4%] backdrop-blur-sm containerify 2xl:h-20 sm:justify-start xs:px-8 sm:pl-8">
-                <Image
-                    src={textualLogo}
-                    alt="Mozilla IIT"
-                    className="hidden w-[145px] md:block 2xl:w-fit"
-                />
-                <Image
-                    src={dotLogo}
-                    width={32}
-                    height={32}
-                    alt="Mozilla IIT"
-                    className="hidden xs:block md:hidden"
-                />
+            <div className="h-16 flex items-center justify-center rounded-2xl bg-black/[48%] p-0 ring-2 ring-border-nav/[4%] backdrop-blur-sm 2xl:h-20 sm:justify-start xs:px-8 sm:pl-8 containerify">
+                <TextualLogo className="hidden w-[145px] md:block" />
+                <DotLogo className="hidden h-8 w-8 xs:block md:hidden" />
                 <div className="flex justify-end gap-4 text-sm uppercase text-text-neutral xs:flex-1 lg:gap-16 md:gap-12 2xl:text-lg md:text-base">
                     <NavLink href="/" label="Home" />
                     <NavLink href="/about" label="About" />

@@ -35,23 +35,19 @@ export function useIsVisible(ref: React.RefObject<HTMLElement>, { cancelOnFirstH
 export function useChainedTransition<T>(
     active: boolean,
     elements: Array<T>,
-): [{ x: SpringValue<number> }, TransitionFn<T, { opacity: number }>] {
+): [{ x: SpringValue<number> }, TransitionFn<T, { opacity: number; y: number }>] {
     const springRef = useSpringRef();
     const springs = useSpring({
         ref: springRef,
         x: active ? 100 : 0,
-        config: {
-            ...config.molasses,
-            duration: 500,
-        },
     });
 
     const transRef = useSpringRef();
     const transition = useTransition(active ? elements : [], {
         ref: transRef,
         trail: 50,
-        from: { opacity: 0 },
-        enter: { opacity: 1 },
+        from: { opacity: 0, y: 20 },
+        enter: { opacity: 1, y: 0 },
         config: {
             ...config.molasses,
             duration: 500,
