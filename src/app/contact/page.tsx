@@ -44,7 +44,7 @@ const Hero: FC = () => {
             <p className="mt-8 capitalize">Connect with us</p>
             <div className="mt-2 w-full flex gap-2">
                 <SocialLink type="facebook" href={FACEBOOK} />
-                <SocialLink type="twitter" href={TIKTOK} />
+                <SocialLink type="tiktok" href={TIKTOK} />
                 <SocialLink type="linkedin" href={LINKEDIN} />
                 <SocialLink type="instagram" href={INSTAGRAM} />
             </div>
