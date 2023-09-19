@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { FACEBOOK, INSTAGRAM, LINKEDIN, TIKTOK } from "@/constants/links";
+import { FACEBOOK, INSTAGRAM, LINKEDIN, REGISTER, TIKTOK } from "@/constants/links";
 
 import CategoryHeader from "@/components/footer/CategoryHeader";
 import EmailInput from "@/components/footer/EmailInput";
@@ -31,7 +31,7 @@ export default function Footer() {
                 <div className="col-span-full flex flex-col md:col-span-2">
                     <CategoryHeader label="Useful Links" />
                     <div className="grid grid-flow-col grid-rows-4 mt-6 gap-4 font-medium">
-                        <Link href="/join">Join Us</Link>
+                        <a href={REGISTER} target="_blank">Join Us</a>
                         <Link href="/events">Events</Link>
                         <Link href="/about">About</Link>
                         <Link href="/contact">Contact Us</Link>

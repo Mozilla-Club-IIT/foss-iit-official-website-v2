@@ -9,6 +9,7 @@ import HeroLayout from "@/components/hero/HeroLayout";
 import ProjectCard from "@/components/cards/ProjectCard";
 
 import IsometricCubeSet from "public/isometric-cubeset.png";
+import { REGISTER } from "@/constants/links";
 
 export default function Home() {
     return (
@@ -16,9 +17,6 @@ export default function Home() {
             <Hero />
             <WhoAreWe />
             <Projects />
-            {/* <div className="absolute bottom-0 right-0 hidden lg:block">
-                <Image src={CodeLines} width={350} alt="" />
-            </div> */}
         </>
     );
 }
@@ -30,8 +28,10 @@ const Hero: FC = () => {
                 title={["Mozilla Campus Club", "And FOSS Community Of IIT"]}
                 subtitle="Contribute, Inspire and Innovate"
             >
-                <AccentedButton label="Join Us" />
-                <TrailingIconButton icon="i-mdi-arrow-top-right" label="Learn More" />
+                <a href={REGISTER} target="_blank" className="button-accented">
+                    Join Us
+                </a>
+                <button className="button-layout">Learn More</button>
             </HeroLayout>
 
             <div className="absolute right-0 hidden w-2/5 -bottom-22 lg:block">
