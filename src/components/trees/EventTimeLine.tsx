@@ -15,7 +15,7 @@ export default function EventTimeLine() {
 
     useEffect(() => {
         const handleResize = () => {
-            setMobileStatus(window.innerWidth < 768);
+            setMobileStatus(window.innerWidth < 1024);
         };
 
         handleResize();
