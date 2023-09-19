@@ -1,22 +1,31 @@
 import Link from "next/link";
+import Image from "next/image";
 
-import { FACEBOOK, INSTAGRAM, LINKEDIN, TWITTER } from "@/constants/links";
+import { FACEBOOK, INSTAGRAM, LINKEDIN, TIKTOK } from "@/constants/links";
 
 import CategoryHeader from "@/components/footer/CategoryHeader";
 import EmailInput from "@/components/footer/EmailInput";
 import SocialLink from "@/components/buttons/SocialLink";
 
-import DotLogo from "@/assets/dot-logo.svg";
+import FooterLogoSet from "public/footer-logoset.png";
+import TextualLogo from "@/assets/textual-logo.svg";
+import FOSSTextualLogo from "@/assets/foss-textual-logo.svg";
+import WIFTextualLogo from "@/assets/wif-textual-logo.svg";
 
 export default function Footer() {
     return (
         <footer className="flex flex-col bg-bg-lighter">
             <div className="grid grid-cols-8 gap-0 gap-y-12 py-8 md:gap-y-0 containerify">
-                <div className="col-span-full flex flex-col flex-wrap gap-4 md:col-span-4">
-                    <DotLogo className="h-14 w-14 text-[#424242]" />
-                    <span className="max-w-md text-xl capitalize md:text-3xl">
-                        Mozilla campus club and FOSS community of IIT
-                    </span>
+                <div className="col-span-full flex flex-col flex-wrap items-start gap-4 md:col-span-4">
+                    <Image
+                        src={FooterLogoSet}
+                        width={400}
+                        className="hidden w-full pr-8 lg:block"
+                        alt="Mozilla Campus Club IIT"
+                    />
+                    <TextualLogo className="h-12 max-w-full lg:hidden" />
+                    <FOSSTextualLogo className="h-12 max-w-full lg:hidden" />
+                    <WIFTextualLogo className="h-12 max-w-full lg:hidden" />
                 </div>
 
                 <div className="col-span-full flex flex-col md:col-span-2">
@@ -38,7 +47,7 @@ export default function Footer() {
                     <span className="mt-8 capitalize">Connect with us</span>
                     <div className="mt-1 flex gap-2">
                         <SocialLink type="facebook" href={FACEBOOK} />
-                        <SocialLink type="twitter" href={TWITTER} />
+                        <SocialLink type="tiktok" href={TIKTOK} />
                         <SocialLink type="linkedin" href={LINKEDIN} />
                         <SocialLink type="instagram" href={INSTAGRAM} />
                     </div>

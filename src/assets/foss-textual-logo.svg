@@ -31,7 +31,7 @@
       }
 
       .cls-8 {
-        fill: #161616;
+        fill: currentColor;
       }
 
       .cls-9 {
@@ -78,6 +78,7 @@
         font-family: UniNeue-Trial-Bold, 'Uni Neue-Trial';
         font-size: 59.55px;
         font-weight: 700;
+        fill: currentColor;
       }
     </style>
     <clipPath id="clippath">

@@ -12,7 +12,7 @@ export type Technology = {
     icon: string;
 };
 
-export type ExternalLink = "facebook" | "instagram" | "linkedin" | "github" | "twitter";
+export type ExternalLink = "facebook" | "instagram" | "linkedin" | "github" | "tiktok";
 
 export type WIFBoardOfficial = {
     name: string;

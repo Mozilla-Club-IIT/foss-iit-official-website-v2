@@ -14,6 +14,9 @@ import RedString from "public/onlygodknowswhatthisis.png";
 export default function Events() {
     return (
         <>
+            <div className="absolute right-0 hidden w-full -top-14 lg:block">
+                <Image src={RedString} alt="" />
+            </div>
             <Hero />
             <EventTimeLine />
             <PastEvents />
@@ -23,10 +26,7 @@ export default function Events() {
 
 const Hero: FC = () => {
     return (
-        <div
-            className="relative max-h-5xl flex items-center"
-            style={{ height: "calc(100vh - 8rem)" }}
-        >
+        <div className="max-h-5xl flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
             <HeroLayout
                 title="Our Events"
                 subtitle={[
@@ -39,9 +39,6 @@ const Hero: FC = () => {
                 <AccentedButton label="Latest Events" />
                 <TrailingIconButton icon="i-mdi-arrow-top-right" label="All Events" />
             </HeroLayout>
-            <div className="absolute hidden w-[calc(100%+12rem)] -right-24 -top-14 lg:block">
-                <Image src={RedString} alt="" />
-            </div>
         </div>
     );
 };

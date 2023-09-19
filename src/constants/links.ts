@@ -1,4 +1,4 @@
 export const FACEBOOK = "";
-export const TWITTER = "";
+export const TIKTOK = "";
 export const INSTAGRAM = "";
 export const LINKEDIN = "";
