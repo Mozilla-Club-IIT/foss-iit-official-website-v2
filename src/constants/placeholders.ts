@@ -75,7 +75,7 @@ export const members: Record<0 | 1 | 2 | 3, Member | Member[]> = {
             role: "President ",
             imageURL: "",
             externalLinks: { linkedin: "http://linkedin.com" },
-            occupations: ["Man in FOSS. Free & open, just for you ;)"],
+            occupations: [""],
         },
         {
             name: "Manupa Samarawickrama",
