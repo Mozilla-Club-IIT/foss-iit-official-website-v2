@@ -24,7 +24,7 @@ export const pastEvents: Event[] = [
     },
     {
         name: "OpenHack 2.0",
-        imageURL: "/projects/openhack2.png",
+        imageURL: "/projects/openhack2.webp",
         description: [
             "The signature event of the club was successfully held as an inter-university hackathon and a designathon in 2022.",
         ],
