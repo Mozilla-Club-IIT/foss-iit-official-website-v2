@@ -27,7 +27,7 @@ export default function Nav() {
             <a
                 target="_blank"
                 href={REGISTER}
-                className="hidden h-16 w-16 items-center justify-center rounded-xl bg-[#5E5E5E] px-4 uppercase text-white md:w-36 xs:inline-flex"
+                className="hidden h-16 w-16 items-center justify-center rounded-xl bg-[#5E5E5E] px-4 uppercase text-white md:w-36 sm:inline-flex"
             >
                 <p className="hidden md:block">Register</p>
                 <p className="md:hidden">REG</p>
