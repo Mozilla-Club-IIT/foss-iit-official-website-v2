@@ -10,6 +10,8 @@ import EventTimeLine from "@/components/trees/EventTimeLine";
 import EventCard from "@/components/cards/EventCard";
 
 import RedString from "public/onlygodknowswhatthisis.webp";
+import Link from "next/link";
+import { REGISTER } from "@/constants/links";
 
 export default function Events() {
     return (
@@ -36,8 +38,12 @@ const Hero: FC = () => {
                     "the Mozilla Campus Club and FOSS Community at IIT.",
                 ]}
             >
-                <AccentedButton label="Latest Events" />
-                <TrailingIconButton icon="i-mdi-arrow-top-right" label="All Events" />
+                <Link href="#upcomingevents" className="button-accented">
+                    Latest Events
+                </Link>
+                <Link href="#pastevents" className="button-layout">
+                    All Events
+                </Link>
             </HeroLayout>
         </div>
     );
@@ -45,7 +51,7 @@ const Hero: FC = () => {
 
 const PastEvents: FC = () => {
     return (
-        <div className="mb-24 gap-4 container-content-block">
+        <div id="pastevents" className="mb-24 gap-4 container-content-block">
             <h1 className="text-style-heading">Past Events</h1>
             <div className="grid grid-cols-1 justify-items-center gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:justify-items-start">
                 {pastEvents.map((event) => {
