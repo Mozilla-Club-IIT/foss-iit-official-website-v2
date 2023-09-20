@@ -45,7 +45,7 @@ export const events: Event[] = [
         description: [
             "The signature event of the club was successfully held as an inter-university hackathon and a designathon in 2022.",
         ],
-        startingDate: new Date("2023-12-18"),
+        startingDate: new Date("2023-02-18"),
     },
     {
         name: "Flutter Bootcamp",
