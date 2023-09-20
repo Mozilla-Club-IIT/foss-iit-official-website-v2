@@ -26,7 +26,7 @@ export default function EventTreeCard({ name, description }: Props) {
             className="h-fit w-full flex flex-col rounded-xl bg-white/10 backdrop-blur-lg md:h-36 md:flex-row"
             style={springs}
         >
-            <div className="h-24 min-w-36 w-full rounded-t-xl bg-red md:h-36 md:w-36 md:rounded-l-xl md:rounded-tr-0" />
+            {/* <div className="h-24 min-w-36 w-full rounded-t-xl bg-red md:h-36 md:w-36 md:rounded-l-xl md:rounded-tr-0" /> */}
             <div className="flex flex-col justify-center gap-1 px-4 py-2 md:py-0">
                 <span className="text-base font-bold text-text-primary md:text-xl">{name}</span>
                 <span className="text-sm leading-tight text-text-secondary md:text-base">
