@@ -34,7 +34,9 @@ export default function Footer() {
                         <a href={REGISTER} target="_blank">
                             Join Us
                         </a>
-                        <Link href="/events">Events</Link>
+                        {process.env.NODE_ENV == "development" && (
+                            <Link href="/events">Events</Link>
+                        )}
                         <Link href="/about">About</Link>
                         <Link href="/contact">Contact Us</Link>
                         <Link href="/blog">Blog</Link>

@@ -20,7 +20,9 @@ export default function Nav() {
                 </Link>
                 <div className="flex justify-end gap-4 text-sm uppercase text-text-neutral xs:flex-1 lg:gap-16 md:gap-12 2xl:text-lg md:text-base">
                     <NavLink href="/about" label="About" />
-                    <NavLink href="/events" label="Events" />
+                    {process.env.NODE_ENV == "development" && (
+                        <NavLink href="/events" label="Events" />
+                    )}
                     <NavLink href="/wif" label="WIF" />
                 </div>
             </div>
