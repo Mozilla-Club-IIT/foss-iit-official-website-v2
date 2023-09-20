@@ -9,10 +9,53 @@ export const event: Event = {
     startingDate: new Date("2023-08-18"),
 };
 
-export const events: Event[] = Array.from({ length: 5 }).map((_, i) => ({
-    ...event,
-    name: `OpenHack ${i}`,
-}));
+// export const events: Event[] = Array.from({ length: 5 }).map((_, i) => ({
+//     ...event,
+//     name: `OpenHack ${i}`,
+// }));
+
+export const events: Event[] = [
+    {
+        name: "OpenHack 3.0",
+        imageURL: "/projects/openhack3.png",
+        description: [
+            "The signature event of the club was successfully held as an inter-university hackathon and a designathon in 2022. The event is expected to be held in 2023 as well.",
+        ],
+        startingDate: new Date("2023-08-18"),
+    },
+    {
+        name: "her.exe",
+        imageURL: "/projects/her-exe.png",
+        description: [
+            "The podcast series by WIF aims to create an empowering interview series that shines a spotlight on the achievements, experiences, perspectives and personalities of women in the tech industry.",
+        ],
+        startingDate: new Date("2023-10-18"),
+    },
+    {
+        name: "Summer Bootcamp 2023",
+        imageURL: "/projects/summer-bootcamp.png",
+        description: [
+            "This two-day, project-based interactive bootcamp was designed to empower students with the latest front-end and back-end development skills. Participants developed their own personal portfolio website using the MERN stack.",
+        ],
+        startingDate: new Date("2023-09-09"),
+    },
+    {
+        name: "OpenHack 2.0",
+        imageURL: "/projects/openhack3.png",
+        description: [
+            "The signature event of the club was successfully held as an inter-university hackathon and a designathon in 2022. The event is expected to be held in 2023 as well.",
+        ],
+        startingDate: new Date("2023-08-18"),
+    },
+    {
+        name: "Flutter Bootcamp",
+        imageURL: "/projects/flutter-bootcamp.png",
+        description: [
+            "Organized by the Women in Foss Community at IIT, Flutter Bootcamp 2022 was a hands-on workshop conducted to give participants a thorough knowledge of mobile development using Flutter",
+        ],
+        startingDate: new Date("2022-10-18"),
+    },
+];
 
 export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
     0: {
