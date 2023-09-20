@@ -45,7 +45,7 @@ export const events: Event[] = [
         name: "OpenHack 3.0",
         imageURL: "/projects/openhack3.png",
         description: ["Brace yourselves, something incredible is on the horizon.."],
-        startingDate: new Date("2023-08-18"),
+        startingDate: new Date("2023-11-30"),
     },
     {
         name: "her.exe",
