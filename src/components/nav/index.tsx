@@ -10,7 +10,7 @@ import DotLogo from "@/assets/dot-logo.svg";
 export default function Nav() {
     return (
         <header
-            className="fixed inset-x-4 top-6 z-50 w-full flex justify-between gap-4 md:inset-x-6 md:gap-8"
+            className="fixed inset-x-4 top-6 z-50 w-full flex items-center justify-between gap-4 md:inset-x-6 md:gap-8"
             style={{ maxWidth: "calc(100% - 3rem)" }}
         >
             <div className="h-16 flex flex-1 items-center justify-between rounded-2xl bg-black/[48%] px-6 ring-2 ring-border-nav/[4%] backdrop-blur-sm 2xl:h-20 sm:justify-start xs:px-8 sm:pl-8 containerify">
