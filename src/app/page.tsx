@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { projects } from "@/constants/placeholders";
 import { REGISTER } from "@/constants/links";
@@ -29,7 +30,9 @@ const Hero: FC = () => {
                 <a href={REGISTER} target="_blank" className="button-accented">
                     Join Us
                 </a>
-                <button className="button-layout">Learn More</button>
+                <Link href="/about" className="button-layout">
+                    Learn More
+                </Link>
             </HeroLayout>
 
             <div className="absolute right-0 hidden w-2/5 -bottom-22 lg:block">
