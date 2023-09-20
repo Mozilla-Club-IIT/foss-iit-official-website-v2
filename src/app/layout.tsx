@@ -9,7 +9,7 @@ import Footer from "@/components/footer";
 import Background from "@/components/background";
 
 export const metadata: Metadata = {
-    title: "Mozilla IIT",
+    title: "The Mozilla Campus Club of IIT",
     description: "",
 };
 

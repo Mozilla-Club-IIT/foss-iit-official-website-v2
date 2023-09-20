@@ -1,10 +1,10 @@
 import type { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
+import { REGISTER } from "@/constants/links";
 import { wifBoard } from "@/constants/placeholders";
 
-import AccentedButton from "@/components/buttons/AccentedButton";
-import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import WIFMemberCard from "@/components/cards/WIFMemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";
 
@@ -33,8 +33,10 @@ const Hero: FC = () => {
                     "and Building a Stronger FOSS Community Together",
                 ]}
             >
-                <AccentedButton label="Join Us" />
-                <TrailingIconButton icon="i-mdi-arrow-top-right" label="Board of Officials" />
+                <a target="_blank" href={REGISTER} className="button-accented">Join Us</a>
+                <Link href="#officials" className="button-layout">
+                    Board of Officials
+                </Link>
             </HeroLayout>
             <div className="absolute bottom-0 right-0 z-10 hidden w-2/5 lg:right-20 md:block">
                 <Image
@@ -90,7 +92,10 @@ const OurVision: FC = () => {
 };
 
 const BoardOfOfficials: FC = () => (
-    <div className="my-24 max-w-full flex flex-col gap-8 text-text-secondary container-content-prose">
+    <div
+        id="officials"
+        className="my-24 max-w-full flex flex-col gap-8 text-text-secondary container-content-prose"
+    >
         <h1 className="leading-tight uppercase text-text-primary">Board Of Officials</h1>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] justify-center gap-6">
             {wifBoard.map((member) => (

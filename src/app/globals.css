@@ -7,4 +7,5 @@ body {
     /* overflow-x: hidden; */
     color-scheme: dark;
     font-family: var(--font-sans);
+    scroll-behavior: smooth;
 }
