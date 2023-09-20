@@ -57,7 +57,7 @@ const Mobile: FC<{ events: Event[] }> = ({ events }) => {
     return (
         <div id="upcomingevents" className="relative mt-24 flex flex-col items-center gap-12 pl-8">
             {events.map((item) => (
-                <div key={item.name} className="relative">
+                <div key={item.name} className="relative w-full">
                     <div className="absolute z-10 h-8 w-8 border-4 border-accent-border rounded-full bg-bg-dark transition-opacity -left-11" />
                     <EventTreeCardFlexWrapper key={item.name} event={item} />
                 </div>

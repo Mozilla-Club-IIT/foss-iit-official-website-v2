@@ -51,7 +51,7 @@ const Hero: FC = () => {
 
 const PastEvents: FC = () => {
     return (
-        <div id="pastevents" className="mb-24 gap-4 container-content-block">
+        <div className="mb-24 gap-4 container-content-block">
             <h1 className="text-style-heading">Past Events</h1>
             <div className="grid grid-cols-1 justify-items-center gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:justify-items-start">
                 {pastEvents.map((event) => {
