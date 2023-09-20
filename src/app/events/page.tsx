@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import Image from "next/image";
 
-import { events } from "@/constants/placeholders";
+import { pastEvents } from "@/constants/placeholders";
 
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
@@ -48,7 +48,7 @@ const PastEvents: FC = () => {
         <div className="mb-24 gap-4 container-content-block">
             <h1 className="text-style-heading">Past Events</h1>
             <div className="grid grid-cols-1 justify-items-center gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:justify-items-start">
-                {events.map((event) => {
+                {pastEvents.map((event) => {
                     return (
                         <EventCard key={event.name} name={event.name} imageURL={event.imageURL} />
                     );

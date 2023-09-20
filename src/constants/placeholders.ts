@@ -13,6 +13,32 @@ export const event: Event = {
 //     ...event,
 //     name: `OpenHack ${i}`,
 // }));
+export const pastEvents: Event[] = [
+    {
+        name: "Summer Bootcamp 2023",
+        imageURL: "/projects/summer-bootcamp.png",
+        description: [
+            "This two-day bootcamp empowered students with MERN stack skills to create personal portfolio websites",
+        ],
+        startingDate: new Date("2023-09-09"),
+    },
+    {
+        name: "OpenHack 2.0",
+        imageURL: "/projects/openhack3.png",
+        description: [
+            "The signature event of the club was successfully held as an inter-university hackathon and a designathon in 2022.",
+        ],
+        startingDate: new Date("2023-02-18"),
+    },
+    {
+        name: "Flutter Bootcamp",
+        imageURL: "/projects/flutter-bootcamp.png",
+        description: [
+            "Organized by Women in Foss at IIT, Flutter Bootcamp 2022 provided hands-on mobile development training using Flutter.",
+        ],
+        startingDate: new Date("2022-10-29"),
+    },
+];
 
 export const events: Event[] = [
     {
