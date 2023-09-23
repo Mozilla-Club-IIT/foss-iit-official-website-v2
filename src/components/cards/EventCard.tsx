@@ -10,8 +10,9 @@ export default function EventCard({ name, imageURL }: Props) {
     return (
         <div className="w-full flex flex-col items-center justify-between rounded-xl bg-white/10">
             <Image
-                height={256}
-                width={256}
+                height={512}
+                width={512}
+                quality={100}
                 src={imageURL}
                 alt={`${name} picture`}
                 className="aspect-square w-full rounded-t-xl object-cover"
