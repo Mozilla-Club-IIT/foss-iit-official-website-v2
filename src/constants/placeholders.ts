@@ -1,62 +1,5 @@
 import type { Event, Member, MemberUnion, Project, WIFBoardOfficial } from "@/types/internal";
 
-export const event: Event = {
-    name: "OpenHack 3.0",
-    imageURL: "/openhack.png",
-    description: [
-        "The signature event of the club was successfully held as an inter-university hackathon and a designathon in 2022. The event is expected to be held in 2023 as well.",
-    ],
-    startingDate: new Date("2023-08-18"),
-};
-
-// export const events: Event[] = Array.from({ length: 5 }).map((_, i) => ({
-//     ...event,
-//     name: `OpenHack ${i}`,
-// }));
-export const pastEvents: Event[] = [
-    {
-        name: "Summer Bootcamp 2023",
-        imageURL: "/projects/summer-bootcamp.png",
-        description: [
-            "This two-day bootcamp empowered students with MERN stack skills to create personal portfolio websites",
-        ],
-        startingDate: new Date("2023-09-09"),
-    },
-    {
-        name: "OpenHack 2.0",
-        imageURL: "/projects/openhack2.webp",
-        description: [
-            "The signature event of the club was successfully held as an inter-university hackathon and a designathon in 2022.",
-        ],
-        startingDate: new Date("2023-02-18"),
-    },
-    {
-        name: "Flutter Bootcamp",
-        imageURL: "/projects/flutter-bootcamp.png",
-        description: [
-            "Organized by Women in Foss at IIT, Flutter Bootcamp 2022 provided hands-on mobile development training using Flutter.",
-        ],
-        startingDate: new Date("2022-10-29"),
-    },
-];
-
-export const events: Event[] = [
-    {
-        name: "her.exe",
-        imageURL: "/projects/her-exe.png",
-        description: [
-            "WIF's podcast series spotlights women in tech, celebrating their achievements, experiences, and personalities.",
-        ],
-        startingDate: new Date("2023-10-18"),
-    },
-    {
-        name: "OpenHack 3.0",
-        imageURL: "/projects/openhack3.png",
-        description: ["Brace yourselves, something incredible is on the horizon.."],
-        startingDate: new Date("2023-11-30"),
-    },
-];
-
 export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
     0: {
         name: "Sahan Dissanayake",
@@ -251,6 +194,50 @@ export const wifBoard: WIFBoardOfficial[] = [
             linkedin: "https://www.linkedin.com/in/nadul-jayasundera-616021257/",
             instagram: "https://instagram.com/nadul.j?igshid=MWZjMTM2ODFkZg==",
         },
+    },
+];
+
+export const pastEvents: Event[] = [
+    {
+        name: "Summer Bootcamp 2023",
+        imageURL: "/projects/summer-bootcamp.png",
+        description: [
+            "This two-day bootcamp empowered students with MERN stack skills to create personal portfolio websites",
+        ],
+        startingDate: new Date("2023-09-09"),
+    },
+    {
+        name: "OpenHack 2.0",
+        imageURL: "/projects/openhack2.webp",
+        description: [
+            "The signature event of the club was successfully held as an inter-university hackathon and a designathon in 2022.",
+        ],
+        startingDate: new Date("2023-02-18"),
+    },
+    {
+        name: "Flutter Bootcamp",
+        imageURL: "/projects/flutter-bootcamp.webp",
+        description: [
+            "Organized by Women in Foss at IIT, Flutter Bootcamp 2022 provided hands-on mobile development training using Flutter.",
+        ],
+        startingDate: new Date("2022-10-29"),
+    },
+];
+
+export const events: Event[] = [
+    {
+        name: "her.exe",
+        imageURL: "/projects/her-exe.png",
+        description: [
+            "WIF's podcast series spotlights women in tech, celebrating their achievements, experiences, and personalities.",
+        ],
+        startingDate: new Date("2023-10-18"),
+    },
+    {
+        name: "OpenHack 3.0",
+        imageURL: "/projects/openhack3.png",
+        description: ["Brace yourselves, something incredible is on the horizon.."],
+        startingDate: new Date("2023-11-30"),
     },
 ];
 

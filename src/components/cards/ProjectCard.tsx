@@ -25,8 +25,9 @@ export default function ProjectCard({ name, imageURL, accent, date }: Props) {
             <Image
                 src={imageURL}
                 alt={name}
-                width={512}
-                height={512}
+                width={1024}
+                height={1024}
+                quality={100}
                 className="aspect-square w-full rounded-t-xl object-cover"
             />
             <DetailsRow name={name} accent={accent} date={date} />
