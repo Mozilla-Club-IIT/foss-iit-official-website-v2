@@ -87,8 +87,8 @@ const DetailsRow: FC<
             {imageURL !== undefined ? (
                 <Image
                     src={imageURL}
-                    height={64}
-                    width={64}
+                    height={256}
+                    width={256}
                     alt={`${name}'s profile picture`}
                     className="h-16 min-w-16 w-16 rounded-full object-cover"
                 />
@@ -175,8 +175,8 @@ const UnderlingList: FC<{ underlings: Pick<Member, "name" | "imageURL">[]; to: s
                         key={x.name}
                         alt={`${x.name}'s profile picture`}
                         src={x.imageURL}
-                        height={32}
-                        width={32}
+                        height={256}
+                        width={256}
                         className="h-8 min-w-8 w-8 rounded-full object-cover"
                     />
                 ))}
