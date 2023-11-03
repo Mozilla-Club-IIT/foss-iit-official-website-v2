@@ -42,7 +42,7 @@ export default function MemberCard({ member, group, className }: Props) {
             <div
                 className={cn(
                     "absolute inset-0 max-h-md flex flex-col rounded-3xl bg-white/9 px-3",
-                    "transition-height transform-gpu use-transition-emphasized",
+                    "transition-background-color,height transform-gpu use-transition-standard",
                     { "h-fit max-h-96 bg-[#2B2B2B]! z-30 shadow-lg": isVisible },
                 )}
             >
@@ -97,13 +97,15 @@ const DetailsRow: FC<
             )}
             <div className="flex flex-1 flex-col gap-1">
                 <span className="font-medium leading-tight text-text-primary">{name}</span>
-                <span className="text-xs leading-tight text-text-primary/50">{role} </span>
+                <span className="select-none text-xs leading-tight text-text-primary/50">
+                    {role}
+                </span>
             </div>
             {active !== undefined && (
                 <div className="inline-flex">
                     <div
                         className={cn(
-                            "i-mdi-chevron-down h-6 w-6 text-text-secondary transition-transform transform-gpu use-transition-emphasized",
+                            "i-mdi-chevron-down h-6 w-6 text-text-secondary transition-transform transform-gpu use-transition-standard",
                             { "rotate-180": active },
                         )}
                     />
@@ -119,30 +121,20 @@ const MemberExpandedDetailsRow: FC<Omit<Member, "imageURL" | "name">> = ({
     occupations,
     externalLinks,
 }) => {
-    const springs = useSpring({
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-    });
-
     return (
-        <animated.div className="flex flex-col gap-2 px-2 pb-4" style={springs}>
+        <div className="flex flex-col gap-2 px-2 pb-4">
             <span className="text-xs text-text-primary/60">{mapToLines(occupations)}</span>
             <ExternalLinkList externalLinks={externalLinks} />
             {underlings && underlings.length > 0 && (
                 <UnderlingList underlings={underlings} to={role} />
             )}
-        </animated.div>
+        </div>
     );
 };
 
 const MemberGroupExpandedDetailsRow: FC<MemberGroup> = ({ name, members, underlings }) => {
-    const springs = useSpring({
-        from: { opacity: 0 },
-        to: { opacity: 1 },
-    });
-
     return (
-        <animated.div className="flex flex-col gap-4 px-2 pb-4" style={springs}>
+        <div className="flex flex-col gap-4 px-2 pb-4">
             {members.map((member) => (
                 <div key={member.name} className="flex flex-col">
                     <DetailsRow name={member.name} role={member.role} imageURL={member.imageURL} />
@@ -155,7 +147,7 @@ const MemberGroupExpandedDetailsRow: FC<MemberGroup> = ({ name, members, underli
             {underlings && underlings.length > 0 && (
                 <UnderlingList underlings={underlings} to={name} />
             )}
-        </animated.div>
+        </div>
     );
 };
 
@@ -174,6 +166,7 @@ const UnderlingList: FC<{ underlings: Pick<Member, "name" | "imageURL">[]; to: s
                     <Image
                         key={x.name}
                         alt={`${x.name}'s profile picture`}
+                        title={x.name}
                         src={x.imageURL}
                         height={256}
                         width={256}
