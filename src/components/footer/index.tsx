@@ -15,7 +15,7 @@ import WIFTextualLogo from "@/assets/wif-textual-logo.svg";
 export default function Footer() {
     return (
         <footer className="flex flex-col bg-bg-lighter">
-            <div className="grid grid-cols-8 gap-0 gap-y-12 py-8 md:gap-y-0 containerify">
+            <div className="grid grid-cols-8 gap-0 gap-y-12 py-8 containerify md:gap-y-0">
                 <div className="col-span-full flex flex-col flex-wrap items-start gap-4 md:col-span-4">
                     <Image
                         src={FooterLogoSet}
@@ -56,12 +56,12 @@ export default function Footer() {
                 </div>
             </div>
             <div className="h-10 flex items-center justify-center bg-bg-dark text-center text-sm font-medium uppercase md:text-base">
-                <p className="text-center">
-                    Copyright © 2022 | Meet the{" "}
+                <span className="text-center">
+                    Copyright © 2023 | Meet the{" "}
                     <Link href="/devs" className="text-accent-light">
                         devs
                     </Link>
-                </p>
+                </span>
             </div>
         </footer>
     );
