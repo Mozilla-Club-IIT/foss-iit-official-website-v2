@@ -270,16 +270,27 @@ export const events: Event[] = [
 
 export const projects: Project[] = [
     {
-        name: "OpenHack 3.0",
         accent: "light",
-        imageURL: "/projects/openhack3.png",
-        date: new Date("2023-12-1"),
+        name: allEventList.OPENHACK_3.name,
+        imageURL: allEventList.OPENHACK_3.imageURL,
+        date: allEventList.OPENHACK_3.startingDate,
     },
     {
-        name: "Summer Bootcamp",
+        name: allEventList.GIT_101.name,
         accent: "dark",
-        imageURL: "/projects/summer-bootcamp.png",
-        date: new Date("2023-08-14"),
+        imageURL: allEventList.GIT_101.imageURL,
+        date: allEventList.GIT_101.startingDate,
     },
-    { name: "Her.exe", accent: "light", imageURL: "/projects/her-exe.png", date: new Date() },
+    {
+        accent: "dark",
+        name: allEventList.SUMMER_BOOTCAMP_2023.name,
+        imageURL: allEventList.SUMMER_BOOTCAMP_2023.imageURL,
+        date: allEventList.SUMMER_BOOTCAMP_2023.startingDate,
+    },
+    {
+        accent: "dark",
+        name: allEventList.HER_EXE.name,
+        imageURL: allEventList.HER_EXE.imageURL,
+        date: allEventList.HER_EXE.startingDate,
+    },
 ];
