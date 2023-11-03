@@ -3,15 +3,12 @@ import Image from "next/image";
 
 import { pastEvents } from "@/constants/placeholders";
 
-import AccentedButton from "@/components/buttons/AccentedButton";
-import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import HeroLayout from "@/components/hero/HeroLayout";
 import EventTimeLine from "@/components/trees/EventTimeLine";
 import EventCard from "@/components/cards/EventCard";
 
 import RedString from "public/onlygodknowswhatthisis.webp";
 import Link from "next/link";
-import { REGISTER } from "@/constants/links";
 
 export default function Events() {
     return (

@@ -70,7 +70,7 @@ const Projects: FC = () => {
     return (
         <div className="mb-24 gap-8 container-content-block">
             <h1 className="text-style-heading">Projects</h1>
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-8 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
                 {projects.map((project) => (
                     <ProjectCard key={project.name} {...project} />
                 ))}

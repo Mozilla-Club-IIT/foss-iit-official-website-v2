@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FACEBOOK, INSTAGRAM, LINKEDIN, REGISTER, TIKTOK } from "@/constants/links";
 
 import CategoryHeader from "@/components/footer/CategoryHeader";
-import EmailInput from "@/components/footer/EmailInput";
+// import EmailInput from "@/components/footer/EmailInput";
 import SocialLink from "@/components/buttons/SocialLink";
 
 import FooterLogoSet from "public/footer-logoset.webp";
@@ -43,10 +43,10 @@ export default function Footer() {
                 </div>
 
                 <div className="col-span-full flex flex-col md:col-span-2">
-                    <CategoryHeader label="Subscribe" />
-                    <EmailInput />
+                    {/* <CategoryHeader label="Subscribe" />
+                    <EmailInput /> */}
 
-                    <span className="mt-8 capitalize">Connect with us</span>
+                    <span className="capitalize">Connect with us</span>
                     <div className="mt-1 flex gap-2">
                         <SocialLink type="facebook" href={FACEBOOK} />
                         <SocialLink type="instagram" href={INSTAGRAM} />
@@ -56,12 +56,12 @@ export default function Footer() {
                 </div>
             </div>
             <div className="h-10 flex items-center justify-center bg-bg-dark text-center text-sm font-medium uppercase md:text-base">
-                <p className="text-center">
-                    Copyright © 2022 | Meet the{" "}
+                <span className="text-center">
+                    Copyright © 2023 | Meet the{" "}
                     <Link href="/devs" className="text-accent-light">
                         devs
                     </Link>
-                </p>
+                </span>
             </div>
         </footer>
     );

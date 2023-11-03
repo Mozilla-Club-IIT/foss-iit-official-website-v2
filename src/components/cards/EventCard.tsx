@@ -14,11 +14,10 @@ export default function EventCard({ name, imageURL }: Props) {
                 width={512}
                 quality={100}
                 src={imageURL}
-                alt={`${name} picture`}
-                className="aspect-square w-full rounded-t-xl object-cover"
+                alt={name}
+                className="aspect-square w-full rounded-t-xl object-cover md:p-4"
             />
-
-            <p className="inline-flex py-4 text-center text-xl font-bold">{name}</p>
+            <span className="inline-flex py-4 text-center text-xl font-bold">{name}</span>
         </div>
     );
 }
