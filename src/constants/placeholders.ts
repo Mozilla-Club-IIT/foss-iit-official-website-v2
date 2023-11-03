@@ -197,35 +197,28 @@ export const wifBoard: WIFBoardOfficial[] = [
     },
 ];
 
-export const pastEvents: Event[] = [
-    {
-        name: "Summer Bootcamp 2023",
-        imageURL: "/projects/summer-bootcamp.png",
-        description: [
-            "This two-day bootcamp empowered students with MERN stack skills to create personal portfolio websites",
-        ],
-        startingDate: new Date("2023-09-09"),
+const allEventList = {
+    OPENHACK_3: {
+        name: "OpenHack 3.0",
+        imageURL: "/projects/openhack3.png",
+        description: ["Brace yourselves, something incredible is on the horizon..."],
+        startingDate: new Date("2023-11-30"),
     },
-    {
-        name: "OpenHack 2.0",
-        imageURL: "/projects/openhack2.webp",
-        description: [
-            "The signature event of the club was successfully held as an inter-university hackathon and a designathon in 2022.",
-        ],
-        startingDate: new Date("2023-02-18"),
+    FLUTTER_BOOTCAMP_2: {
+        name: "Flutter Bootcamp 2.0",
+        imageURL: "/projects/flutter-bootcamp.png",
+        description: ["Decoding the magic beyond the screen."],
+        startingDate: new Date("2023-11-25"),
     },
-    {
-        name: "Flutter Bootcamp",
-        imageURL: "/projects/flutter-bootcamp.webp",
+    GIT_101: {
+        name: "Git 101",
+        imageURL: "/projects/git-101.png",
         description: [
-            "Organized by Women in Foss at IIT, Flutter Bootcamp 2022 provided hands-on mobile development training using Flutter.",
+            "An interactive GitHub workshop for beginners to master version control in development workflows.",
         ],
-        startingDate: new Date("2022-10-29"),
+        startingDate: new Date("2023-10-19"),
     },
-];
-
-export const events: Event[] = [
-    {
+    HER_EXE: {
         name: "her.exe",
         imageURL: "/projects/her-exe.png",
         description: [
@@ -233,12 +226,46 @@ export const events: Event[] = [
         ],
         startingDate: new Date("2023-10-18"),
     },
-    {
-        name: "OpenHack 3.0",
-        imageURL: "/projects/openhack3.png",
-        description: ["Brace yourselves, something incredible is on the horizon.."],
-        startingDate: new Date("2023-11-30"),
+    SUMMER_BOOTCAMP_2023: {
+        name: "Summer Bootcamp 2023",
+        imageURL: "/projects/summer-bootcamp.png",
+        description: [
+            "This two-day bootcamp empowered students with MERN stack skills to create personal portfolio websites",
+        ],
+        startingDate: new Date("2023-09-09"),
     },
+    OPENHACK_2: {
+        name: "OpenHack 2.0",
+        imageURL: "/projects/openhack2.webp",
+        description: [
+            "The signature event of the club was successfully held as an inter-university hackathon and a designathon in 2022.",
+        ],
+        startingDate: new Date("2023-02-18"),
+    },
+    FLUTTER_BOOTCAMP_1: {
+        name: "Flutter Bootcamp",
+        imageURL: "/projects/flutter-bootcamp.webp",
+        description: [
+            "Organized by Women in Foss at IIT, Flutter Bootcamp 2022 provided hands-on mobile development training using Flutter.",
+        ],
+        startingDate: new Date("2022-10-29"),
+    },
+};
+
+export const pastEvents: Event[] = [
+    allEventList.GIT_101,
+    allEventList.HER_EXE,
+    allEventList.SUMMER_BOOTCAMP_2023,
+    allEventList.OPENHACK_2,
+    allEventList.FLUTTER_BOOTCAMP_1,
+];
+
+export const events: Event[] = [
+    allEventList.SUMMER_BOOTCAMP_2023,
+    allEventList.HER_EXE,
+    allEventList.GIT_101,
+    allEventList.FLUTTER_BOOTCAMP_2,
+    allEventList.OPENHACK_3,
 ];
 
 export const projects: Project[] = [
