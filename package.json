@@ -11,15 +11,15 @@
         "fmt": "prettier -c .prettierrc --write ./**/*.{ts,tsx,css,md,json}"
     },
     "dependencies": {
-        "@iconify-json/bxl": "^1.1.7",
-        "@iconify-json/logos": "^1.1.37",
-        "@iconify-json/mdi": "^1.1.55",
+        "@iconify-json/bxl": "^1.1.10",
+        "@iconify-json/logos": "^1.1.41",
+        "@iconify-json/mdi": "^1.1.63",
         "@react-spring/web": "^9.7.3",
         "@types/node": "20.8.10",
         "@types/react": "18.2.34",
         "@types/react-dom": "18.2.14",
-        "@unocss/postcss": "^0.57.1",
-        "@unocss/reset": "^0.57.1",
+        "@unocss/postcss": "^0.57.7",
+        "@unocss/reset": "^0.57.7",
         "clsx": "^2.0.0",
         "eslint": "8.52.0",
         "eslint-config-next": "14.0.1",
@@ -27,20 +27,20 @@
         "postcss": "8.4.31",
         "react": "18.2.0",
         "react-dom": "18.2.0",
-        "tailwind-merge": "^2.0.0",
+        "tailwind-merge": "^2.1.0",
         "typescript": "5.2.2",
-        "unocss": "^0.57.1"
+        "unocss": "^0.57.7"
     },
     "devDependencies": {
         "@iconify/types": "^2.0.0",
         "@svgr/webpack": "^8.1.0",
-        "@testing-library/jest-dom": "^6.1.4",
-        "@testing-library/react": "^14.0.0",
-        "@types/jest": "^29.5.7",
-        "@unocss/eslint-config": "^0.57.1",
+        "@testing-library/jest-dom": "^6.1.5",
+        "@testing-library/react": "^14.1.2",
+        "@types/jest": "^29.5.11",
+        "@unocss/eslint-config": "^0.57.7",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
-        "prettier": "^3.0.3",
+        "prettier": "^3.1.1",
         "sharp": "^0.32.6"
     }
 }
