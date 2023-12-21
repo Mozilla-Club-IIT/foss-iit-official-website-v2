@@ -33,7 +33,9 @@ const Hero: FC = () => {
                     "and Building a Stronger FOSS Community Together",
                 ]}
             >
-                <a target="_blank" href={REGISTER} className="button-accented">Join Us</a>
+                <a target="_blank" href={REGISTER} className="button-accented">
+                    Join Us
+                </a>
                 <Link href="#officials" className="button-layout">
                     Board of Officials
                 </Link>

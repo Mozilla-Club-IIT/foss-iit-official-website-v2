@@ -202,13 +202,13 @@ const allEventList = {
         name: "OpenHack 3.0",
         imageURL: "/projects/openhack3.png",
         description: ["Brace yourselves, something incredible is on the horizon..."],
-        startingDate: new Date("2023-11-30"),
+        startingDate: new Date("2023-12-30"),
     },
     FLUTTER_BOOTCAMP_2: {
         name: "Flutter Bootcamp 2.0",
-        imageURL: "/projects/flutter-bootcamp.png",
+        imageURL: "/projects/flutter-bootcamp-2.png",
         description: ["Decoding the magic beyond the screen."],
-        startingDate: new Date("2023-11-25"),
+        startingDate: new Date("2023-12-11"),
     },
     GIT_101: {
         name: "Git 101",
@@ -253,6 +253,7 @@ const allEventList = {
 };
 
 export const pastEvents: Event[] = [
+    allEventList.FLUTTER_BOOTCAMP_2,
     allEventList.GIT_101,
     allEventList.HER_EXE,
     allEventList.SUMMER_BOOTCAMP_2023,
