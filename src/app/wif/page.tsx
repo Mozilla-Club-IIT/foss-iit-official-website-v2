@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { FC } from "react";
 
+import { wifBoard } from "@/constants/data";
 import { REGISTER } from "@/constants/links";
-import { wifBoard } from "@/constants/placeholders";
 
 import WIFMemberCard from "@/components/cards/WIFMemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";

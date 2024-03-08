@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import type { FC } from "react";
 
-import { members } from "@/constants/placeholders";
+import { members } from "@/constants/data";
 import type { Member, MemberGroup, MemberUnion } from "@/types/internal";
 import cn from "@/utils/cn";
 

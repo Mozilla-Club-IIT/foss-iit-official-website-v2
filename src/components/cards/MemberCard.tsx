@@ -1,14 +1,13 @@
 "use client";
 
-import { animated, useSpring } from "@react-spring/web";
 import Image from "next/image";
 import { FC, useEffect, useRef, useState } from "react";
 
 import type { ExternalLink, Member, MemberGroup } from "@/types/internal";
 import cn from "@/utils/cn";
+import { mapToLines } from "@/utils/react/shared";
 
 import SocialLink from "@/components/buttons/SocialLink";
-import { mapToLines } from "@/utils/react/shared";
 
 type Props = {
     member?: Member;

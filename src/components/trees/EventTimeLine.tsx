@@ -2,7 +2,7 @@
 
 import { type FC, useEffect, useState } from "react";
 
-import { events } from "@/constants/placeholders";
+import { events } from "@/constants/data";
 import type { Event } from "@/types/internal";
 
 import {

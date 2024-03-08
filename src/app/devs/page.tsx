@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { FC } from "react";
 
-import { developers } from "@/constants/placeholders";
+import { developers } from "@/constants/data";
 
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";

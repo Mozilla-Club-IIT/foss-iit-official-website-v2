@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { FC } from "react";
 
+import { projects } from "@/constants/data";
 import { REGISTER } from "@/constants/links";
-import { projects } from "@/constants/placeholders";
 
 import ProjectCard from "@/components/cards/ProjectCard";
 import HeroLayout from "@/components/hero/HeroLayout";
