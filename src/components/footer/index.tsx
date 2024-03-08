@@ -7,7 +7,7 @@ import CategoryHeader from "@/components/footer/CategoryHeader";
 // import EmailInput from "@/components/footer/EmailInput";
 import SocialLink from "@/components/buttons/SocialLink";
 
-import FooterLogoSet from "public/footer-logoset.webp";
+import FooterLogoSet from "@/assets/logos/collection.webp";
 import TextualLogo from "@/assets/textual-logo.svg";
 import FOSSTextualLogo from "@/assets/foss-textual-logo.svg";
 import WIFTextualLogo from "@/assets/wif-textual-logo.svg";

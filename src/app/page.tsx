@@ -8,7 +8,7 @@ import { REGISTER } from "@/constants/links";
 import HeroLayout from "@/components/hero/HeroLayout";
 import ProjectCard from "@/components/cards/ProjectCard";
 
-import IsometricCubeSet from "public/isometric-cubeset.webp";
+import IsometricCubeSet from "@/assets/decorations/cubes.webp";
 
 export default function Home() {
     return (

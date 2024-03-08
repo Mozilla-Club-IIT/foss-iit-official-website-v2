@@ -3,5 +3,11 @@
     "files.associations": {
         "*.css": "tailwindcss"
     },
-    "cSpell.words": ["BOOTCAMP", "clsx", "containerify", "OPENHACK"]
+    "cSpell.words": [
+        "BOOTCAMP",
+        "clsx",
+        "containerify",
+        "FOSS",
+        "OPENHACK"
+    ]
 }

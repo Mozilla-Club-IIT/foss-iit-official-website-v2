@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { pastEvents } from "@/constants/placeholders";
 
@@ -7,8 +8,7 @@ import HeroLayout from "@/components/hero/HeroLayout";
 import EventTimeLine from "@/components/trees/EventTimeLine";
 import EventCard from "@/components/cards/EventCard";
 
-import RedString from "public/onlygodknowswhatthisis.webp";
-import Link from "next/link";
+import RedString from "@/assets/decorations/events.webp";
 
 export default function Events() {
     return (
