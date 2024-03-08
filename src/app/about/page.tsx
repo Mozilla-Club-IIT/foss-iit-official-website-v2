@@ -1,9 +1,9 @@
-import type { FC } from "react";
 import clsx from "clsx";
+import type { FC } from "react";
 
-import cn from "@/utils/cn";
-import type { Member, MemberGroup, MemberUnion } from "@/types/internal";
 import { members } from "@/constants/placeholders";
+import type { Member, MemberGroup, MemberUnion } from "@/types/internal";
+import cn from "@/utils/cn";
 
 import MemberCard from "@/components/cards/MemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";

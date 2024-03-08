@@ -4,8 +4,8 @@ import { REGISTER } from "@/constants/links";
 
 import NavLink from "@/components/nav/Link";
 
-import TextualLogo from "@/assets/textual-logo.svg";
 import DotLogo from "@/assets/dot-logo.svg";
+import TextualLogo from "@/assets/textual-logo.svg";
 
 export default function Nav() {
     return (

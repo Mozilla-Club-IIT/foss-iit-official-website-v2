@@ -1,8 +1,8 @@
 "use client";
 
+import { animated, type SpringValue, useInView } from "@react-spring/web";
 import clsx from "clsx";
 import type { FC } from "react";
-import { type SpringValue, animated, useInView } from "@react-spring/web";
 
 import type { Event } from "@/types/internal";
 import { getFancyDate } from "@/utils/date";

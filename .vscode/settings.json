@@ -14,6 +14,6 @@
     "files.exclude": {
         ".next": true,
         ".swc": true,
-        "node_modules": true,
+        "node_modules": true
     }
 }

@@ -1,12 +1,12 @@
-import type { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { FC } from "react";
 
-import { projects } from "@/constants/placeholders";
 import { REGISTER } from "@/constants/links";
+import { projects } from "@/constants/placeholders";
 
-import HeroLayout from "@/components/hero/HeroLayout";
 import ProjectCard from "@/components/cards/ProjectCard";
+import HeroLayout from "@/components/hero/HeroLayout";
 
 import IsometricCubeSet from "@/assets/decorations/cubes.webp";
 
@@ -71,9 +71,7 @@ const Projects: FC = () => {
         <div className="mb-24 gap-8 container-content-block">
             <h1 className="text-style-heading">Projects</h1>
             <div className="grid grid-cols-1 gap-8 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
-                {projects.map((project) => (
-                    <ProjectCard key={project.name} {...project} />
-                ))}
+                {projects.map((project) => <ProjectCard key={project.name} {...project} />)}
             </div>
         </div>
     );

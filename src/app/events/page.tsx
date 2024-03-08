@@ -1,12 +1,12 @@
-import type { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { FC } from "react";
 
 import { pastEvents } from "@/constants/placeholders";
 
+import EventCard from "@/components/cards/EventCard";
 import HeroLayout from "@/components/hero/HeroLayout";
 import EventTimeLine from "@/components/trees/EventTimeLine";
-import EventCard from "@/components/cards/EventCard";
 
 import RedString from "@/assets/decorations/events.webp";
 

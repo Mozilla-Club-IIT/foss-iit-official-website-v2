@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 
 import { poppins } from "@/constants/fonts";
 
-import Nav from "@/components/nav";
-import Footer from "@/components/footer";
 import Background from "@/components/background";
+import Footer from "@/components/footer";
+import Nav from "@/components/nav";
 
 export const metadata: Metadata = {
     title: "The Mozilla Campus Club of IIT",

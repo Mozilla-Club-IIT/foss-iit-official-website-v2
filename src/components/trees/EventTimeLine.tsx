@@ -2,8 +2,8 @@
 
 import { type FC, useEffect, useState } from "react";
 
-import type { Event } from "@/types/internal";
 import { events } from "@/constants/placeholders";
+import type { Event } from "@/types/internal";
 
 import {
     EventTreeCardFlexWrapper,

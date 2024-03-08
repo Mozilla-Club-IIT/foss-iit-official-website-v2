@@ -3,11 +3,11 @@ import type { FC } from "react";
 
 import { developers } from "@/constants/placeholders";
 
-import TechnologyCard from "@/components/cards/TechnologyCard";
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
-import HeroLayout from "@/components/hero/HeroLayout";
 import MemberCard from "@/components/cards/MemberCard";
+import TechnologyCard from "@/components/cards/TechnologyCard";
+import HeroLayout from "@/components/hero/HeroLayout";
 
 export default function Devs() {
     return (

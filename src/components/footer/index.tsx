@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 import { FACEBOOK, INSTAGRAM, LINKEDIN, REGISTER, TIK_TOK } from "@/constants/links";
 
@@ -8,8 +8,8 @@ import CategoryHeader from "@/components/footer/CategoryHeader";
 import SocialLink from "@/components/buttons/SocialLink";
 
 import LogoCollection from "@/assets/logos/collection.webp";
-import MOZCLogo from "@/assets/logos/mozc.svg";
 import FOSSLogo from "@/assets/logos/foss.svg";
+import MOZCLogo from "@/assets/logos/mozc.svg";
 import WIFLogo from "@/assets/logos/wif.svg";
 
 export default function Footer() {
@@ -43,8 +43,10 @@ export default function Footer() {
                 </div>
 
                 <div className="col-span-full flex flex-col md:col-span-2">
-                    {/* <CategoryHeader label="Subscribe" />
-                    <EmailInput /> */}
+                    {
+                        /* <CategoryHeader label="Subscribe" />
+                    <EmailInput /> */
+                    }
 
                     <span className="capitalize">Connect with us</span>
                     <div className="mt-1 flex gap-2">
