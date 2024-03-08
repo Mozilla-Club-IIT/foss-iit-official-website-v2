@@ -1,5 +1,5 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "dprint.dprint",
     "files.associations": {
         "*.css": "tailwindcss"
     },
@@ -10,5 +10,10 @@
         "FOSS",
         "MOZC",
         "OPENHACK"
-    ]
+    ],
+    "files.exclude": {
+        ".next": true,
+        ".swc": true,
+        "node_modules": true,
+    }
 }
