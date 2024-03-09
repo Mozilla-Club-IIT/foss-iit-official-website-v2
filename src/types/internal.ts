@@ -4,9 +4,9 @@ export type Member = {
     name: string;
     role: string;
     imageURL: string;
-    occupations: string[];
+    bio: string[];
     externalLinks: Partial<Record<ExternalLink, string>>;
-    underlings?: Pick<Member, "name" | "occupations" | "imageURL">[];
+    underlings?: Pick<Member, "name" | "imageURL">[];
 };
 
 export type MemberGroup = {
@@ -21,12 +21,6 @@ export type Technology = {
 };
 
 export type ExternalLink = "facebook" | "instagram" | "linkedin" | "github" | "tiktok";
-
-export type WIFBoardOfficial = {
-    name: string;
-    imageURL: string;
-    externalLinks?: Partial<Record<ExternalLink, string>>;
-};
 
 export type Event = {
     name: string;

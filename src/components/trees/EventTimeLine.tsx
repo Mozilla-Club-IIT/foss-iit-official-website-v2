@@ -2,8 +2,8 @@
 
 import { type FC, useEffect, useState } from "react";
 
+import { EVENT_TIMELINE } from "@/constants/data";
 import type { Event } from "@/types/internal";
-import { events } from "@/constants/placeholders";
 
 import {
     EventTreeCardFlexWrapper,
@@ -26,7 +26,7 @@ export default function EventTimeLine() {
         };
     }, []);
 
-    return isMobile ? <Mobile events={events} /> : <Desktop events={events} />;
+    return isMobile ? <Mobile events={EVENT_TIMELINE} /> : <Desktop events={EVENT_TIMELINE} />;
 }
 
 const Desktop: FC<{ events: Event[] }> = ({ events }) => {

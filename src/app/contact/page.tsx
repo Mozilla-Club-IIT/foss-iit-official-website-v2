@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { FACEBOOK, INSTAGRAM, LINKEDIN, TIKTOK } from "@/constants/links";
+import { FACEBOOK, INSTAGRAM, LINKEDIN, TIK_TOK } from "@/constants/links";
 
 import SocialLink from "@/components/buttons/SocialLink";
 import ContactCard from "@/components/cards/ContactCard";
@@ -46,7 +46,7 @@ const Hero: FC = () => {
                 <SocialLink type="facebook" href={FACEBOOK} />
                 <SocialLink type="instagram" href={INSTAGRAM} />
                 <SocialLink type="linkedin" href={LINKEDIN} />
-                <SocialLink type="tiktok" href={TIKTOK} />
+                <SocialLink type="tiktok" href={TIK_TOK} />
             </div>
         </div>
     );

@@ -1,7 +1,19 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "dprint.dprint",
     "files.associations": {
         "*.css": "tailwindcss"
     },
-    "cSpell.words": ["BOOTCAMP", "clsx", "containerify", "OPENHACK"]
+    "cSpell.words": [
+        "BOOTCAMP",
+        "clsx",
+        "containerify",
+        "FOSS",
+        "MOZC",
+        "OPENHACK"
+    ],
+    "files.exclude": {
+        ".next": true,
+        ".swc": true,
+        "node_modules": true
+    }
 }

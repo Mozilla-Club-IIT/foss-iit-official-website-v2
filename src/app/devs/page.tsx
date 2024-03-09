@@ -1,13 +1,13 @@
 import Image from "next/image";
 import type { FC } from "react";
 
-import { developers } from "@/constants/placeholders";
+import { DEVELOPERS } from "@/constants/data";
 
-import TechnologyCard from "@/components/cards/TechnologyCard";
 import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
-import HeroLayout from "@/components/hero/HeroLayout";
 import MemberCard from "@/components/cards/MemberCard";
+import TechnologyCard from "@/components/cards/TechnologyCard";
+import HeroLayout from "@/components/hero/HeroLayout";
 
 export default function Devs() {
     return (
@@ -74,7 +74,7 @@ const Developers: FC = () => {
         <div className="my-24 gap-8 container-content-block">
             <h1 className="text-style-heading">Developers</h1>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                {developers.map((developer) => (
+                {DEVELOPERS.map((developer) => (
                     <MemberCard key={developer.name} member={developer} />
                 ))}
             </div>

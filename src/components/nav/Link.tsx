@@ -1,8 +1,8 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 import clsx from "clsx";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Props = {
     href: string;
@@ -15,9 +15,11 @@ export default function NavLink({ href, label }: Props) {
     return (
         <Link
             href={href}
-            className={`hover:underline hover:underline-offset-4 ${clsx({
-                "text-accent-dark font-bold": pathname === href,
-            })}`}
+            className={`hover:underline hover:underline-offset-4 ${
+                clsx({
+                    "text-accent-dark font-bold": pathname === href,
+                })
+            }`}
         >
             {label}
         </Link>

@@ -1,14 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { FC, useEffect, useState, useRef } from "react";
-import { animated, useSpring } from "@react-spring/web";
+import { FC, useEffect, useRef, useState } from "react";
 
-import cn from "@/utils/cn";
 import type { ExternalLink, Member, MemberGroup } from "@/types/internal";
+import cn from "@/utils/cn";
+import { mapToLines } from "@/utils/react/shared";
 
 import SocialLink from "@/components/buttons/SocialLink";
-import { mapToLines } from "@/utils/react/shared";
 
 type Props = {
     member?: Member;
@@ -52,21 +51,23 @@ export default function MemberCard({ member, group, className }: Props) {
                     imageURL={member?.imageURL}
                     trailing={{ onPress: () => setVisibility((x) => !x), active: isVisible }}
                 />
-                {isVisible &&
-                    (member !== undefined ? (
-                        <MemberExpandedDetailsRow
-                            role={member.role}
-                            occupations={member.occupations}
-                            externalLinks={member.externalLinks}
-                            underlings={member.underlings}
-                        />
-                    ) : (
-                        <MemberGroupExpandedDetailsRow
-                            name={group!.name}
-                            members={group!.members}
-                            underlings={group!.underlings}
-                        />
-                    ))}
+                {isVisible
+                    && (member !== undefined
+                        ? (
+                            <MemberExpandedDetailsRow
+                                role={member.role}
+                                bio={member.bio}
+                                externalLinks={member.externalLinks}
+                                underlings={member.underlings}
+                            />
+                        )
+                        : (
+                            <MemberGroupExpandedDetailsRow
+                                name={group!.name}
+                                members={group!.members}
+                                underlings={group!.underlings}
+                            />
+                        ))}
             </div>
         </div>
     );
@@ -84,17 +85,17 @@ const DetailsRow: FC<
 > = ({ name, role, imageURL, trailing: { active, onPress } = {} }) => {
     return (
         <div className="h-22 min-h-22 flex items-center gap-3" onClick={onPress}>
-            {imageURL !== undefined ? (
-                <Image
-                    src={imageURL}
-                    height={256}
-                    width={256}
-                    alt={`${name}'s profile picture`}
-                    className="h-16 min-w-16 w-16 rounded-full object-cover"
-                />
-            ) : (
-                <div className="w-1" />
-            )}
+            {imageURL !== undefined
+                ? (
+                    <Image
+                        src={imageURL}
+                        height={256}
+                        width={256}
+                        alt={`${name}'s profile picture`}
+                        className="h-16 min-w-16 w-16 rounded-full object-cover"
+                    />
+                )
+                : <div className="w-1" />}
             <div className="flex flex-1 flex-col gap-1">
                 <span className="font-medium leading-tight text-text-primary">{name}</span>
                 <span className="select-none text-xs leading-tight text-text-primary/50">
@@ -118,12 +119,12 @@ const DetailsRow: FC<
 const MemberExpandedDetailsRow: FC<Omit<Member, "imageURL" | "name">> = ({
     role,
     underlings,
-    occupations,
+    bio,
     externalLinks,
 }) => {
     return (
         <div className="flex flex-col gap-2 px-2 pb-4">
-            <span className="text-xs text-text-primary/60">{mapToLines(occupations)}</span>
+            <span className="text-xs text-text-primary/60">{mapToLines(bio)}</span>
             <ExternalLinkList externalLinks={externalLinks} />
             {underlings && underlings.length > 0 && (
                 <UnderlingList underlings={underlings} to={role} />
@@ -139,7 +140,7 @@ const MemberGroupExpandedDetailsRow: FC<MemberGroup> = ({ name, members, underli
                 <div key={member.name} className="flex flex-col">
                     <DetailsRow name={member.name} role={member.role} imageURL={member.imageURL} />
                     <span className="text-xs text-text-primary/60">
-                        {mapToLines(member.occupations)}
+                        {mapToLines(member.bio)}
                     </span>
                     <ExternalLinkList externalLinks={member.externalLinks} />
                 </div>

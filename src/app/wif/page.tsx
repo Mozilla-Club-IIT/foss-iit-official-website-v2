@@ -1,20 +1,24 @@
-import type { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { FC } from "react";
 
+import { WIF_BOARD } from "@/constants/data";
 import { REGISTER } from "@/constants/links";
-import { wifBoard } from "@/constants/placeholders";
 
 import WIFMemberCard from "@/components/cards/WIFMemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";
+
+import FemaleDeveloperImage from "@/assets/decorations/female-developer.png";
 
 export default function Home() {
     return (
         <>
             <Hero />
-            <AboutUs />
-            <OurMission />
-            <OurVision />
+            <div className="flex flex-col md:px-16">
+                <AboutUs />
+                <OurMission />
+                <OurVision />
+            </div>
             <BoardOfOfficials />
         </>
     );
@@ -42,10 +46,11 @@ const Hero: FC = () => {
             </HeroLayout>
             <div className="absolute bottom-0 right-0 z-10 hidden w-2/5 lg:right-20 md:block">
                 <Image
-                    src="/wif-developer.png"
+                    src={FemaleDeveloperImage}
                     width={782}
                     height={521}
-                    alt="WIF Female Developer"
+                    alt=""
+                    aria-hidden
                 />
             </div>
         </div>
@@ -54,8 +59,8 @@ const Hero: FC = () => {
 
 const AboutUs: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col text-text-secondary container-content-prose">
-            <h1 className="uppercase text-text-primary">ABOUT US</h1>
+        <div className="mt-24 flex flex-col text-text-secondary prose">
+            <h1 className="text-text-primary uppercase">ABOUT US</h1>
             <p>
                 The Women in FOSS Community at IIT is an affinity group within the FOSS Community
                 where we empower, inspire, and uplift women in the open-source landscape, creating a
@@ -68,8 +73,8 @@ const AboutUs: FC = () => {
 
 const OurMission: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col text-text-secondary container-content-prose">
-            <h1 className="uppercase text-text-primary">Our Mission</h1>
+        <div className="mt-24 flex flex-col text-text-secondary prose">
+            <h1 className="text-text-primary uppercase">Our Mission</h1>
             <p>
                 To empower and inspire women, fostering a vibrant and inclusive environment
                 regardless of gender identity, where innovation thrives, talent is empowered, and
@@ -81,13 +86,13 @@ const OurMission: FC = () => {
 
 const OurVision: FC = () => {
     return (
-        <div className="mt-24 max-w-full flex flex-col text-text-secondary container-content-prose">
-            <h1 className="uppercase text-text-primary">Our Vision</h1>
+        <div className="mt-24 flex flex-col text-text-secondary prose">
+            <h1 className="text-text-primary uppercase">Our Vision</h1>
             <p>
                 We aspire to create an inclusive open-source community that encourages diversity,
-                fosters innovation, and empowers women to lead in technology. Our goal is to inspire
-                a future where women’s contributions play a pivotal role in advancing
-                open-source software.
+                fosters innovation, and empowers women to lead in technology. <br />
+                Our goal is to inspire a future where women’s contributions play a pivotal role in
+                advancing open-source software.
             </p>
         </div>
     );
@@ -98,16 +103,9 @@ const BoardOfOfficials: FC = () => (
         id="officials"
         className="my-24 max-w-full flex flex-col gap-8 text-text-secondary container-content-prose"
     >
-        <h1 className="leading-tight uppercase text-text-primary">Board Of Officials</h1>
+        <h1 className="text-text-primary leading-tight uppercase">Board Of Officials</h1>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] justify-center gap-6">
-            {wifBoard.map((member) => (
-                <WIFMemberCard
-                    key={member.name}
-                    name={member.name}
-                    imageURL={member.imageURL}
-                    externalLinks={member.externalLinks}
-                />
-            ))}
+            {WIF_BOARD.map((member) => <WIFMemberCard key={member.name} {...member} />)}
         </div>
     </div>
 );

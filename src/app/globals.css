@@ -1,11 +1,15 @@
 @import "@unocss/reset/tailwind.css";
 @unocss all;
 
+:root {
+    color-scheme: dark;
+}
+
 html,
 body {
     width: 100vw;
     /* overflow-x: hidden; */
-    color-scheme: dark;
     font-family: var(--font-sans);
+    color-scheme: dark;
     scroll-behavior: smooth;
 }

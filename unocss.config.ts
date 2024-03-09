@@ -1,15 +1,15 @@
-import { Theme } from "unocss/preset-mini";
+import type { IconifyJSON } from "@iconify/types";
 import {
-    defineConfig,
-    presetUno,
-    presetTypography,
-    presetIcons,
     Awaitable,
+    defineConfig,
+    presetIcons,
+    presetTypography,
+    presetUno,
     transformerVariantGroup,
 } from "unocss";
-import type { IconifyJSON } from "@iconify/types";
+import { Theme } from "unocss/preset-mini";
 
-const importIconCollection = (name: string): (() => Awaitable<IconifyJSON>) => {
+const importIconCollection = (name: string): () => Awaitable<IconifyJSON> => {
     return async () => {
         const { default: icons } = await import(`@iconify-json/${name}/icons.json`);
         return icons;

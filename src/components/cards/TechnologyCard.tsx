@@ -1,5 +1,5 @@
-import clsx from "clsx";
 import type { Technology } from "@/types/internal";
+import clsx from "clsx";
 
 type Props = Technology;
 export default function TechnologyCard({ name, icon }: Props) {

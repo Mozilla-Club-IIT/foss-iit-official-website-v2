@@ -1,15 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import {
+    config,
+    type SpringValue,
+    type TransitionFn,
     useChain,
     useSpring,
     useSpringRef,
     useTransition,
-    config,
-    type SpringValue,
-    type TransitionFn,
 } from "@react-spring/web";
+import { useEffect, useState } from "react";
 
 export function useIsVisible(ref: React.RefObject<HTMLElement>, { cancelOnFirstHit = false }) {
     const [isIntersecting, setIntersecting] = useState(false);

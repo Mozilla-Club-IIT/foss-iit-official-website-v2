@@ -1,14 +1,14 @@
-import type { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { FC } from "react";
 
-import { projects } from "@/constants/placeholders";
+import { PROJECTS } from "@/constants/data";
 import { REGISTER } from "@/constants/links";
 
-import HeroLayout from "@/components/hero/HeroLayout";
 import ProjectCard from "@/components/cards/ProjectCard";
+import HeroLayout from "@/components/hero/HeroLayout";
 
-import IsometricCubeSet from "public/isometric-cubeset.webp";
+import IsometricCubeSet from "@/assets/decorations/cubes.webp";
 
 export default function Home() {
     return (
@@ -71,9 +71,7 @@ const Projects: FC = () => {
         <div className="mb-24 gap-8 container-content-block">
             <h1 className="text-style-heading">Projects</h1>
             <div className="grid grid-cols-1 gap-8 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
-                {projects.map((project) => (
-                    <ProjectCard key={project.name} {...project} />
-                ))}
+                {PROJECTS.map((project) => <ProjectCard key={project.name} {...project} />)}
             </div>
         </div>
     );

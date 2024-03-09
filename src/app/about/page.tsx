@@ -1,9 +1,9 @@
-import type { FC } from "react";
 import clsx from "clsx";
+import type { FC } from "react";
 
-import cn from "@/utils/cn";
+import { MEMBER_BOARD } from "@/constants/data";
 import type { Member, MemberGroup, MemberUnion } from "@/types/internal";
-import { members } from "@/constants/placeholders";
+import cn from "@/utils/cn";
 
 import MemberCard from "@/components/cards/MemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";
@@ -47,12 +47,12 @@ const FlexibleMemberCard: FC<{ member: Member }> = ({ member }) => {
 const MemberTree: FC = () => {
     return (
         <div className="grid grid-cols-8 mb-36 mt-24 justify-items-center md:gap-x-6">
-            <FlexibleMemberCard member={members[0] as Member} />
+            <FlexibleMemberCard member={MEMBER_BOARD[0] as Member} />
             <TreeSpacer />
-            <FlexibleMemberCard member={members[1] as Member} />
+            <FlexibleMemberCard member={MEMBER_BOARD[1] as Member} />
             <TreeSpacer className="h-32" />
 
-            {(members[2] as MemberUnion[]).map((x, i) => {
+            {(MEMBER_BOARD[2] as MemberUnion[]).map((x, i) => {
                 // @ts-expect-error Check if item is a mem type or not.
                 const isMember = x["role"] !== undefined;
 
@@ -71,7 +71,7 @@ const MemberTree: FC = () => {
 
             <TreeSpacer className="h-32" />
 
-            {(members[3] as MemberUnion[]).map((member, i) => {
+            {(MEMBER_BOARD[3] as MemberUnion[]).map((member, i) => {
                 // @ts-expect-error Check if item is a mem type or not.
                 const isMember = member["role"] !== undefined;
 

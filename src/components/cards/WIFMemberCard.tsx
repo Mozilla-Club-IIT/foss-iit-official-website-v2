@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-import type { ExternalLink, WIFBoardOfficial } from "@/types/internal";
+import type { ExternalLink, Member } from "@/types/internal";
 
 import SocialLink from "@/components/buttons/SocialLink";
 
-type Props = WIFBoardOfficial & {
+type Props = Member & {
     className?: string;
 };
 
