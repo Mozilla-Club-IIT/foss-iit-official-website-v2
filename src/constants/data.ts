@@ -5,7 +5,7 @@ const PEOPLE = {
         name: "Sahan Dissanayake",
         role: "President",
         imageURL: "/portraits/Sahan.jpg",
-        occupations: [
+        bio: [
             "Undergraduate trainee - Software Engineering @ IFS R&D ",
             "Software engineering undergraduate  @ IIT",
         ],
@@ -18,7 +18,7 @@ const PEOPLE = {
         name: "Sachith Wickramasekara",
         role: "Vice President",
         imageURL: "/portraits/sachith.webp",
-        occupations: ["Software Engineer", "UI/UX Designer"],
+        bio: ["Software Engineer", "UI/UX Designer"],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/sachith-wickramasekara/",
             instagram: "https://instagram.com/sach.cha_?igshid=MWZjMTM2ODFkZg==",
@@ -26,9 +26,9 @@ const PEOPLE = {
     },
     "bagya": {
         name: "Bhagya Semage",
-        role: "Secretary ",
+        role: "Secretary",
         imageURL: "/portraits/Bhagya.jpg",
-        occupations: ["Software Engineer", "UI/UX Designer"],
+        bio: ["Software Engineer", "UI/UX Designer"],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/bhagya-semage-311b7b237/",
             instagram: "https://instagram.com/s.e.m.a.g.e.02?igshid=MWZjMTM2ODFkZg==",
@@ -36,9 +36,9 @@ const PEOPLE = {
     },
     "vinuja": {
         name: "Vinuja Jayathilake",
-        role: "Treasurer ",
+        role: "Treasurer",
         imageURL: "/portraits/vinuja.webp",
-        occupations: ["Software Engineer", "UI/UX Designer"],
+        bio: ["Software Engineer", "UI/UX Designer"],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/vinuja-jayathilake/",
             instagram: "https://instagram.com/_vinuja_?igshid=MWZjMTM2ODFkZg==",
@@ -46,9 +46,9 @@ const PEOPLE = {
     },
     "devmal": {
         name: "Devmal Wijesinghe",
-        role: "Director of Events ",
+        role: "Director of Events",
         imageURL: "/portraits/devmal.jpg",
-        occupations: ["Software Engineer", "UI/UX Designer"],
+        bio: ["Software Engineer", "UI/UX Designer"],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/devmalwije/",
             instagram: "https://instagram.com/devmal.__?igshid=MWZjMTM2ODFkZg==",
@@ -59,7 +59,7 @@ const PEOPLE = {
         name: "Ravindu Senarathna",
         role: "Director of PR & Media",
         imageURL: "/portraits/ravindu.webp",
-        occupations: ["A person"],
+        bio: ["A person"],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/ravindusenrathna",
             instagram: "https://instagram.com/mrrevengerx?igshid=MWZjMTM2ODFkZg==",
@@ -69,7 +69,7 @@ const PEOPLE = {
         name: "Pasan Deshapriya",
         role: "Director of PR & Media",
         imageURL: "/portraits/punsara.jpg",
-        occupations: ["Ensuring everyone has a blast 👌"],
+        bio: ["Ensuring everyone has a blast 👌"],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/pasan-deshapriya-163671267/",
         },
@@ -79,7 +79,7 @@ const PEOPLE = {
         name: "Manupa Samarawickrama",
         role: "Director of IT",
         imageURL: "/portraits/manupa.jpg",
-        occupations: ["Software Engineer", "UI/UX Designer"],
+        bio: ["Software Engineer", "UI/UX Designer"],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/manupa-samarawickrama/",
             instagram: "https://instagram.com/__manupa__?igshid=MWZjMTM2ODFkZg==",
@@ -89,14 +89,14 @@ const PEOPLE = {
         name: "Abrar Ahmed",
         role: "Director Membership & Club Growth",
         imageURL: "/portraits/abrar.webp",
-        occupations: ["Computer Science Enthusiast. Linux Enthusiast. Loves FOSS."],
+        bio: ["Computer Science Enthusiast. Linux Enthusiast. Loves FOSS."],
         externalLinks: { linkedin: "https://www.linkedin.com/in/abrar-ahmed-028368255/" },
     },
     "shakthi": {
         name: "Shakthi Warnakulasuriya",
         imageURL: "/portraits/Shakthi.webp",
         role: "Editor",
-        occupations: ["Software Engineer", "UI/UX Designer"],
+        bio: ["Software Engineer", "UI/UX Designer"],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/shakthi-warnakulasuriya-/",
             instagram: "https://www.instagram.com/_shakthi_raveen_/",
@@ -107,7 +107,7 @@ const PEOPLE = {
         name: "Stefania Hapuarachchi",
         imageURL: "/portraits/Stef.webp",
         role: "",
-        occupations: [],
+        bio: [],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/stefania-hapuarachchi/",
             instagram: "https://instagram.com/_____shavini_____?igshid=MWZjMTM2ODFkZg==",
@@ -117,7 +117,7 @@ const PEOPLE = {
         name: "Buddhima Fernando",
         imageURL: "/portraits/buddhima.jpg",
         role: "",
-        occupations: [],
+        bio: [],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/buddhima-fernando/",
             instagram: "https://instagram.com/buddhima_fernando?igshid=MWZjMTM2ODFkZg==",
@@ -127,7 +127,7 @@ const PEOPLE = {
         name: "Nadul Jayasundera",
         imageURL: "/portraits/Nadul.webp",
         role: "",
-        occupations: [],
+        bio: [],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/nadul-jayasundera-616021257/",
             instagram: "https://instagram.com/nadul.j?igshid=MWZjMTM2ODFkZg==",
@@ -139,21 +139,21 @@ const PEOPLE = {
         role: "Developer",
         imageURL: "/portraits/rachala.webp",
         externalLinks: { linkedin: "https://lk.linkedin.com/in/curstantine" },
-        occupations: ["SvelteKit in prod when?"],
+        bio: ["SvelteKit in prod when?"],
     },
     "chamidu": {
         name: "Chamidu Amarasinghe",
         role: "UI/UX Designer",
         imageURL: "/portraits/chamidu.jpg",
         externalLinks: { linkedin: "https://www.linkedin.com/in/chamidu-amarasinghe-87a83b1b0/" },
-        occupations: ["Software Engineer", "UI/UX Designer"],
+        bio: ["Software Engineer", "UI/UX Designer"],
     },
     "afeef": {
         name: "Afeef Razick",
         role: "Developer",
         imageURL: "/portraits/afeef.jpg",
         externalLinks: { linkedin: "https://www.linkedin.com/in/afeef-razick/" },
-        occupations: ["Jiyuu 🕊️"],
+        bio: ["Jiyuu 🕊️"],
     },
 } satisfies Record<string, Member>;
 

@@ -56,7 +56,7 @@ export default function MemberCard({ member, group, className }: Props) {
                         ? (
                             <MemberExpandedDetailsRow
                                 role={member.role}
-                                occupations={member.occupations}
+                                bio={member.bio}
                                 externalLinks={member.externalLinks}
                                 underlings={member.underlings}
                             />
@@ -119,12 +119,12 @@ const DetailsRow: FC<
 const MemberExpandedDetailsRow: FC<Omit<Member, "imageURL" | "name">> = ({
     role,
     underlings,
-    occupations,
+    bio,
     externalLinks,
 }) => {
     return (
         <div className="flex flex-col gap-2 px-2 pb-4">
-            <span className="text-xs text-text-primary/60">{mapToLines(occupations)}</span>
+            <span className="text-xs text-text-primary/60">{mapToLines(bio)}</span>
             <ExternalLinkList externalLinks={externalLinks} />
             {underlings && underlings.length > 0 && (
                 <UnderlingList underlings={underlings} to={role} />
@@ -140,7 +140,7 @@ const MemberGroupExpandedDetailsRow: FC<MemberGroup> = ({ name, members, underli
                 <div key={member.name} className="flex flex-col">
                     <DetailsRow name={member.name} role={member.role} imageURL={member.imageURL} />
                     <span className="text-xs text-text-primary/60">
-                        {mapToLines(member.occupations)}
+                        {mapToLines(member.bio)}
                     </span>
                     <ExternalLinkList externalLinks={member.externalLinks} />
                 </div>

@@ -4,7 +4,7 @@ export type Member = {
     name: string;
     role: string;
     imageURL: string;
-    occupations: string[];
+    bio: string[];
     externalLinks: Partial<Record<ExternalLink, string>>;
     underlings?: Pick<Member, "name" | "imageURL">[];
 };
