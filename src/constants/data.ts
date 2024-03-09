@@ -1,6 +1,6 @@
 import type { Event, Member, MemberUnion, Project } from "@/types/internal";
 
-const people = {
+const PEOPLE = {
     "sahan": {
         name: "Sahan Dissanayake",
         role: "President",
@@ -157,59 +157,60 @@ const people = {
     },
 } satisfies Record<string, Member>;
 
-export const members: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
-    0: people.sahan,
-    1: people.sachith,
+export const MEMBER_BOARD: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
+    0: PEOPLE.sahan,
+    1: PEOPLE.sachith,
     2: [
-        people.bagya,
-        people.vinuja,
-        people.devmal,
+        PEOPLE.bagya,
+        PEOPLE.vinuja,
+        PEOPLE.devmal,
     ],
     3: [
         {
             name: "Media Directors",
             underlings: [],
             members: [
-                people.ravindu,
-                people.pasan,
+                PEOPLE.ravindu,
+                PEOPLE.pasan,
             ],
         },
         {
-            ...people.manupa,
+            ...PEOPLE.manupa,
             underlings: [
                 {
-                    name: people.rachala.name,
-                    imageURL: people.rachala.imageURL,
+                    name: PEOPLE.rachala.name,
+                    imageURL: PEOPLE.rachala.imageURL,
                 },
                 {
-                    name: people.chamidu.name,
-                    imageURL: people.chamidu.imageURL,
+                    name: PEOPLE.chamidu.name,
+                    imageURL: PEOPLE.chamidu.imageURL,
                 },
                 {
-                    name: people.afeef.name,
-                    imageURL: people.afeef.imageURL,
+                    name: PEOPLE.afeef.name,
+                    imageURL: PEOPLE.afeef.imageURL,
                 },
             ],
         },
-        people.abrar,
-        people.shakthi,
+        PEOPLE.abrar,
+        PEOPLE.shakthi,
     ],
 };
 
-export const developers: Member[] = [
-    people.rachala,
-    people.chamidu,
-    people.afeef,
-    people.ravindu,
+export const DEVELOPERS: Member[] = [
+    PEOPLE.rachala,
+    PEOPLE.chamidu,
+    PEOPLE.afeef,
+    PEOPLE.ravindu,
 ];
 
-export const wifBoard: Member[] = [
-    people.bagya,
-    people.buddhima,
-    people.nadul,
+export const WIF_BOARD: Member[] = [
+    PEOPLE.bagya,
+    PEOPLE.stefania,
+    PEOPLE.buddhima,
+    PEOPLE.nadul,
 ];
 
-const allEventList = {
+const ALL_EVENTS = {
     OPENHACK_3: {
         name: "OpenHack 3.0",
         imageURL: "/projects/openhack3.png",
@@ -264,46 +265,46 @@ const allEventList = {
     },
 };
 
-export const pastEvents: Event[] = [
-    allEventList.FLUTTER_BOOTCAMP_2,
-    allEventList.GIT_101,
-    allEventList.HER_EXE,
-    allEventList.SUMMER_BOOTCAMP_2023,
-    allEventList.OPENHACK_2,
-    allEventList.FLUTTER_BOOTCAMP_1,
+export const PAST_EVENTS: Event[] = [
+    ALL_EVENTS.FLUTTER_BOOTCAMP_2,
+    ALL_EVENTS.GIT_101,
+    ALL_EVENTS.HER_EXE,
+    ALL_EVENTS.SUMMER_BOOTCAMP_2023,
+    ALL_EVENTS.OPENHACK_2,
+    ALL_EVENTS.FLUTTER_BOOTCAMP_1,
 ];
 
-export const events: Event[] = [
-    allEventList.SUMMER_BOOTCAMP_2023,
-    allEventList.HER_EXE,
-    allEventList.GIT_101,
-    allEventList.FLUTTER_BOOTCAMP_2,
-    allEventList.OPENHACK_3,
+export const EVENT_TIMELINE: Event[] = [
+    ALL_EVENTS.SUMMER_BOOTCAMP_2023,
+    ALL_EVENTS.HER_EXE,
+    ALL_EVENTS.GIT_101,
+    ALL_EVENTS.FLUTTER_BOOTCAMP_2,
+    ALL_EVENTS.OPENHACK_3,
 ];
 
-export const projects: Project[] = [
+export const PROJECTS: Project[] = [
     {
         accent: "light",
-        name: allEventList.OPENHACK_3.name,
-        imageURL: allEventList.OPENHACK_3.imageURL,
-        date: allEventList.OPENHACK_3.startingDate,
+        name: ALL_EVENTS.OPENHACK_3.name,
+        imageURL: ALL_EVENTS.OPENHACK_3.imageURL,
+        date: ALL_EVENTS.OPENHACK_3.startingDate,
     },
     {
-        name: allEventList.GIT_101.name,
+        name: ALL_EVENTS.GIT_101.name,
         accent: "dark",
-        imageURL: allEventList.GIT_101.imageURL,
-        date: allEventList.GIT_101.startingDate,
-    },
-    {
-        accent: "dark",
-        name: allEventList.SUMMER_BOOTCAMP_2023.name,
-        imageURL: allEventList.SUMMER_BOOTCAMP_2023.imageURL,
-        date: allEventList.SUMMER_BOOTCAMP_2023.startingDate,
+        imageURL: ALL_EVENTS.GIT_101.imageURL,
+        date: ALL_EVENTS.GIT_101.startingDate,
     },
     {
         accent: "dark",
-        name: allEventList.HER_EXE.name,
-        imageURL: allEventList.HER_EXE.imageURL,
-        date: allEventList.HER_EXE.startingDate,
+        name: ALL_EVENTS.SUMMER_BOOTCAMP_2023.name,
+        imageURL: ALL_EVENTS.SUMMER_BOOTCAMP_2023.imageURL,
+        date: ALL_EVENTS.SUMMER_BOOTCAMP_2023.startingDate,
+    },
+    {
+        accent: "dark",
+        name: ALL_EVENTS.HER_EXE.name,
+        imageURL: ALL_EVENTS.HER_EXE.imageURL,
+        date: ALL_EVENTS.HER_EXE.startingDate,
     },
 ];

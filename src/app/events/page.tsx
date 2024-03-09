@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { FC } from "react";
 
-import { pastEvents } from "@/constants/data";
+import { PAST_EVENTS } from "@/constants/data";
 
 import EventCard from "@/components/cards/EventCard";
 import HeroLayout from "@/components/hero/HeroLayout";
@@ -52,7 +52,7 @@ const PastEvents: FC = () => {
         <div id="pastevents" className="mb-24 mt-32 gap-4 container-content-block">
             <h1 className="text-style-heading">Past Events</h1>
             <div className="grid grid-cols-1 justify-items-center gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:justify-items-start">
-                {pastEvents.map((event) => {
+                {PAST_EVENTS.map((event) => {
                     return (
                         <EventCard key={event.name} name={event.name} imageURL={event.imageURL} />
                     );

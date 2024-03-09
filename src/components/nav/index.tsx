@@ -4,8 +4,8 @@ import { REGISTER } from "@/constants/links";
 
 import NavLink from "@/components/nav/Link";
 
-import DotLogo from "@/assets/dot-logo.svg";
-import TextualLogo from "@/assets/textual-logo.svg";
+import DotLogo from "@/assets/logos/mozc-dot.svg";
+import MOZCLogo from "@/assets/logos/mozc.svg";
 
 export default function Nav() {
     return (
@@ -15,10 +15,10 @@ export default function Nav() {
         >
             <div className="h-16 flex flex-1 items-center justify-between rounded-2xl bg-black/[48%] px-6 ring-2 ring-border-nav/[4%] backdrop-blur-sm 2xl:h-20 sm:justify-start xs:px-8 sm:pl-8">
                 <Link href="/" className="contents">
-                    <TextualLogo className="hidden w-[145px] md:block" />
+                    <MOZCLogo className="hidden w-[145px] md:block" />
                     <DotLogo className="h-8 w-8 md:hidden" />
                 </Link>
-                <div className="flex justify-end gap-4 text-sm uppercase text-text-neutral xs:flex-1 lg:gap-16 md:gap-12 2xl:text-lg md:text-base">
+                <div className="flex justify-end gap-4 text-sm text-text-neutral uppercase xs:flex-1 lg:gap-16 md:gap-12 2xl:text-lg md:text-base">
                     <NavLink href="/about" label="About" />
                     <NavLink href="/events" label="Events" />
                     <NavLink href="/wif" label="WIF" />
@@ -27,7 +27,7 @@ export default function Nav() {
             <a
                 target="_blank"
                 href={REGISTER}
-                className="hidden h-16 w-16 items-center justify-center rounded-xl bg-[#5E5E5E] px-4 uppercase text-white md:w-36 sm:inline-flex"
+                className="hidden h-16 w-16 items-center justify-center rounded-xl bg-[#5E5E5E] px-4 text-white uppercase md:w-36 sm:inline-flex"
             >
                 <p className="hidden md:block">Register</p>
                 <p className="md:hidden">REG</p>
