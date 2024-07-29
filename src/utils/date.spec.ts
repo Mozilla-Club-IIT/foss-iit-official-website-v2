@@ -1,3 +1,5 @@
+import { describe, expect, test } from "vitest";
+
 import { getFancyDate } from "@/utils/date";
 
 describe("getFancyDate", () => {

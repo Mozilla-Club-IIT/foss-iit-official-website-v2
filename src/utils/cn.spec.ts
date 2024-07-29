@@ -1,3 +1,5 @@
+import { describe, expect, test } from "vitest";
+
 import cn from "@/utils/cn";
 
 describe("test cn compat with tw and uno", () => {

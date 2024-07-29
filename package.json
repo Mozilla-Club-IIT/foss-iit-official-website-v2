@@ -7,7 +7,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "test": "jest",
+        "test": "vitest",
         "fmt": "dprint fmt"
     },
     "dependencies": {
@@ -35,14 +35,14 @@
     "devDependencies": {
         "@iconify/types": "^2.0.0",
         "@svgr/webpack": "^8.1.0",
-        "@testing-library/jest-dom": "^6.4.8",
         "@testing-library/react": "^16.0.0",
         "@types/jest": "^29.5.12",
         "@unocss/eslint-config": "^0.61.6",
+        "@vitejs/plugin-react": "^4.3.1",
         "dprint": "^0.47.2",
-        "jest": "^29.7.0",
-        "jest-environment-jsdom": "^29.7.0",
-        "prettier": "^3.3.3"
+        "jsdom": "^24.1.1",
+        "prettier": "^3.3.3",
+        "vitest": "^2.0.4"
     },
     "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
 }
