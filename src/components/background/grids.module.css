@@ -1,18 +1,3 @@
-/* .layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 24px);
-    grid-template-rows: repeat(auto-fill, 24px);
-    outline: 1px solid #ccc;
-
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-}
-
- */
-
 .layout {
     position: absolute;
     top: 0;

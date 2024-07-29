@@ -1,5 +1,6 @@
 {
     "editor.defaultFormatter": "dprint.dprint",
+    "eslint.useFlatConfig": true,
     "files.associations": {
         "*.css": "tailwindcss"
     },
@@ -14,6 +15,6 @@
     "files.exclude": {
         ".next": true,
         ".swc": true,
-        "node_modules": true
+        "node_modules": false
     }
 }

@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./grids.module.css";
 
 export default function Grids() {

@@ -28,8 +28,8 @@ export default function EventTreeCard({ name, description }: Props) {
         >
             {/* <div className="h-24 min-w-36 w-full rounded-t-xl bg-red md:h-36 md:w-36 md:rounded-l-xl md:rounded-tr-0" /> */}
             <div className="flex flex-col justify-center gap-1 px-4 py-2 md:py-0">
-                <span className="text-base font-bold text-text-primary md:text-xl">{name}</span>
-                <span className="text-sm leading-tight text-text-secondary md:text-base">
+                <span className="text-base text-text-primary font-bold md:text-xl">{name}</span>
+                <span className="text-sm text-text-secondary leading-tight md:text-base">
                     {mapToLines(description)}
                 </span>
             </div>
@@ -40,7 +40,7 @@ export default function EventTreeCard({ name, description }: Props) {
 export const EventTreeCardFlexWrapper: FC<{ event: Event }> = ({ event }) => {
     return (
         <div className="flex flex-col gap-2">
-            <span className="text-lg font-bold text-text-primary">
+            <span className="text-lg text-text-primary font-bold">
                 {getFancyDate(event.startingDate)}
             </span>
             <EventTreeCard

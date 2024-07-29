@@ -97,8 +97,8 @@ const DetailsRow: FC<
                 )
                 : <div className="w-1" />}
             <div className="flex flex-1 flex-col gap-1">
-                <span className="font-medium leading-tight text-text-primary">{name}</span>
-                <span className="select-none text-xs leading-tight text-text-primary/50">
+                <span className="text-text-primary font-medium leading-tight">{name}</span>
+                <span className="select-none text-xs text-text-primary/50 leading-tight">
                     {role}
                 </span>
             </div>
@@ -159,7 +159,7 @@ const UnderlingList: FC<{ underlings: Pick<Member, "name" | "imageURL">[]; to: s
     return (
         <>
             <div className="my-2 h-0 b-t-2 b-t-border-separator/35" />
-            <span className="pb-1 font-bold leading-tight text-text-primary/50">
+            <span className="pb-1 text-text-primary/50 font-bold leading-tight">
                 People Who Reports To {to}
             </span>
             <div className="flex gap-4">

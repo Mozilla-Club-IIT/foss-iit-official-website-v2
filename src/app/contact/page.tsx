@@ -22,7 +22,7 @@ export default function Contact() {
 const Hero: FC = () => {
     return (
         <div className="flex flex-col justify-center gap-2 md:gap-0">
-            <h1 className="mt-8 text-3xl leading-tight uppercase text-text-neutral md:text-5xl">
+            <h1 className="mt-8 text-3xl text-text-neutral leading-tight uppercase md:text-5xl">
                 Contact us
             </h1>
             <span className="mt-4 text-base font-medium font-italic md:text-lg">
