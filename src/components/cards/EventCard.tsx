@@ -15,9 +15,12 @@ export default function EventCard({ name, imageURL }: Props) {
                 quality={100}
                 src={imageURL}
                 alt={name}
+                draggable={false}
                 className="aspect-square w-full rounded-t-xl object-cover md:p-4"
             />
-            <span className="inline-flex py-4 text-center text-xl font-bold">{name}</span>
+            <span className="inline-flex px-2 py-4 text-center text-pretty text-xl font-bold">
+                {name}
+            </span>
         </div>
     );
 }

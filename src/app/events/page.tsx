@@ -51,7 +51,7 @@ const PastEvents: FC = () => {
         // NOTE(Curstantine): temp mt override, right now the event tree is a bit small.
         <div id="pastevents" className="mb-24 mt-32 gap-4 container-content-block">
             <h1 className="text-style-heading">Past Events</h1>
-            <div className="grid grid-cols-1 justify-items-center gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:justify-items-start">
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] justify-items-center gap-4 2xl:grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] md:justify-items-start">
                 {PAST_EVENTS.map((event) => {
                     return (
                         <EventCard key={event.name} name={event.name} imageURL={event.imageURL} />
