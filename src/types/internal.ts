@@ -25,13 +25,14 @@ export type ExternalLink = "facebook" | "instagram" | "linkedin" | "github" | "t
 export type Event = {
     name: string;
     description: string[];
-    startingDate: Date;
+    startingDate: Date | string;
     imageURL: string;
 };
 
 export type Project = {
     name: string;
     imageURL: string;
-    date: Date;
+    /** A valid {@link Date}. A {@link String} will always mark this project as "coming soon" */
+    date: Date | string;
     accent: "dark" | "light";
 };

@@ -36,7 +36,7 @@ export default function ProjectCard({ name, imageURL, accent, date }: Props) {
 }
 
 const DetailsRow: FC<Pick<Project, "date" | "accent" | "name">> = ({ name, accent, date }) => {
-    const isUpcoming = useMemo(() => date > new Date(), [date]);
+    const isUpcoming = useMemo(() => typeof date === "string" || date > new Date(), [date]);
 
     return (
         <div

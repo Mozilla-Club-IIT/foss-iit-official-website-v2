@@ -138,8 +138,8 @@ const PEOPLE = {
         name: "Rachala Ovin",
         role: "Developer",
         imageURL: "/portraits/rachala.webp",
-        externalLinks: { linkedin: "https://lk.linkedin.com/in/curstantine" },
-        bio: ["SvelteKit in prod when?"],
+        externalLinks: { linkedin: "https://linkedin.com/in/curstantine" },
+        bio: ["Bird-brained SWE, designer"],
     },
     "chamidu": {
         name: "Chamidu Amarasinghe",
@@ -237,7 +237,7 @@ const ALL_EVENTS = {
         description: [
             "WIF's podcast series spotlights women in tech, celebrating their achievements, experiences, and personalities.",
         ],
-        startingDate: new Date("2023-10-18"),
+        startingDate: "2024-xx-xx",
     },
     SUMMER_BOOTCAMP_2023: {
         name: "Summer Bootcamp 2023",
@@ -268,39 +268,17 @@ const ALL_EVENTS = {
 export const PAST_EVENTS: Event[] = [
     ALL_EVENTS.FLUTTER_BOOTCAMP_2,
     ALL_EVENTS.GIT_101,
-    ALL_EVENTS.HER_EXE,
     ALL_EVENTS.SUMMER_BOOTCAMP_2023,
     ALL_EVENTS.OPENHACK_2,
     ALL_EVENTS.FLUTTER_BOOTCAMP_1,
 ];
 
 export const EVENT_TIMELINE: Event[] = [
-    ALL_EVENTS.SUMMER_BOOTCAMP_2023,
     ALL_EVENTS.HER_EXE,
-    ALL_EVENTS.GIT_101,
-    ALL_EVENTS.FLUTTER_BOOTCAMP_2,
-    ALL_EVENTS.OPENHACK_3,
+    // ALL_EVENTS.OPENHACK_3,
 ];
 
 export const PROJECTS: Project[] = [
-    {
-        accent: "light",
-        name: ALL_EVENTS.OPENHACK_3.name,
-        imageURL: ALL_EVENTS.OPENHACK_3.imageURL,
-        date: ALL_EVENTS.OPENHACK_3.startingDate,
-    },
-    {
-        name: ALL_EVENTS.GIT_101.name,
-        accent: "dark",
-        imageURL: ALL_EVENTS.GIT_101.imageURL,
-        date: ALL_EVENTS.GIT_101.startingDate,
-    },
-    {
-        accent: "dark",
-        name: ALL_EVENTS.SUMMER_BOOTCAMP_2023.name,
-        imageURL: ALL_EVENTS.SUMMER_BOOTCAMP_2023.imageURL,
-        date: ALL_EVENTS.SUMMER_BOOTCAMP_2023.startingDate,
-    },
     {
         accent: "dark",
         name: ALL_EVENTS.HER_EXE.name,
