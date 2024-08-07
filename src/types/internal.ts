@@ -1,9 +1,11 @@
+import { StaticImageData } from "next/image";
+
 export type MemberUnion = Member | MemberGroup;
 
 export type Member = {
     name: string;
     role: string;
-    imageURL: string;
+    imageURL: StaticImageData | string | null;
     bio: string[];
     externalLinks: Partial<Record<ExternalLink, string>>;
     underlings?: Pick<Member, "name" | "imageURL">[];

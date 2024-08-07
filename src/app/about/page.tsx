@@ -62,8 +62,8 @@ const MemberTree: FC = () => {
                         member={isMember ? (x as Member) : undefined}
                         group={isMember ? undefined : (x as MemberGroup)}
                         className={clsx(
-                            "col-span-full my-2 md:col-span-2 md:my-0",
-                            i === 0 ? "md:col-start-2" : "",
+                            "col-span-full my-2 lg:col-span-2 lg:my-0",
+                            i === 0 ? "lg:col-start-2" : "",
                         )}
                     />
                 );
@@ -81,8 +81,8 @@ const MemberTree: FC = () => {
                         member={isMember ? (member as Member) : undefined}
                         group={isMember ? undefined : (member as MemberGroup)}
                         className={clsx(
-                            "col-span-full my-2 md:col-span-2 md:my-0",
-                            i === 0 ? "md:col-start-1" : "",
+                            "col-span-full my-2 xl:col-span-2 xl:my-0",
+                            i === 0 ? "xl:col-start-1" : "",
                         )}
                     />
                 );

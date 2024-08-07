@@ -104,7 +104,7 @@ const BoardOfOfficials: FC = () => (
         className="my-24 max-w-full flex flex-col gap-8 text-text-secondary container-content-prose"
     >
         <h1 className="text-text-primary leading-tight uppercase">Board Of Officials</h1>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] justify-center gap-6">
+        <div className="grid grid-cols-[repeat(auto-fill,16rem)] justify-center gap-6">
             {WIF_BOARD.map((member) => <WIFMemberCard key={member.name} {...member} />)}
         </div>
     </div>

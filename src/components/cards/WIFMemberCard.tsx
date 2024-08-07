@@ -1,7 +1,6 @@
-import Image from "next/image";
-
 import type { ExternalLink, Member } from "@/types/internal";
 
+import Avatar from "@/components/Avatar";
 import SocialLink from "@/components/buttons/SocialLink";
 
 type Props = Member & {
@@ -12,12 +11,7 @@ export default function WIFMemberCard({ name, imageURL, externalLinks = {} }: Pr
     return (
         <div className="flex flex-col items-center justify-between overflow-hidden rounded-6 bg-[#9B9B9B]/22">
             <div className="relative h-64 w-full">
-                <Image
-                    src={imageURL}
-                    alt={`${name} picture`}
-                    layout="fill"
-                    className="bg-center object-cover"
-                />
+                <Avatar name={name} imageURL={imageURL} size="fill" />
             </div>
 
             <p className="mb-0 mt-3 text-center text-xl font-bold">{name}</p>

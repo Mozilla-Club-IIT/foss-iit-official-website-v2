@@ -1,9 +1,31 @@
 import type { Event, Member, MemberUnion, Project } from "@/types/internal";
 
+import AfeefPortrait from "@/assets/portraits/afeef.jpg";
+import AniqaPortrait from "@/assets/portraits/aniqa.jpg";
+import AyyoobPortrait from "@/assets/portraits/ayyoob.jpg";
+import HeshanPortrait from "@/assets/portraits/heshan.jpg";
+import LasanPortrait from "@/assets/portraits/lasan.png";
+import NadulPortrait from "@/assets/portraits/nadul.jpg";
+import NisharaPortrait from "@/assets/portraits/nishara.png";
+import RachalaPortrait from "@/assets/portraits/rachala.jpg";
+import SavindiPortrait from "@/assets/portraits/savindi.jpg";
+import StefaniaPortrait from "@/assets/portraits/stefania.jpeg";
+
+import RavinduPortrait from "@/assets/portraits/Old/ravindu.webp";
+
 const PEOPLE = {
+    "heshan": {
+        name: "Heshan Theekshana",
+        role: "President",
+        imageURL: HeshanPortrait,
+        bio: [],
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/heshan-wanigasinghe-65a930263/",
+        },
+    },
     "stefania": {
         name: "Stefania Hapuarachchi",
-        imageURL: "/portraits/Stef.webp",
+        imageURL: StefaniaPortrait,
         role: "Vice President",
         bio: [],
         externalLinks: {
@@ -11,64 +33,153 @@ const PEOPLE = {
             instagram: "https://instagram.com/_____shavini_____?igshid=MWZjMTM2ODFkZg==",
         },
     },
-    "nadul": {
-        name: "Nadul Jayasundera",
-        imageURL: "/portraits/Nadul.webp",
-        role: "Director of Events",
+    "lasan": {
+        name: "Lasan Ranatunge",
+        role: "Secretary",
+        imageURL: LasanPortrait,
         bio: [],
         externalLinks: {
+            linkedin: "https://www.linkedin.com/in/lasanranatunge/",
+        },
+    },
+    "chathula": {
+        name: "Chathula Chamupathi",
+        role: "Treasurer",
+        imageURL: null,
+        bio: [],
+        externalLinks: {
+            linkedin: "http://www.linkedin.com/in/chathula-chamupathi",
+            instagram: "https://www.instagram.com/chathula.aa/",
+        },
+    },
+    "nadul": {
+        name: "Nadul Jayasundera",
+        imageURL: NadulPortrait,
+        role: "Director of Events",
+        bio: ["haaaaave ya met heshan? (insta above)"],
+        externalLinks: {
             linkedin: "https://www.linkedin.com/in/nadul-jayasundera-616021257/",
-            instagram: "https://instagram.com/nadul.j?igshid=MWZjMTM2ODFkZg==",
+            instagram: "https://www.instagram.com/nadul.j/",
+        },
+    },
+    "ayyoob": {
+        name: "Ayyoob Ajward",
+        imageURL: AyyoobPortrait,
+        role: "Director of PR & Media",
+        bio: [],
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/ayyoob-ajward/",
+            instagram: "https://www.instagram.com/millionmacck/",
+        },
+    },
+    "ashen": {
+        name: "Ashen Himeshana",
+        role: "Director of PR & Media",
+        imageURL: null,
+        bio: [],
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/ashen-himeshana/",
+            instagram: "https://www.instagram.com/4izen_x/",
         },
     },
     "rachala": {
         name: "Rachala Ovin",
         role: "Director of IT",
-        imageURL: "/portraits/rachala.webp",
+        imageURL: RachalaPortrait,
         externalLinks: {
             linkedin: "https://linkedin.com/in/curstantine",
             github: "https://github.com/Curstantine",
         },
-        bio: ["Bird-brained SWE, designer"],
+        bio: ["Generic software engineer"],
+    },
+    "aniqa": {
+        name: "Aniqa Razick",
+        role: "Director Membership & Club Growth",
+        imageURL: AniqaPortrait,
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/aniqar/",
+        },
+        bio: [],
     },
     "chamidu": {
         name: "Chamidu Amarasinghe",
         role: "Director of Community Engagement",
-        imageURL: "/portraits/chamidu.jpg",
-        externalLinks: { linkedin: "https://www.linkedin.com/in/chamidu-amarasinghe-87a83b1b0/" },
+        imageURL: null,
+        externalLinks: { linkedin: "https://www.linkedin.com/in/chamidu-amarasinghe" },
         bio: ["Software Engineer", "UI/UX Designer"],
     },
-
-    // Ex
-    "sahan": {
-        name: "Sahan Dissanayake",
-        role: "President",
-        imageURL: "/portraits/Sahan.jpg",
-        bio: [
-            "Undergraduate trainee - Software Engineering @ IFS R&D ",
-            "Software engineering undergraduate  @ IIT",
-        ],
+    "dilmi": {
+        name: "Dilmi Fernando",
+        role: "Editor",
+        imageURL: null,
         externalLinks: {
-            linkedin: "https://www.linkedin.com/in/sahan-dissanayake-82291516a/",
-            instagram: "https://instagram.com/sahandissanayakeee?igshid=MWZjMTM2ODFkZg==",
+            linkedin: "https://www.linkedin.com/in/dilmi-fernando-078a99251",
+            instagram: "https://www.instagram.com/dilmi.v/",
         },
+        bio: [],
     },
+
+    "tihara": {
+        name: "Tihara Egodage",
+        role: "Chairperson",
+        imageURL: null,
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/tihara-egodage-238596256/",
+            instagram: "https://www.instagram.com/tihara.18/",
+        },
+        bio: [],
+    },
+    "savindi": {
+        name: "Savindi Silva",
+        role: "Vice Chairperson",
+        imageURL: SavindiPortrait,
+        externalLinks: {
+            linkedin: "http://www.linkedin.com/in/savindi-silva",
+            instagram: "https://www.instagram.com/savindayy?igsh=MTYybnpxMmhjeXZvaw==",
+        },
+        bio: [],
+    },
+    "nishara": {
+        name: "Nishara Fernando",
+        role: "Secretary",
+        imageURL: NisharaPortrait,
+        externalLinks: {
+            linkedin: "http://www.linkedin.com/in/nishara-fernando-526921265",
+            instagram: "https://www.instagram.com/nishara.christine/",
+        },
+        bio: [],
+    },
+
+    "afeef": {
+        name: "Afeef Razick",
+        role: "Developer",
+        imageURL: AfeefPortrait,
+        externalLinks: { linkedin: "https://www.linkedin.com/in/afeef-razick/" },
+        bio: ["Jiyuu 🕊️"],
+    },
+    // Ex
+    // "sahan": {
+    //     name: "Sahan Dissanayake",
+    //     role: "President",
+    //     imageURL: "/portraits/Sahan.jpg",
+    //     bio: [
+    //         "Undergraduate trainee - Software Engineering @ IFS R&D ",
+    //         "Software engineering undergraduate  @ IIT",
+    //     ],
+    //     externalLinks: {
+    //         linkedin: "https://www.linkedin.com/in/sahan-dissanayake-82291516a/",
+    //         instagram: "https://instagram.com/sahandissanayakeee?igshid=MWZjMTM2ODFkZg==",
+    //     },
+    // },
     "ravindu": {
         name: "Ravindu Senarathna",
         role: "Ex. Director of PR & Media",
-        imageURL: "/portraits/ravindu.webp",
+        imageURL: RavinduPortrait,
         bio: ["A person"],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/ravindusenrathna",
             instagram: "https://instagram.com/mrrevengerx?igshid=MWZjMTM2ODFkZg==",
         },
-    },
-    "afeef": {
-        name: "Afeef Razick",
-        role: "Developer",
-        imageURL: "/portraits/afeef.jpg",
-        externalLinks: { linkedin: "https://www.linkedin.com/in/afeef-razick/" },
-        bio: ["Jiyuu 🕊️"],
     },
     // "sachith": {
     //     name: "Sachith Wickramasekara",
@@ -159,13 +270,17 @@ const PEOPLE = {
 } satisfies Record<string, Member>;
 
 export const MEMBER_BOARD: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
-    0: PEOPLE.sahan,
+    0: PEOPLE.heshan,
     1: PEOPLE.stefania,
     2: [
+        PEOPLE.lasan,
+        PEOPLE.chathula,
         PEOPLE.nadul,
     ],
     3: [
+        { name: "Media Directors", members: [PEOPLE.ayyoob, PEOPLE.ashen] },
         PEOPLE.rachala,
+        PEOPLE.aniqa,
         PEOPLE.chamidu,
     ],
 };
@@ -177,7 +292,11 @@ export const DEVELOPERS: Member[] = [
     PEOPLE.ravindu,
 ];
 
-export const WIF_BOARD: Member[] = [];
+export const WIF_BOARD: Member[] = [
+    PEOPLE.tihara,
+    PEOPLE.savindi,
+    PEOPLE.nishara,
+];
 
 const ALL_EVENTS = {
     OPENHACK_3: {
