@@ -4,12 +4,12 @@ import AfeefPortrait from "@/assets/portraits/afeef.jpg";
 import AniqaPortrait from "@/assets/portraits/aniqa.jpg";
 import AyyoobPortrait from "@/assets/portraits/ayyoob.jpg";
 import HeshanPortrait from "@/assets/portraits/heshan.jpg";
-import LasanPortrait from "@/assets/portraits/lasan.png";
+import LasanPortrait from "@/assets/portraits/lasan.jpg";
 import NadulPortrait from "@/assets/portraits/nadul.jpg";
 import NisharaPortrait from "@/assets/portraits/nishara.png";
 import RachalaPortrait from "@/assets/portraits/rachala.jpg";
 import SavindiPortrait from "@/assets/portraits/savindi.jpg";
-import StefaniaPortrait from "@/assets/portraits/stefania.jpeg";
+import StefaniaPortrait from "@/assets/portraits/stefania.jpg";
 
 import RavinduPortrait from "@/assets/portraits/Old/ravindu.webp";
 
