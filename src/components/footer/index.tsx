@@ -57,13 +57,15 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="h-10 flex items-center justify-center bg-bg-dark text-center text-sm font-medium uppercase md:text-base">
-                <span className="text-center">
-                    Copyright © 2023 | Meet the{" "}
-                    <Link href="/devs" className="text-accent-light">
+            <div className="h-10 flex items-center justify-center gap-2 bg-bg-dark text-center text-sm font-medium uppercase md:text-base">
+                <span>Copyright © 2024</span>
+                <span aria-hidden>|</span>
+                <Link href="/devs">
+                    Meet the{"  "}
+                    <span className="text-accent-light font-bold">
                         devs
-                    </Link>
-                </span>
+                    </span>
+                </Link>
             </div>
         </footer>
     );

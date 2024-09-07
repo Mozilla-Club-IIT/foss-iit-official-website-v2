@@ -9,6 +9,8 @@ import MemberCard from "@/components/cards/MemberCard";
 import TechnologyCard from "@/components/cards/TechnologyCard";
 import HeroLayout from "@/components/hero/HeroLayout";
 
+import SourceCodeImage from "@/assets/decorations/code.png";
+
 export default function Devs() {
     return (
         <>
@@ -40,10 +42,10 @@ const Hero: FC = () => {
                 <Image
                     width={510}
                     height={768}
-                    src={"/opensource-code.png"}
+                    src={SourceCodeImage}
                     alt="Open Source"
-                    className="!h-full"
-                    style={{ objectFit: "contain" }}
+                    className="object-contain !h-full"
+                    aria-hidden
                 />
             </div>
         </div>

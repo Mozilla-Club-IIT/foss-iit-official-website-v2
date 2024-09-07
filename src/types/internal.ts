@@ -1,9 +1,11 @@
+import { StaticImageData } from "next/image";
+
 export type MemberUnion = Member | MemberGroup;
 
 export type Member = {
     name: string;
     role: string;
-    imageURL: string;
+    imageURL: StaticImageData | string | null;
     bio: string[];
     externalLinks: Partial<Record<ExternalLink, string>>;
     underlings?: Pick<Member, "name" | "imageURL">[];
@@ -25,13 +27,14 @@ export type ExternalLink = "facebook" | "instagram" | "linkedin" | "github" | "t
 export type Event = {
     name: string;
     description: string[];
-    startingDate: Date;
+    startingDate: Date | string;
     imageURL: string;
 };
 
 export type Project = {
     name: string;
     imageURL: string;
-    date: Date;
+    /** A valid {@link Date}. A {@link String} will always mark this project as "coming soon" */
+    date: Date | string;
     accent: "dark" | "light";
 };

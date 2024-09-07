@@ -1,12 +1,13 @@
 "use client";
 
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { FC, useEffect, useRef, useState } from "react";
 
 import type { ExternalLink, Member, MemberGroup } from "@/types/internal";
 import cn from "@/utils/cn";
 import { mapToLines } from "@/utils/react/shared";
 
+import Avatar from "@/components/Avatar";
 import SocialLink from "@/components/buttons/SocialLink";
 
 type Props = {
@@ -74,9 +75,7 @@ export default function MemberCard({ member, group, className }: Props) {
 }
 
 const DetailsRow: FC<
-    Pick<Member, "name"> & {
-        role?: string;
-        imageURL?: string;
+    Pick<Member, "name"> & Partial<Pick<Member, "role" | "imageURL">> & {
         trailing?: {
             active: boolean;
             onPress: () => void;
@@ -85,17 +84,9 @@ const DetailsRow: FC<
 > = ({ name, role, imageURL, trailing: { active, onPress } = {} }) => {
     return (
         <div className="h-22 min-h-22 flex items-center gap-3" onClick={onPress}>
-            {imageURL !== undefined
-                ? (
-                    <Image
-                        src={imageURL}
-                        height={256}
-                        width={256}
-                        alt={`${name}'s profile picture`}
-                        className="h-16 min-w-16 w-16 rounded-full object-cover"
-                    />
-                )
-                : <div className="w-1" />}
+            {imageURL === undefined
+                ? <div className="w-1" />
+                : <Avatar name={name} imageURL={imageURL} size="16" />}
             <div className="flex flex-1 flex-col gap-1">
                 <span className="text-text-primary font-medium leading-tight">{name}</span>
                 <span className="select-none text-xs text-text-primary/50 leading-tight">
@@ -164,14 +155,10 @@ const UnderlingList: FC<{ underlings: Pick<Member, "name" | "imageURL">[]; to: s
             </span>
             <div className="flex gap-4">
                 {underlings.map((x) => (
-                    <Image
+                    <Avatar
                         key={x.name}
-                        alt={`${x.name}'s profile picture`}
-                        title={x.name}
-                        src={x.imageURL}
-                        height={256}
-                        width={256}
-                        className="h-8 min-w-8 w-8 rounded-full object-cover"
+                        name={x.name}
+                        imageURL={x.imageURL}
                     />
                 ))}
             </div>
