@@ -13,7 +13,7 @@ import Background from "@/components/background";
 export const metadata: Metadata = {
     title: "The Mozilla Campus Club of IIT",
     description: "Contribute, Inspire and Innovate",
-    metadataBase: process.env.NEXT_PUBLIC_APP_URL !== undefined ? new URL(process.env.NEXT_PUBLIC_APP_URL) : undefined,
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL),
 };
 
 export const viewport: Viewport = {
