@@ -2,7 +2,7 @@ import type { Event, Member, MemberUnion, Project } from "@/types/internal";
 
 import AfeefPortrait from "@/assets/portraits/afeef.jpg";
 import AniqaPortrait from "@/assets/portraits/aniqa.jpg";
-
+import AshenPortrait from "@/assets/portraits/ashen.jpg";
 import ChamiduPortrait from "@/assets/portraits/chamidu.jpg";
 import ChathulaPortrait from "@/assets/portraits/chathula.jpg";
 import DilmiPortrait from "@/assets/portraits/dilmi.jpg";
@@ -50,7 +50,7 @@ const PEOPLE = {
     "ashen": {
         name: "Ashen Himeshana",
         role: "Director of PR & Media",
-        imageURL: null,
+        imageURL: AshenPortrait,
         bio: [],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/ashen-himeshana/",
