@@ -40,7 +40,7 @@ const PEOPLE = {
         name: "Nadul Jayasundera",
         imageURL: NadulPortrait,
         role: "Director of Events",
-        bio: ["haaaaave ya met heshan? (insta above)"],
+        bio: ["Fullstack Developer"],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/nadul-jayasundera-616021257/",
             instagram: "https://www.instagram.com/nadul.j/",
