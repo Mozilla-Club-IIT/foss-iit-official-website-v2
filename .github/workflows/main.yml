@@ -1,0 +1,17 @@
+name: Mirroring
+
+on: [push, delete]
+
+jobs:
+  to_foss_iit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url:
+            git@github.com:FossIIT/foss-iit-website-prod.git
+          ssh_private_key:
+            ${{ secrets.MIRROR_SSH_SECRET_KEY }}
