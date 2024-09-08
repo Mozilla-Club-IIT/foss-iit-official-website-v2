@@ -30,7 +30,7 @@ const Hero: FC = () => {
 
 const TreeSpacer: FC<{ className?: string }> = ({ className }) => {
     return (
-        <div className={cn("col-span-full h-48 flex items-center justify-center py-8", className)}>
+        <div className={cn("col-span-full h-48 flex items-center justify-center py-4", className)}>
             <div className="h-full w-[2px] rounded-2xl bg-border-separator/49" />
         </div>
     );
@@ -46,7 +46,7 @@ const FlexibleMemberCard: FC<{ member: Member }> = ({ member }) => {
 
 const MemberTree: FC = () => {
     return (
-        <div className="grid grid-cols-8 mb-36 mt-24 justify-items-center md:gap-x-6">
+        <div className="grid grid-cols-8 mb-36 mt-24 justify-items-center gap-y-4 md:gap-x-6">
             <FlexibleMemberCard member={MEMBER_BOARD[0] as Member} />
             <TreeSpacer />
             <FlexibleMemberCard member={MEMBER_BOARD[1] as Member} />
@@ -62,8 +62,8 @@ const MemberTree: FC = () => {
                         member={isMember ? (x as Member) : undefined}
                         group={isMember ? undefined : (x as MemberGroup)}
                         className={clsx(
-                            "col-span-full my-2 lg:col-span-2 lg:my-0",
-                            i === 0 ? "lg:col-start-2" : "",
+                            "col-span-full xl:col-span-2",
+                            i === 0 ? "xl:col-start-2" : "",
                         )}
                     />
                 );
@@ -81,7 +81,7 @@ const MemberTree: FC = () => {
                         member={isMember ? (member as Member) : undefined}
                         group={isMember ? undefined : (member as MemberGroup)}
                         className={clsx(
-                            "col-span-full my-2 xl:col-span-2 xl:my-0",
+                            "col-span-full xl:col-span-2",
                             i === 0 ? "xl:col-start-1" : "",
                         )}
                     />

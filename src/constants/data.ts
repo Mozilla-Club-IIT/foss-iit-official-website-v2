@@ -2,9 +2,10 @@ import type { Event, Member, MemberUnion, Project } from "@/types/internal";
 
 import AfeefPortrait from "@/assets/portraits/afeef.jpg";
 import AniqaPortrait from "@/assets/portraits/aniqa.jpg";
-import AyyoobPortrait from "@/assets/portraits/ayyoob.jpg";
-import HeshanPortrait from "@/assets/portraits/heshan.jpg";
-import LasanPortrait from "@/assets/portraits/lasan.jpg";
+
+import ChamiduPortrait from "@/assets/portraits/chamidu.jpg";
+import ChathulaPortrait from "@/assets/portraits/chathula.jpg";
+import DilmiPortrait from "@/assets/portraits/dilmi.jpg";
 import NadulPortrait from "@/assets/portraits/nadul.jpg";
 import NisharaPortrait from "@/assets/portraits/nishara.png";
 import RachalaPortrait from "@/assets/portraits/rachala.jpg";
@@ -14,38 +15,20 @@ import StefaniaPortrait from "@/assets/portraits/stefania.jpg";
 import RavinduPortrait from "@/assets/portraits/Old/ravindu.webp";
 
 const PEOPLE = {
-    "heshan": {
-        name: "Heshan Theekshana",
-        role: "President",
-        imageURL: HeshanPortrait,
-        bio: [],
-        externalLinks: {
-            linkedin: "https://www.linkedin.com/in/heshan-wanigasinghe-65a930263/",
-        },
-    },
     "stefania": {
         name: "Stefania Hapuarachchi",
         imageURL: StefaniaPortrait,
-        role: "Vice President",
+        role: "Secretary",
         bio: [],
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/stefania-hapuarachchi/",
             instagram: "https://instagram.com/_____shavini_____?igshid=MWZjMTM2ODFkZg==",
         },
     },
-    "lasan": {
-        name: "Lasan Ranatunge",
-        role: "Secretary",
-        imageURL: LasanPortrait,
-        bio: [],
-        externalLinks: {
-            linkedin: "https://www.linkedin.com/in/lasanranatunge/",
-        },
-    },
     "chathula": {
         name: "Chathula Chamupathi",
-        role: "Treasurer",
-        imageURL: null,
+        role: "President",
+        imageURL: ChathulaPortrait,
         bio: [],
         externalLinks: {
             linkedin: "http://www.linkedin.com/in/chathula-chamupathi",
@@ -62,16 +45,7 @@ const PEOPLE = {
             instagram: "https://www.instagram.com/nadul.j/",
         },
     },
-    "ayyoob": {
-        name: "Ayyoob Ajward",
-        imageURL: AyyoobPortrait,
-        role: "Director of PR & Media",
-        bio: [],
-        externalLinks: {
-            linkedin: "https://www.linkedin.com/in/ayyoob-ajward/",
-            instagram: "https://www.instagram.com/millionmacck/",
-        },
-    },
+
     "ashen": {
         name: "Ashen Himeshana",
         role: "Director of PR & Media",
@@ -104,14 +78,14 @@ const PEOPLE = {
     "chamidu": {
         name: "Chamidu Amarasinghe",
         role: "Director of Community Engagement",
-        imageURL: null,
+        imageURL: ChamiduPortrait,
         externalLinks: { linkedin: "https://www.linkedin.com/in/chamidu-amarasinghe" },
         bio: ["Software Engineer", "UI/UX Designer"],
     },
     "dilmi": {
         name: "Dilmi Fernando",
         role: "Editor",
-        imageURL: null,
+        imageURL: DilmiPortrait,
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/dilmi-fernando-078a99251",
             instagram: "https://www.instagram.com/dilmi.v/",
@@ -157,6 +131,36 @@ const PEOPLE = {
         externalLinks: { linkedin: "https://www.linkedin.com/in/afeef-razick/" },
         bio: ["Jiyuu 🕊️"],
     },
+
+    // "heshan": {
+    //     name: "Heshan Theekshana",
+    //     role: "President",
+    //     imageURL: HeshanPortrait,
+    //     bio: [],
+    //     externalLinks: {
+    //         linkedin: "https://www.linkedin.com/in/heshan-wanigasinghe-65a930263/",
+    //     },
+    // },
+    // "ayyoob": {
+    //     name: "Ayyoob Ajward",
+    //     imageURL: AyyoobPortrait,
+    //     role: "Director of PR & Media",
+    //     bio: [],
+    //     externalLinks: {
+    //         linkedin: "https://www.linkedin.com/in/ayyoob-ajward/",
+    //         instagram: "https://www.instagram.com/millionmacck/",
+    //     },
+    // },
+    // "lasan": {
+    //     name: "Lasan Ranatunge",
+    //     role: "Secretary",
+    //     imageURL: LasanPortrait,
+    //     bio: [],
+    //     externalLinks: {
+    //         linkedin: "https://www.linkedin.com/in/lasanranatunge/",
+    //     },
+    // },
+
     // Ex
     // "sahan": {
     //     name: "Sahan Dissanayake",
@@ -270,18 +274,25 @@ const PEOPLE = {
 } satisfies Record<string, Member>;
 
 export const MEMBER_BOARD: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = {
-    0: PEOPLE.heshan,
-    1: PEOPLE.stefania,
+    0: PEOPLE.chathula,
+    1: {
+        name: "N/A",
+        bio: [],
+        externalLinks: {},
+        imageURL: null,
+        role: "Vice President",
+    },
     2: [
-        PEOPLE.lasan,
-        PEOPLE.chathula,
+        PEOPLE.stefania,
+        { name: "N/A", bio: [], externalLinks: {}, imageURL: null, role: "Treasurer" },
         PEOPLE.nadul,
     ],
     3: [
-        { name: "Media Directors", members: [PEOPLE.ayyoob, PEOPLE.ashen] },
+        PEOPLE.ashen,
         PEOPLE.rachala,
         PEOPLE.aniqa,
         PEOPLE.chamidu,
+        PEOPLE.dilmi,
     ],
 };
 
@@ -303,7 +314,7 @@ const ALL_EVENTS = {
         name: "OpenHack 3.0",
         imageURL: "/projects/openhack3.png",
         description: ["Brace yourselves, something incredible is on the horizon..."],
-        startingDate: new Date("2023-12-30"),
+        startingDate: new Date("2024-xx-xx"),
     },
     FLUTTER_BOOTCAMP_2: {
         name: "Flutter Bootcamp 2.0",
