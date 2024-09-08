@@ -1,16 +1,17 @@
 import "./globals.css";
 
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 import { poppins } from "@/constants/fonts";
 
-import Background from "@/components/background";
-import Footer from "@/components/footer";
 import Nav from "@/components/nav";
+import Footer from "@/components/footer";
+import Background from "@/components/background";
 
 export const metadata: Metadata = {
     title: "The Mozilla Campus Club of IIT",
-    description: "",
+    description: "Contribute, Inspire and Innovate",
 };
 
 export const viewport: Viewport = {
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </main>
                 <Footer />
                 <Background />
+                <Analytics />
             </body>
         </html>
     );
