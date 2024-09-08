@@ -385,4 +385,10 @@ export const PROJECTS: Project[] = [
         imageURL: ALL_EVENTS.HER_EXE.imageURL,
         date: ALL_EVENTS.HER_EXE.startingDate,
     },
+    {
+        accent: "light",
+        name: ALL_EVENTS.OPENHACK_3.name,
+        imageURL: ALL_EVENTS.OPENHACK_3.imageURL,
+        date: ALL_EVENTS.OPENHACK_3.startingDate,
+    },
 ];
