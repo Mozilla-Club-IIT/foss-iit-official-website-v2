@@ -7,14 +7,15 @@ type Props = Member & {
     className?: string;
 };
 
-export default function WIFMemberCard({ name, imageURL, externalLinks = {} }: Props) {
+export default function WIFMemberCard({ name, role, imageURL, externalLinks = {} }: Props) {
     return (
         <div className="flex flex-col items-center justify-between overflow-hidden rounded-6 bg-[#9B9B9B]/22">
             <div className="relative h-64 w-full">
                 <Avatar name={name} imageURL={imageURL} size="fill" />
             </div>
 
-            <p className="mb-0 mt-3 text-center text-xl font-bold">{name}</p>
+            <span className="mb-0 mt-3 text-center text-xl font-bold">{name}</span>
+            <span className="text-sm text-text-secondary leading-tight">{role}</span>
 
             <div className="my-3 flex gap-2">
                 {Object.entries(externalLinks).map(([key, value]) => (

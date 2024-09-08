@@ -11,6 +11,7 @@ import NisharaPortrait from "@/assets/portraits/nishara.png";
 import RachalaPortrait from "@/assets/portraits/rachala.jpg";
 import SavindiPortrait from "@/assets/portraits/savindi.jpg";
 import StefaniaPortrait from "@/assets/portraits/stefania.jpg";
+import TiharaPortrait from "@/assets/portraits/tihara.jpg";
 
 import RavinduPortrait from "@/assets/portraits/Old/ravindu.webp";
 
@@ -96,7 +97,7 @@ const PEOPLE = {
     "tihara": {
         name: "Tihara Egodage",
         role: "Chairperson",
-        imageURL: null,
+        imageURL: TiharaPortrait,
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/tihara-egodage-238596256/",
             instagram: "https://www.instagram.com/tihara.18/",
@@ -314,7 +315,7 @@ const ALL_EVENTS = {
         name: "OpenHack 3.0",
         imageURL: "/projects/openhack3.png",
         description: ["Brace yourselves, something incredible is on the horizon..."],
-        startingDate: new Date("2024-xx-xx"),
+        startingDate: "2024-xx-xx",
     },
     FLUTTER_BOOTCAMP_2: {
         name: "Flutter Bootcamp 2.0",
@@ -374,6 +375,7 @@ export const PAST_EVENTS: Event[] = [
 
 export const EVENT_TIMELINE: Event[] = [
     ALL_EVENTS.HER_EXE,
+    ALL_EVENTS.OPENHACK_3,
 ];
 
 export const PROJECTS: Project[] = [
