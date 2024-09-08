@@ -49,8 +49,8 @@ const MemberTree: FC = () => {
         <div className="grid grid-cols-8 mb-36 mt-24 justify-items-center gap-y-4 md:gap-x-6">
             <FlexibleMemberCard member={MEMBER_BOARD[0] as Member} />
             <TreeSpacer />
-            <FlexibleMemberCard member={MEMBER_BOARD[1] as Member} />
-            <TreeSpacer className="h-32" />
+            {/* <FlexibleMemberCard member={MEMBER_BOARD[1] as Member} /> */}
+            {/* <TreeSpacer className="h-32" /> */}
 
             {(MEMBER_BOARD[2] as MemberUnion[]).map((x, i) => {
                 // @ts-expect-error Check if item is a mem type or not.
