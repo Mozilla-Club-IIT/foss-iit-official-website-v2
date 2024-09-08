@@ -16,16 +16,6 @@ import TiharaPortrait from "@/assets/portraits/tihara.jpg";
 import RavinduPortrait from "@/assets/portraits/Old/ravindu.webp";
 
 const PEOPLE = {
-    "stefania": {
-        name: "Stefania Hapuarachchi",
-        imageURL: StefaniaPortrait,
-        role: "Secretary",
-        bio: [],
-        externalLinks: {
-            linkedin: "https://www.linkedin.com/in/stefania-hapuarachchi/",
-            instagram: "https://instagram.com/_____shavini_____?igshid=MWZjMTM2ODFkZg==",
-        },
-    },
     "chathula": {
         name: "Chathula Chamupathi",
         role: "President",
@@ -34,6 +24,16 @@ const PEOPLE = {
         externalLinks: {
             linkedin: "http://www.linkedin.com/in/chathula-chamupathi",
             instagram: "https://www.instagram.com/chathula.aa/",
+        },
+    },
+    "stefania": {
+        name: "Stefania Hapuarachchi",
+        imageURL: StefaniaPortrait,
+        role: "Treasurer",
+        bio: [],
+        externalLinks: {
+            linkedin: "https://www.linkedin.com/in/stefania-hapuarachchi/",
+            instagram: "https://instagram.com/_____shavini_____?igshid=MWZjMTM2ODFkZg==",
         },
     },
     "nadul": {
@@ -96,7 +96,7 @@ const PEOPLE = {
 
     "tihara": {
         name: "Tihara Egodage",
-        role: "Chairperson",
+        role: "Secretary",
         imageURL: TiharaPortrait,
         externalLinks: {
             linkedin: "https://www.linkedin.com/in/tihara-egodage-238596256/",
@@ -284,8 +284,8 @@ export const MEMBER_BOARD: Record<0 | 1 | 2 | 3, MemberUnion | MemberUnion[]> = 
         role: "Vice President",
     },
     2: [
+        PEOPLE.tihara,
         PEOPLE.stefania,
-        { name: "N/A", bio: [], externalLinks: {}, imageURL: null, role: "Treasurer" },
         PEOPLE.nadul,
     ],
     3: [
@@ -305,9 +305,10 @@ export const DEVELOPERS: Member[] = [
 ];
 
 export const WIF_BOARD: Member[] = [
-    PEOPLE.tihara,
+    { ...PEOPLE.tihara, role: "Chairperson" },
     PEOPLE.savindi,
     PEOPLE.nishara,
+    PEOPLE.nadul,
 ];
 
 const ALL_EVENTS = {
