@@ -4,9 +4,10 @@ export interface BlogFrontMatter {
     description: string;
 }
 
-export interface Blog {
+export interface BlogReference {
+    id: string;
     title: string;
-    date: string;
     description: string;
-    blogId: string;
+    date: string;
+    author: { name: string; avatar?: string };
 }
