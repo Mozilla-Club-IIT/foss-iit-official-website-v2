@@ -1,38 +1,29 @@
-import { readdir, readFile } from "node:fs/promises";
-import path, { extname, join } from "node:path";
+import { readdir } from "node:fs/promises";
+import { extname, join as joinPath } from "node:path";
 
-import matter from "gray-matter";
 import Link from "next/link";
 import type { FC } from "react";
 
-import type { Blog } from "@/types/Blog";
+import type { BlogReference } from "@/types/Blog";
 
 import HeroLayout from "@/components/hero/HeroLayout";
 
-const postsDirectory = path.join(process.cwd(), "src/assets/blogs");
+const POSTS_DIR = joinPath(process.cwd(), "src/app/blogs/(listing)/");
 
-async function getPosts(): Promise<Blog[]> {
-    const filenames = await readdir(postsDirectory);
-    const files = await Promise.all(
-        filenames
-            .filter((x) => extname(x) === ".mdx")
-            .map(async (x) => [
-                x.replace(".mdx", ""),
-                await readFile(join(postsDirectory, x), "utf-8"),
-            ]),
-    );
+type BlogMod = { default: unknown; data: Omit<BlogReference, "id"> };
 
-    return files.map(([id, content]) => {
-        const { data } = matter(content);
+async function getPosts(): Promise<BlogReference[]> {
+    const pageNames = (await readdir(POSTS_DIR))
+        .filter((x) => extname(x) === "")
+        .map(async (x) => {
+            const mod: BlogMod = await import(`@/app/blogs/(listing)/${x}/page.mdx`);
+            return { id: x, ...mod.data };
+        });
 
-        return {
-            blogId: id,
-            ...data as Omit<Blog, "blogId">,
-        };
-    });
+    return await Promise.all(pageNames);
 }
 
-export default async function Blogs() {
+export default function Blogs() {
     return (
         <>
             <Hero />
@@ -61,10 +52,10 @@ const BlogsList: FC = async () => {
     return (
         <ul className="grid grid-cols-4">
             {posts.map((blog) => (
-                <li key={blog.blogId} className="min-h-56 flex flex-col rounded-md text-pretty">
+                <li key={blog.id} className="min-h-56 flex flex-col rounded-md text-pretty">
                     <h2 className="mb-1 text-xl font-medium">{blog.title}</h2>
                     <p className="text-pretty text-sm text-text-secondary">{blog.description}</p>
-                    <Link href={`/blogs/${blog.blogId}`} className="mt-4">Read more</Link>
+                    <Link href={`/blogs/${blog.id}`} className="mt-4">Read more</Link>
                 </li>
             ))}
         </ul>

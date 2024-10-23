@@ -1,0 +1,38 @@
+import HeroLayout from "@/components/hero/HeroLayout";
+
+export const data = {
+    title: "Understanding TypeScript in Next.js",
+    description:
+        "An introduction to using TypeScript in Next.js, covering types, props, and the benefits of static typing in your applications.",
+    date: "2024-10-23",
+    author: { name: "John Doe", avatar: null },
+};
+
+export const metadata = {
+    title: "Blog - " + data.title,
+};
+
+<div
+    className="relative max-h-5xl flex items-center justify-between"
+    style={{ height: "calc(100vh - 8rem)" }}
+>
+    <HeroLayout title={data.title} subtitle={data.subtitle} />
+</div>
+
+## Why Use TypeScript with Next.js?
+
+TypeScript helps catch errors at compile time, making your Next.js projects more robust and easier to maintain. It provides static typing, which improves development speed and code quality.
+
+### Benefits of TypeScript
+
+-   **Static typing**: Detect errors early in the development process.
+-   **Improved IDE support**: Get better autocompletion and code suggestions.
+-   **Scalability**: Easier to maintain as your app grows.
+
+### Setting Up TypeScript
+
+To add TypeScript to a Next.js project, simply run:
+
+```bash
+npm install --save-dev typescript @types/react @types/node
+```
