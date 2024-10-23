@@ -43,7 +43,10 @@ export default async function Blogs() {
 
 const Hero: FC = () => {
     return (
-        <div className="max-h-xl flex items-center" style={{ height: "calc(100vh - 8rem)" }}>
+        <div
+            className="relative max-h-5xl flex items-center justify-between"
+            style={{ height: "calc(100vh - 8rem)" }}
+        >
             <HeroLayout
                 title="OUR BLOGS"
                 subtitle="Yapping"
