@@ -20,6 +20,7 @@ export default function Nav() {
                 </Link>
                 <div className="flex justify-end gap-4 text-sm text-text-neutral uppercase xs:flex-1 lg:gap-16 md:gap-12 2xl:text-lg md:text-base">
                     <NavLink href="/about" label="About" />
+                    <NavLink href="/blogs" label="Blogs" />
                     <NavLink href="/events" label="Events" />
                     <NavLink href="/wif" label="WIF" />
                 </div>
