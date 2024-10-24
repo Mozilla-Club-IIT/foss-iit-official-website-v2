@@ -1,3 +1,5 @@
+import type { StaticImageData } from "next/image";
+
 export interface BlogFrontMatter {
     title: string;
     date: string;
@@ -9,5 +11,5 @@ export interface BlogReference {
     title: string;
     description: string;
     date: string;
-    author: { name: string; avatar?: string };
+    author: { name: string; avatar?: StaticImageData };
 }
