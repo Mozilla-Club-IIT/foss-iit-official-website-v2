@@ -1,6 +1,6 @@
 # Creating a blog
 
-1. Create a the files listed below in [src/app/blogs/(listing)/](./src/app/blogs/(listing)/) followed by a sub-folder with the blog id as its name.
+1. Create a the files listed below in [src/app/blogs/_data/](.) followed by a sub-folder with the blog id as its name.
 2. Include the boilerplate below in the folder you created, and change content however you need.
 
 > [!NOTE]
@@ -19,21 +19,4 @@
    };
 
    export default data;
-   ```
-
-2. In `page.mdx`
-   ```jsx
-   import HeroLayout from "@/components/hero/HeroLayout";
-   import data from "./data";
-
-   export const metadata = {
-       title: "Blog - " + data.title,
-   };
-
-   <div
-       className="relative max-h-5xl flex items-center justify-between"
-       style={{ height: "calc(100vh - 8rem)" }}
-   >
-       <HeroLayout title={data.title} subtitle={data.subtitle} />
-   </div>;
    ```

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 import type { BlogReference } from "@/types/Blog";
@@ -24,10 +24,7 @@ export default function BlogCard(
             </span>
 
             <div className="h-6 flex items-center justify-between">
-                <div className="inline-flex items-center gap-2">
-                    {avatar && <Image src={avatar} alt="" className="size-5 rounded-full" />}
-                    <span className="text-sm">{name}</span>
-                </div>
+                <Credit name={name} avatar={avatar} />
 
                 <span className="text-xs text-text-secondary">
                     {new Date(date).toLocaleDateString(undefined, {
@@ -41,10 +38,19 @@ export default function BlogCard(
     );
 }
 
-function TagChip({ value }: { value: string }) {
+export function TagChip({ value }: { value: string }) {
     return (
         <span className="border border-[#D7D7D7]/30 rounded-md bg-[#F2F2F7]/22 px-2 py-1">
             {value}
         </span>
+    );
+}
+
+export function Credit({ name, avatar }: { name: string; avatar: StaticImageData }) {
+    return (
+        <div className="inline-flex items-center gap-2">
+            {avatar && <Image src={avatar} alt="" className="size-5 rounded-full" />}
+            <span className="text-xs sm:text-sm">{name}</span>
+        </div>
     );
 }
