@@ -16,7 +16,7 @@ export default function Blogs() {
 
 const Hero: FC = () => {
     return (
-        <div className="relative h-screen max-h-5xl flex items-center justify-between">
+        <div className="relative h-screen max-h-5xl flex items-center justify-between" style={{ height: "calc(100vh - 8rem)" }}>
             <HeroLayout
                 title="OUR BLOGS"
                 subtitle={["EXPLORE THE LATEST INSIGHTS AND TRENDS", "IN UI/UX DESIGN"]}
