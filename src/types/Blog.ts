@@ -7,4 +7,5 @@ export interface BlogReference {
     date: string;
     cover: StaticImageData;
     author: { name: string; avatar?: StaticImageData };
+    tags: string[];
 }

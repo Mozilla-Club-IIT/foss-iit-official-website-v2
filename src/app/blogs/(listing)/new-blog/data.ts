@@ -10,6 +10,7 @@ const data: Omit<BlogReference, "id"> = {
     date: "2024-10-23",
     author: { name: "Rachala Ovin", avatar: RachalaPortrait },
     cover: NewBlogCover,
+    tags: ["Testing", "Lorem Ipsum"],
 };
 
 export default data;

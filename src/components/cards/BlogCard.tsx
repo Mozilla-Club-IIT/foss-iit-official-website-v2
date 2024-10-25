@@ -1,11 +1,12 @@
 "use client";
 
-import { BlogReference } from "@/types/Blog";
 import Image from "next/image";
 import Link from "next/link";
 
+import type { BlogReference } from "@/types/Blog";
+
 export default function BlogCard(
-    { data: { id, title, date, author: { name, avatar }, cover } }: { data: BlogReference },
+    { data: { id, title, date, author: { name, avatar }, cover, tags } }: { data: BlogReference },
 ) {
     return (
         <Link
@@ -14,7 +15,11 @@ export default function BlogCard(
         >
             <Image src={cover} alt="" className="aspect-video w-full rounded-md" />
 
-            <span className="my-4 text-pretty text-text-primary font-semibold leading-tight">
+            <div className="mt-4 inline-flex flex-wrap gap-2 text-xs text-text-secondary">
+                {tags.map((x) => <TagChip key={x} value={x} />)}
+            </div>
+
+            <span className="my-4 text-pretty text-lg text-text-primary font-semibold leading-tight">
                 {title}
             </span>
 
@@ -33,5 +38,13 @@ export default function BlogCard(
                 </span>
             </div>
         </Link>
+    );
+}
+
+function TagChip({ value }: { value: string }) {
+    return (
+        <span className="border border-[#D7D7D7]/30 rounded-md bg-[#F2F2F7]/22 px-2 py-1">
+            {value}
+        </span>
     );
 }
