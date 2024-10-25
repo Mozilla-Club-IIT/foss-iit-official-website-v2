@@ -5,14 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function BlogCard(
-    { data: { id, title, date, author: { name, avatar } } }: { data: BlogReference },
+    { data: { id, title, date, author: { name, avatar }, cover } }: { data: BlogReference },
 ) {
     return (
         <Link
             href={`/blogs/${id}`}
             className="flex flex-col border border-border-separator/50 rounded-lg bg-[#9B9B9B]/22 p-3"
         >
-            <div className="aspect-video w-full rounded-md bg-black"></div>
+            <Image src={cover} alt="" className="aspect-video w-full rounded-md" />
+
             <span className="my-4 text-pretty text-text-primary font-semibold leading-tight">
                 {title}
             </span>
