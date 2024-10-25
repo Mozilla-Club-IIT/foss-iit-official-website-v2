@@ -10,14 +10,14 @@ import HeroLayout from "@/components/hero/HeroLayout";
 
 const POSTS_DIR = joinPath(process.cwd(), "src/app/blogs/(listing)/");
 
-type BlogMod = { default: unknown; data: Omit<BlogReference, "id"> };
+type BlogMod = { default: Omit<BlogReference, "id"> };
 
 async function getPosts(): Promise<BlogReference[]> {
     const pageNames = (await readdir(POSTS_DIR))
         .filter((x) => extname(x) === "")
         .map(async (x) => {
-            const mod: BlogMod = await import(`@/app/blogs/(listing)/${x}/page.mdx`);
-            return { id: x, ...mod.data };
+            const mod: BlogMod = await import(`@/app/blogs/(listing)/${x}/data.ts`);
+            return { id: x, ...mod.default };
         });
 
     return await Promise.all(pageNames);
