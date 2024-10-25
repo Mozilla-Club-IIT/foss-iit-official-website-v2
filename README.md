@@ -7,7 +7,7 @@
 
 ### Publishing Blog Content
 
-Read through [this](./src/app/blogs/(listing)/README.md) document.
+Read through [this](./src/app/blogs/_data/README.md) document.
 
 ### Keep in mind
 
