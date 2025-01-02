@@ -1,12 +1,13 @@
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 import { type FC, useMemo } from "react";
 
 import type { Project } from "@/types/internal";
 
 type Props = Project;
 
-export default function ProjectCard({ name, imageURL, accent, date }: Props) {
+export default function ProjectCard({ name, imageURL, accent, date, link }: Props) {
     return (
         <div
             className={clsx("w-full flex flex-col items-center justify-between rounded-xl", {
@@ -30,12 +31,12 @@ export default function ProjectCard({ name, imageURL, accent, date }: Props) {
                 quality={100}
                 className="aspect-square w-full rounded-t-xl object-cover"
             />
-            <DetailsRow name={name} accent={accent} date={date} />
+            <DetailsRow accent={accent} date={date} link={link} />
         </div>
     );
 }
 
-const DetailsRow: FC<Pick<Project, "date" | "accent" | "name">> = ({ name, accent, date }) => {
+const DetailsRow: FC<Pick<Project, "date" | "accent" | "link">> = ({ accent, date, link }) => {
     const isUpcoming = useMemo(() => typeof date === "string" || date > new Date(), [date]);
 
     return (
@@ -47,11 +48,12 @@ const DetailsRow: FC<Pick<Project, "date" | "accent" | "name">> = ({ name, accen
         >
             {isUpcoming && <p>Coming soon</p>}
             <div className="flex-1" />
-            <button
-                // href={`/projects/${name}`}
-                disabled
+            <Link
+                href={link?.href ?? "#"}
+                target={link?.external ? "_blank" : undefined}
+                aria-disabled={link === undefined}
                 className={clsx(
-                    "inline-flex items-center justify-center rounded-xl px-4 h-8 disabled:opacity-10",
+                    "inline-flex items-center justify-center rounded-xl px-4 h-8 aria-disabled:opacity-10 aria-disabled:pointer-events-none",
                     {
                         "bg-bg-dark text-white": accent === "light",
                         "bg-white text-bg-dark": accent === "dark",
@@ -59,7 +61,7 @@ const DetailsRow: FC<Pick<Project, "date" | "accent" | "name">> = ({ name, accen
                 )}
             >
                 More
-            </button>
+            </Link>
         </div>
     );
 };

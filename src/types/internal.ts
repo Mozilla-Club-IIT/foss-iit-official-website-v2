@@ -29,6 +29,7 @@ export type Event = {
     description: string[];
     startingDate: Date | string;
     imageURL: string;
+    externalLink?: string;
 };
 
 export type Project = {
@@ -36,5 +37,6 @@ export type Project = {
     imageURL: string;
     /** A valid {@link Date}. A {@link String} will always mark this project as "coming soon" */
     date: Date | string;
+    link?: { external: boolean; href: string };
     accent: "dark" | "light";
 };
