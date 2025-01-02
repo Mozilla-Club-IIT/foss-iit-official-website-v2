@@ -317,8 +317,8 @@ const ALL_EVENTS = {
         description: [
             "Dev.Me is a dynamic webinar series designed to empower learners with essential tech skills. Mastering design principles in Figma, diving into javascript fundamentals, unraveling data structures and algorithms, to exploring continuous integration and deployment workflows", 
         ],
-        startingDate: new Date("2025-01-04"),
-        imageURL: "",
+        startingDate: new Date("2025-01-03"),
+        imageURL: "/projects/devdotme.png",
     },
     OPENHACK_3: {
         name: "OpenHack 3.0",
