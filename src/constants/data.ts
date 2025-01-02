@@ -313,9 +313,9 @@ export const WIF_BOARD: Member[] = [
 
 const ALL_EVENTS = {
     DEV_ME: {
-        name: "dev.me",
+        name: "Dev.Me",
         description: [
-            "lorem ipsum",
+            "Dev.Me is a dynamic webinar series designed to empower learners with essential tech skills. Mastering design principles in Figma, diving into javascript fundamentals, unraveling data structures and algorithms, to exploring continuous integration and deployment workflows", 
         ],
         startingDate: new Date("2025-01-04"),
         imageURL: "",
@@ -324,7 +324,7 @@ const ALL_EVENTS = {
         name: "OpenHack 3.0",
         imageURL: "/projects/openhack3.png",
         description: ["Brace yourselves, something incredible is on the horizon..."],
-        startingDate: "2024-xx-xx",
+        startingDate: "2025-xx-xx",
     },
     FLUTTER_BOOTCAMP_2: {
         name: "Flutter Bootcamp 2.0",

@@ -1,6 +1,6 @@
 "use client";
 
-import { animated, type SpringValue, useInView } from "@react-spring/web";
+import { animated, useInView } from "@react-spring/web";
 import clsx from "clsx";
 import type { FC } from "react";
 
@@ -17,13 +17,13 @@ export default function EventTreeCard({ name, description }: Props) {
             to: { y: 0, opacity: 1 },
             config: { tension: 300 },
         }),
-        { once: true },
+        { once: true, amount: 0.5 },
     );
 
     return (
         <animated.div
             ref={ref}
-            className="h-fit w-full flex flex-col rounded-xl bg-white/10 backdrop-blur-lg md:h-36 md:flex-row"
+            className="h-fit w-full flex flex-col rounded-xl bg-white/10 backdrop-blur-lg md:min-h-36 md:flex-row md:py-4"
             style={springs}
         >
             {/* <div className="h-24 min-w-36 w-full rounded-t-xl bg-red md:h-36 md:w-36 md:rounded-l-xl md:rounded-tr-0" /> */}
