@@ -312,6 +312,14 @@ export const WIF_BOARD: Member[] = [
 ];
 
 const ALL_EVENTS = {
+    DEV_ME: {
+        name: "dev.me",
+        description: [
+            "lorem ipsum",
+        ],
+        startingDate: new Date("2025-01-04"),
+        imageURL: "",
+    },
     OPENHACK_3: {
         name: "OpenHack 3.0",
         imageURL: "/projects/openhack3.png",
@@ -338,7 +346,8 @@ const ALL_EVENTS = {
         description: [
             "WIF's podcast series spotlights women in tech, celebrating their achievements, experiences, and personalities.",
         ],
-        startingDate: "2024-xx-xx",
+        startingDate: new Date("2024-07-12"),
+        externalLink: "https://linktr.ee/her.exe",
     },
     SUMMER_BOOTCAMP_2023: {
         name: "Summer Bootcamp 2023",
@@ -364,7 +373,7 @@ const ALL_EVENTS = {
         ],
         startingDate: new Date("2022-10-29"),
     },
-};
+} as const satisfies Record<string, Event> ;
 
 export const PAST_EVENTS: Event[] = [
     ALL_EVENTS.FLUTTER_BOOTCAMP_2,
@@ -376,6 +385,7 @@ export const PAST_EVENTS: Event[] = [
 
 export const EVENT_TIMELINE: Event[] = [
     ALL_EVENTS.HER_EXE,
+    ALL_EVENTS.DEV_ME,
     ALL_EVENTS.OPENHACK_3,
 ];
 
@@ -385,6 +395,13 @@ export const PROJECTS: Project[] = [
         name: ALL_EVENTS.HER_EXE.name,
         imageURL: ALL_EVENTS.HER_EXE.imageURL,
         date: ALL_EVENTS.HER_EXE.startingDate,
+        link: { external: true, href: ALL_EVENTS.HER_EXE.externalLink },
+    },
+    {
+        accent: "dark",
+        name: ALL_EVENTS.DEV_ME.name,
+        imageURL: ALL_EVENTS.DEV_ME.imageURL,
+        date: ALL_EVENTS.DEV_ME.startingDate,
     },
     {
         accent: "light",
