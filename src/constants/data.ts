@@ -315,7 +315,7 @@ const ALL_EVENTS = {
     DEV_ME: {
         name: "Dev.Me",
         description: [
-            "Dev.Me is a dynamic webinar series designed to empower learners with essential tech skills. Mastering design principles in Figma, diving into javascript fundamentals, unraveling data structures and algorithms, to exploring continuous integration and deployment workflows", 
+            "Dev.Me is a dynamic webinar series designed to empower learners with essential tech skills. Mastering design principles in Figma, diving into javascript fundamentals, unraveling data structures and algorithms, to exploring continuous integration and deployment workflows",
         ],
         startingDate: new Date("2025-01-03"),
         imageURL: "/projects/devdotme.png",
@@ -373,7 +373,7 @@ const ALL_EVENTS = {
         ],
         startingDate: new Date("2022-10-29"),
     },
-} as const satisfies Record<string, Event> ;
+} as const satisfies Record<string, Event>;
 
 export const PAST_EVENTS: Event[] = [
     ALL_EVENTS.FLUTTER_BOOTCAMP_2,

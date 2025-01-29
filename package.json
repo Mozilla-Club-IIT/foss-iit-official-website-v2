@@ -6,7 +6,7 @@
         "dev": "next dev --turbopack",
         "build": "next build",
         "start": "next start",
-        "lint": "pnpm eslint .",
+        "lint": "next lint",
         "fmt": "dprint fmt",
         "slicemachine": "start-slicemachine"
     },
