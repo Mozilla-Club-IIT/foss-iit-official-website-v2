@@ -96,7 +96,7 @@ export default async function Page({ params: { id } }: Props) {
     const { title, tags, authors, publication_date } = page.data;
 
     return (
-        <div className="mt-16 text-sm prose lg:max-w-[75ch] lg:self-center sm:text-base">
+        <div className="mt-16 pb-8 text-sm prose lg:max-w-[75ch] lg:self-center sm:text-base">
             <section className="mb-4">
                 <div className="inline-flex flex-wrap gap-2 text-xs text-text-secondary">
                     {tags.map((x) => <TagChip key={x.label} value={x.label} />)}
