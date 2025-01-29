@@ -1,9 +1,11 @@
 import "./globals.css";
 
+import { PrismicPreview } from "@prismicio/next";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata, Viewport } from "next";
 
 import { poppins } from "@/constants/fonts";
+import { repositoryName } from "@/prismicio";
 
 import Background from "@/components/background";
 import Footer from "@/components/footer";
@@ -30,6 +32,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Footer />
                 <Background />
                 <Analytics />
+
+                <PrismicPreview repositoryName={repositoryName} />
             </body>
         </html>
     );
