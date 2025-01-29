@@ -44,7 +44,7 @@ export interface BlogDocumentDataAuthorsItem {
   name: prismic.KeyTextField;
 }
 
-type BlogDocumentDataSlicesSlice = BlogContentSlice;
+type BlogDocumentDataSlicesSlice = never;
 
 /**
  * Content for Blog documents
@@ -117,6 +117,17 @@ interface BlogDocumentData {
   authors: prismic.GroupField<Simplify<BlogDocumentDataAuthorsItem>>;
 
   /**
+   * Content field in *Blog*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.content
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
    * Slice Zone field in *Blog*
    *
    * - **Field Type**: Slice Zone
@@ -125,16 +136,7 @@ interface BlogDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<BlogDocumentDataSlicesSlice> /**
-   * Meta Image field in *Blog*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */;
-  meta_image: prismic.ImageField<never>;
+  slices: prismic.SliceZone<BlogDocumentDataSlicesSlice>;
 }
 
 /**
@@ -150,51 +152,6 @@ export type BlogDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<BlogDocumentData>, "blog", Lang>;
 
 export type AllDocumentTypes = BlogDocument;
-
-/**
- * Primary content in *BlogContent → Default → Primary*
- */
-export interface BlogContentSliceDefaultPrimary {
-  /**
-   * Content field in *BlogContent → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_content.default.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-}
-
-/**
- * Default variation for BlogContent Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type BlogContentSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<BlogContentSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *BlogContent*
- */
-type BlogContentSliceVariation = BlogContentSliceDefault;
-
-/**
- * BlogContent Shared Slice
- *
- * - **API ID**: `blog_content`
- * - **Description**: BlogContent
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type BlogContentSlice = prismic.SharedSlice<
-  "blog_content",
-  BlogContentSliceVariation
->;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -223,10 +180,6 @@ declare module "@prismicio/client" {
       BlogDocumentDataAuthorsItem,
       BlogDocumentDataSlicesSlice,
       AllDocumentTypes,
-      BlogContentSlice,
-      BlogContentSliceDefaultPrimary,
-      BlogContentSliceVariation,
-      BlogContentSliceDefault,
     };
   }
 }
