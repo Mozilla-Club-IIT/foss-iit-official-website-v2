@@ -7,7 +7,7 @@ import ChamiduPortrait from "@/assets/portraits/chamidu.jpg";
 import ChathulaPortrait from "@/assets/portraits/chathula.jpg";
 import DilmiPortrait from "@/assets/portraits/dilmi.jpg";
 import NadulPortrait from "@/assets/portraits/nadul.jpg";
-import NisharaPortrait from "@/assets/portraits/nishara.png";
+import NisharaPortrait from "@/assets/portraits/nishara.jpg";
 import RachalaPortrait from "@/assets/portraits/rachala.jpg";
 import SavindiPortrait from "@/assets/portraits/savindi.jpg";
 import StefaniaPortrait from "@/assets/portraits/stefania.jpg";
