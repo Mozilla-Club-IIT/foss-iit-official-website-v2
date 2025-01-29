@@ -1,10 +1,9 @@
 import type { FC } from "react";
 
-import { getPostsData } from "@/utils/blog";
+import { createClient } from "@/prismicio";
 
 import BlogCard from "@/components/cards/BlogCard";
 import HeroLayout from "@/components/hero/HeroLayout";
-import { createClient } from "@/prismicio";
 
 export default function Blogs() {
     return (
@@ -46,8 +45,6 @@ const BlogsList: FC = async () => {
             { field: "blog.publication_date", direction: "desc" },
         ],
     });
-
-    console.log(blogs);
 
     return (
         <ul className="grid grid-cols-1 mb-24 gap-6 sm:grid-cols-[repeat(auto-fill,24rem)]">
