@@ -1,6 +1,6 @@
 "use client";
 
-import type { ImageField, KeyTextField } from "@prismicio/client";
+import type { KeyTextField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import Link from "next/link";
 

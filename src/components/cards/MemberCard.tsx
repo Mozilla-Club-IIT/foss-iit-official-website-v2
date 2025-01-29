@@ -1,6 +1,5 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
 import { FC, useEffect, useRef, useState } from "react";
 
 import type { ExternalLink, Member, MemberGroup } from "@/types/internal";
