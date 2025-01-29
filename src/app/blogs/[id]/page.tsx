@@ -11,10 +11,10 @@ import { BlogCredits } from "@/components/BlogCredits";
 import { TagChip } from "@/components/cards/BlogCard";
 
 type Props = {
-    params: { id: string };
+    params: Promise<{ id: string }>;
 };
 
-export async function generateStaticParams(): Promise<Props["params"][]> {
+export async function generateStaticParams(): Promise<Awaited<Props["params"]>[]> {
     const client = createClient();
     const posts = await client.getAllByType("blog", {
         graphQuery: `{
@@ -27,7 +27,13 @@ export async function generateStaticParams(): Promise<Props["params"][]> {
     return posts.map((x) => ({ id: x.uid }));
 }
 
-export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+    const params = await props.params;
+
+    const {
+        id,
+    } = params;
+
     const client = createClient();
     const page = await client.getByUID("blog", id).catch(() => notFound()) as BlogDocument;
 
@@ -89,7 +95,9 @@ const components: JSXMapSerializer = {
     },
 };
 
-export default async function Page({ params: { id } }: Props) {
+export default async function Page(props: Props) {
+    const { id } = await props.params;
+
     const client = createClient();
     const page = await client.getByUID("blog", id).catch(() => notFound()) as BlogDocument;
 

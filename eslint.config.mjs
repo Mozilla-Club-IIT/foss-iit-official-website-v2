@@ -1,12 +1,20 @@
-/* eslint-disable import/no-anonymous-default-export */
-import { fixupConfigRules } from "@eslint/compat";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+
 import { FlatCompat } from "@eslint/eslintrc";
 import unocss from "@unocss/eslint-config/flat";
 
-const compat = new FlatCompat();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-export default [
+const compat = new FlatCompat({
+    baseDirectory: __dirname,
+});
+
+const eslintConfig = [
     { ignores: ["**/dist", "**/.next"] },
-    ...fixupConfigRules(compat.extends("eslint-config-next/core-web-vitals")),
+    ...compat.extends("next/core-web-vitals", "next/typescript"),
     unocss,
 ];
+
+export default eslintConfig;
