@@ -1,3 +1,4 @@
+import { asImageSrc } from "@prismicio/client";
 import { type JSXMapSerializer, PrismicRichText } from "@prismicio/react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -52,6 +53,19 @@ const components: JSXMapSerializer = {
     heading2: (data) => <h2>{data.text}</h2>,
     heading3: (data) => <h3>{data.text}</h3>,
     heading4: (data) => <h4>{data.text}</h4>,
+    image: (data) => {
+        const src = asImageSrc(data.node);
+        return (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+                src={src}
+                alt={data.node.alt ?? ""}
+                width={data.node.dimensions?.width}
+                height={data.node.dimensions?.height}
+                className="rounded-lg"
+            />
+        );
+    },
     span: (data) => <span className="text-text-secondary">{data.text}</span>,
     hyperlink: (data) => (
         <a href={data.key} className="inline-flex underline">
@@ -83,7 +97,7 @@ export default async function Page({ params: { id } }: Props) {
 
     return (
         <div className="mt-16 text-sm prose lg:max-w-[75ch] lg:self-center sm:text-base">
-            <section className="mb-12">
+            <section className="mb-4">
                 <div className="inline-flex flex-wrap gap-2 text-xs text-text-secondary">
                     {tags.map((x) => <TagChip key={x.label} value={x.label} />)}
                 </div>

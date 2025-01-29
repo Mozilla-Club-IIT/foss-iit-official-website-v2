@@ -39,7 +39,7 @@
           "label": "Cover Image",
           "constraint": {
             "width": 1280,
-            "height": 630
+            "height": ""
           },
           "thumbnails": []
         }
