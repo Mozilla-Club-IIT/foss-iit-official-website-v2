@@ -1,3 +1,4 @@
+import { type JSXMapSerializer, PrismicRichText } from "@prismicio/react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { codeToHtml } from "shiki";
@@ -7,7 +8,6 @@ import type { BlogDocument } from "@/prismicio-types";
 
 import { BlogCredits } from "@/components/BlogCredits";
 import { TagChip } from "@/components/cards/BlogCard";
-import { JSXMapSerializer, PrismicRichText } from "@prismicio/react";
 
 type Props = {
     params: { id: string };
