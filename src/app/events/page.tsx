@@ -11,6 +11,12 @@ import EventTimeLine from "@/components/trees/EventTimeLine";
 
 import RedString from "@/assets/decorations/events.webp";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Mozilla Campus Club of IIT - Events",
+};
+
 export default function Events() {
     return (
         <MotionWrapper>

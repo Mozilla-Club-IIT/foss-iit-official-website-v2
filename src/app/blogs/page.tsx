@@ -1,9 +1,14 @@
+import type { Metadata } from "next";
 import type { FC } from "react";
 
 import { createClient } from "@/prismicio";
 
 import BlogCard from "@/components/cards/BlogCard";
 import HeroLayout from "@/components/hero/HeroLayout";
+
+export const metadata: Metadata = {
+    title: "Mozilla Campus Club of IIT - Blogs",
+};
 
 export default function Blogs() {
     return (

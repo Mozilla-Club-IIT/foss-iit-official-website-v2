@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import type { FC } from "react";
 
@@ -10,6 +11,10 @@ import TechnologyCard from "@/components/cards/TechnologyCard";
 import HeroLayout from "@/components/hero/HeroLayout";
 
 import SourceCodeImage from "@/assets/decorations/code.png";
+
+export const metadata: Metadata = {
+    title: "Mozilla Campus Club of IIT - Developers",
+};
 
 export default function Devs() {
     return (

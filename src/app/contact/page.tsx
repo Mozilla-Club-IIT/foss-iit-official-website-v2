@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { FC } from "react";
 
 import { FACEBOOK, INSTAGRAM, LINKEDIN, TIK_TOK } from "@/constants/links";
@@ -6,6 +7,10 @@ import SocialLink from "@/components/buttons/SocialLink";
 import ContactCard from "@/components/cards/ContactCard";
 import DenseInput from "@/components/forms/DenseInput";
 import DenseTextArea from "@/components/forms/DenseTextArea";
+
+export const metadata: Metadata = {
+    title: "Mozilla Campus Club of IIT - Contact",
+};
 
 export default function Contact() {
     return (

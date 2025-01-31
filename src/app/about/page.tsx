@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import type { Metadata } from "next";
 import type { FC } from "react";
 
 import { MEMBER_BOARD } from "@/constants/data";
@@ -7,6 +8,10 @@ import cn from "@/utils/cn";
 
 import MemberCard from "@/components/cards/MemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";
+
+export const metadata: Metadata = {
+    title: "Mozilla Campus Club of IIT - About Us",
+};
 
 export default function About() {
     return (

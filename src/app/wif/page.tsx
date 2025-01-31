@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import type { FC } from "react";
@@ -9,6 +10,10 @@ import WIFMemberCard from "@/components/cards/WIFMemberCard";
 import HeroLayout from "@/components/hero/HeroLayout";
 
 import FemaleDeveloperImage from "@/assets/decorations/female-developer.png";
+
+export const metadata: Metadata = {
+    title: "Mozilla Campus Club of IIT - Women in FOSS",
+};
 
 export default function Home() {
     return (
