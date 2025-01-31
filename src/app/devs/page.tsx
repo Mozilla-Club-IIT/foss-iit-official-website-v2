@@ -56,8 +56,8 @@ const TechnologiesUsed: FC = () => {
     return (
         <div className="gap-8 container-content-block">
             <h1 className="text-style-heading">Technologies Used</h1>
-            <div className="grid grid-cols-2 justify-items-center gap-4 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 md:justify-items-start">
-                <TechnologyCard name="Sanity" icon="i-logos-sanity" />
+            <div className="grid grid-cols-[repeat(auto-fit,9rem)] gap-4 lg:grid-cols-[repeat(5,12rem)] md:grid-cols-[repeat(5,9rem)] md:self-center">
+                <TechnologyCard name="Prismic" icon="i-logos-prismic-icon" />
                 <TechnologyCard name="React" icon="i-logos-react" />
                 <TechnologyCard name="NextJS" icon="i-logos-nextjs invert" />
                 <TechnologyCard name="Typescript" icon="i-logos-typescript-icon" />
@@ -74,7 +74,7 @@ const TechnologiesUsed: FC = () => {
 const Developers: FC = () => {
     return (
         <div className="my-24 gap-8 container-content-block">
-            <h1 className="text-style-heading">Developers</h1>
+            <h1 className="text-style-heading">Designers, Developers</h1>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 {DEVELOPERS.map((developer) => (
                     <MemberCard key={developer.name} member={developer} />

@@ -1,7 +1,7 @@
 "use client";
 
-import { animated, useInView } from "@react-spring/web";
 import clsx from "clsx";
+import { m } from "motion/react";
 import type { FC } from "react";
 
 import type { Event } from "@/types/internal";
@@ -11,29 +11,24 @@ import { mapToLines } from "@/utils/react/shared";
 type Props = Omit<Event, "startingDate">;
 
 export default function EventTreeCard({ name, description }: Props) {
-    const [ref, springs] = useInView(
-        () => ({
-            from: { y: 20, opacity: 0 },
-            to: { y: 0, opacity: 1 },
-            config: { tension: 300 },
-        }),
-        { once: true, amount: 0.5 },
-    );
-
     return (
-        <animated.div
-            ref={ref}
+        <m.div
+            initial="from"
+            whileInView="to"
+            viewport={{ once: true }}
+            variants={{
+                from: { y: 20, opacity: 0 },
+                to: { y: 0, opacity: 1, transition: { duration: 0.5, delay: 0.25 } },
+            }}
             className="h-fit w-full flex flex-col rounded-xl bg-white/10 backdrop-blur-lg md:min-h-36 md:flex-row md:py-4"
-            style={springs}
         >
-            {/* <div className="h-24 min-w-36 w-full rounded-t-xl bg-red md:h-36 md:w-36 md:rounded-l-xl md:rounded-tr-0" /> */}
             <div className="flex flex-col justify-center gap-1 px-4 py-2 md:py-0">
                 <span className="text-base text-text-primary font-bold md:text-xl">{name}</span>
                 <span className="text-sm text-text-secondary leading-tight md:text-base">
                     {mapToLines(description)}
                 </span>
             </div>
-        </animated.div>
+        </m.div>
     );
 }
 
@@ -51,6 +46,7 @@ export const EventTreeCardFlexWrapper: FC<{ event: Event }> = ({ event }) => {
         </div>
     );
 };
+
 export const EventTreeCardGridWrapper: FC<{ event: Event; isEven: boolean }> = ({
     event,
     isEven,

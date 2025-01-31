@@ -1,0 +1,4 @@
+.avatar:not(:first-child) {
+    @apply -ml-0.5;
+    mask: radial-gradient(circle 10px at -0.38rem 50%, transparent 99%, #fff 100%);
+}

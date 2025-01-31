@@ -6,20 +6,21 @@ import { PAST_EVENTS } from "@/constants/data";
 
 import EventCard from "@/components/cards/EventCard";
 import HeroLayout from "@/components/hero/HeroLayout";
+import { MotionWrapper } from "@/components/MotionWrapper";
 import EventTimeLine from "@/components/trees/EventTimeLine";
 
 import RedString from "@/assets/decorations/events.webp";
 
 export default function Events() {
     return (
-        <>
+        <MotionWrapper>
             <div className="absolute right-0 hidden w-full -top-14 lg:block">
                 <Image src={RedString} alt="" />
             </div>
             <Hero />
             <EventTimeLine />
             <PastEvents />
-        </>
+        </MotionWrapper>
     );
 }
 
