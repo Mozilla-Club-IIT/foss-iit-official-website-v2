@@ -58,7 +58,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="h-10 flex items-center justify-center gap-2 bg-bg-dark text-center text-sm font-medium uppercase md:text-base">
-                <span>Copyright © 2024</span>
+                <span>Copyright © 2025</span>
                 <span aria-hidden>|</span>
                 <Link href="/devs">
                     Meet the{"  "}
