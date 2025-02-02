@@ -1,4 +1,5 @@
 import { asImageSrc } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
 import { type JSXMapSerializer, PrismicRichText } from "@prismicio/react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -68,7 +69,7 @@ const components: JSXMapSerializer = {
                 alt={data.node.alt ?? ""}
                 width={data.node.dimensions?.width}
                 height={data.node.dimensions?.height}
-                className="rounded-lg"
+                className="mx-auto my-8 w-fit rounded-xl lg:max-w-xl sm:max-w-lg"
             />
         );
     },
@@ -101,10 +102,10 @@ export default async function Page(props: Props) {
     const client = createClient();
     const page = await client.getByUID("blog", id).catch(() => notFound()) as BlogDocument;
 
-    const { title, tags, authors, publication_date } = page.data;
+    const { title, tags, authors, publication_date, cover_image } = page.data;
 
     return (
-        <div className="mt-16 pb-8 text-sm prose lg:max-w-[75ch] lg:self-center sm:text-base">
+        <div className="mt-16 pb-8 text-sm prose md:max-w-[75ch] lg:self-center sm:text-base">
             <section className="mb-4">
                 <div className="inline-flex flex-wrap gap-2 text-xs text-text-secondary">
                     {tags.map((x) => <TagChip key={x.label} value={x.label} />)}
@@ -120,6 +121,10 @@ export default async function Page(props: Props) {
                         })}
                     </span>
                 </div>
+            </section>
+
+            <section>
+                <PrismicNextImage field={cover_image} className="w-full rounded-xl" />
             </section>
 
             <article>
