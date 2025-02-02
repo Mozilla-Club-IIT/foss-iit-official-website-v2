@@ -69,7 +69,7 @@ const components: JSXMapSerializer = {
                 alt={data.node.alt ?? ""}
                 width={data.node.dimensions?.width}
                 height={data.node.dimensions?.height}
-                className="mx-auto my-8 w-fit rounded-xl lg:max-w-xl md:max-w-lg"
+                className="mx-auto my-8 w-fit rounded-xl lg:max-w-xl sm:max-w-lg"
             />
         );
     },
