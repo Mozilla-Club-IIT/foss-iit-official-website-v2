@@ -40,7 +40,7 @@ export default function MemberCard({ member, group, className }: Props) {
         <div ref={ref} className={cn("relative w-full min-h-22", className)}>
             <div
                 className={cn(
-                    "absolute inset-0 max-h-md flex flex-col rounded-3xl bg-white/9 px-3",
+                    "absolute inset-0 max-h-md flex flex-col rounded-3xl bg-white/9 px-3 cursor-pointer",
                     "transition-background-color,height transform-gpu use-transition-standard",
                     { "h-fit max-h-96 bg-[#2B2B2B]! z-30 shadow-lg": isVisible },
                 )}

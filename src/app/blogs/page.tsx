@@ -27,7 +27,9 @@ const Hero: FC = () => {
         >
             <HeroLayout
                 title="OUR BLOGS"
-                subtitle={["EXPLORE THE LATEST INSIGHTS AND TRENDS", "IN UI/UX DESIGN"]}
+                subtitle={[
+                    "Discover thought-provoking insights from our community.",
+                ]}
             />
         </div>
     );
@@ -52,7 +54,7 @@ const BlogsList: FC = async () => {
     });
 
     return (
-        <ul className="grid grid-cols-1 mb-24 gap-6 sm:grid-cols-[repeat(auto-fill,24rem)]">
+        <ul className="grid grid-cols-1 mb-24 gap-6 sm:grid-cols-[repeat(auto-fill,24rem)] md:px-16">
             {blogs.map((blog) => (
                 <li key={blog.id}>
                     <BlogCard

@@ -21,7 +21,7 @@ export default function Events() {
     return (
         <MotionWrapper>
             <div className="absolute right-0 hidden w-full -top-14 lg:block">
-                <Image src={RedString} alt="" />
+                <Image src={RedString} alt="" quality={100} sizes="100vw" />
             </div>
             <Hero />
             <EventTimeLine />
