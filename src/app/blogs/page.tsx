@@ -28,7 +28,7 @@ const Hero: FC = () => {
             <HeroLayout
                 title="OUR BLOGS"
                 subtitle={[
-                    "Discover thought-provoking insights from our community.",
+                    "Keep up with open source trends, tools and breakthroughs",
                 ]}
             />
         </div>
