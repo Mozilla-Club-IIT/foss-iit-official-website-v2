@@ -1,4 +1,4 @@
-import { asImageSrc } from "@prismicio/client";
+import { asImageSrc, type FilledLinkToWebField } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { type JSXMapSerializer, PrismicRichText } from "@prismicio/react";
 import type { Metadata } from "next";
@@ -74,12 +74,20 @@ const components: JSXMapSerializer = {
         );
     },
     span: (data) => <span className="text-text-secondary">{data.text}</span>,
-    hyperlink: (data) => (
-        <a href={data.key} className="inline-flex underline">
-            {data.text}
-            <div className="i-mdi-external-link ml-0.5 size-3.5" />
-        </a>
-    ),
+    hyperlink: (data) => {
+        const { target, url } = data.node.data as FilledLinkToWebField;
+
+        return (
+            <a
+                href={url}
+                target={target}
+                className="inline-flex underline"
+            >
+                {data.text}
+                <div className="i-mdi-external-link ml-0.5 size-3.5" />
+            </a>
+        );
+    },
     // @ts-expect-error - serializer does not support async functions,
     // but it works so whatever
     preformatted: async (data) => {
