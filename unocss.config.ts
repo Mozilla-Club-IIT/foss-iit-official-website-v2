@@ -74,7 +74,7 @@ export default defineConfig<Theme>({
     },
 
     shortcuts: {
-        containerify: "px-12 2xl:(container! w-full mx-auto px-0)",
+        containerify: "px-6 2xl:(container! w-full mx-auto px-0)",
         "use-transition-standard": "ease-standard duration-standard",
         "use-transition-emphasized": "ease-emphasized duration-emphasized",
         "container-content-block": "mt-24 flex flex-col md:px-16",
