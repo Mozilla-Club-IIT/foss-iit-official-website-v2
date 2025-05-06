@@ -15,7 +15,9 @@ type Props = {
     params: Promise<{ id: string }>;
 };
 
-export async function generateStaticParams(): Promise<Awaited<Props["params"]>[]> {
+export async function generateStaticParams(): Promise<
+    Awaited<Props["params"]>[]
+> {
     const client = createClient();
     const posts = await client.getAllByType("blog", {
         graphQuery: `{
@@ -31,12 +33,12 @@ export async function generateStaticParams(): Promise<Awaited<Props["params"]>[]
 export async function generateMetadata(props: Props): Promise<Metadata> {
     const params = await props.params;
 
-    const {
-        id,
-    } = params;
+    const { id } = params;
 
     const client = createClient();
-    const page = await client.getByUID("blog", id).catch(() => notFound()) as BlogDocument;
+    const page = (await client
+        .getByUID("blog", id)
+        .catch(() => notFound())) as BlogDocument;
 
     return {
         title: page.data.title,
@@ -78,13 +80,8 @@ const components: JSXMapSerializer = {
         const { target, url } = data.node.data as FilledLinkToWebField;
 
         return (
-            <a
-                href={url}
-                target={target}
-                className="inline-flex underline"
-            >
+            <a href={url} target={target} className="break-words underline">
                 {data.text}
-                <div className="i-mdi-external-link ml-0.5 size-3.5" />
             </a>
         );
     },
@@ -93,7 +90,9 @@ const components: JSXMapSerializer = {
     preformatted: async (data) => {
         const text = data.text as unknown as string;
         const brkIndex = text.indexOf("\n");
-        const lang = text.startsWith("#lang=") ? text.slice(6, brkIndex) : "plaintext";
+        const lang = text.startsWith("#lang=")
+            ? text.slice(6, brkIndex)
+            : "plaintext";
 
         const html = await codeToHtml(
             lang !== "plaintext" ? text.slice(brkIndex + 1) : text,
@@ -108,7 +107,9 @@ export default async function Page(props: Props) {
     const { id } = await props.params;
 
     const client = createClient();
-    const page = await client.getByUID("blog", id).catch(() => notFound()) as BlogDocument;
+    const page = (await client
+        .getByUID("blog", id)
+        .catch(() => notFound())) as BlogDocument;
 
     const { title, tags, authors, publication_date, cover_image } = page.data;
 
