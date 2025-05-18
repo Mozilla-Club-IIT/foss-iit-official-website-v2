@@ -4,13 +4,13 @@ import type { FC } from "react";
 
 import { DEVELOPERS } from "@/constants/data";
 
-import AccentedButton from "@/components/buttons/AccentedButton";
 import TrailingIconButton from "@/components/buttons/TrailingIconButton";
 import MemberCard from "@/components/cards/MemberCard";
 import TechnologyCard from "@/components/cards/TechnologyCard";
 import HeroLayout from "@/components/hero/HeroLayout";
 
 import SourceCodeImage from "@/assets/decorations/code.png";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Mozilla Campus Club of IIT - Developers",
@@ -39,7 +39,7 @@ const Hero: FC = () => {
                     "and the team behind it",
                 ]}
             >
-                <AccentedButton label="The Team" />
+                <Link href="#team" className="button-accented">The team</Link>
                 <TrailingIconButton label="Tech used" icon="i-mdi-arrow-top-right" />
             </HeroLayout>
 
@@ -59,9 +59,9 @@ const Hero: FC = () => {
 
 const TechnologiesUsed: FC = () => {
     return (
-        <div className="gap-8 container-content-block">
+        <section id="tech-used" className="gap-8 container-content-block">
             <h1 className="text-style-heading">Technologies Used</h1>
-            <div className="grid grid-cols-[repeat(auto-fit,9rem)] gap-4 lg:grid-cols-[repeat(5,12rem)] md:grid-cols-[repeat(5,9rem)] md:self-center">
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-[repeat(5,12rem)] md:grid-cols-[repeat(5,9rem)] md:self-center">
                 <TechnologyCard name="Prismic" icon="i-logos-prismic-icon" />
                 <TechnologyCard name="React" icon="i-logos-react" />
                 <TechnologyCard name="NextJS" icon="i-logos-nextjs invert" />
@@ -72,19 +72,19 @@ const TechnologiesUsed: FC = () => {
                 Take a peek inside the code
                 <div className="i-mdi-arrow-top-right text-xl"></div>
             </button>
-        </div>
+        </section>
     );
 };
 
 const Developers: FC = () => {
     return (
-        <div className="my-24 gap-8 container-content-block">
+        <section id="team" className="my-24 gap-8 container-content-block">
             <h1 className="text-style-heading">Designers, Developers</h1>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 {DEVELOPERS.map((developer) => (
                     <MemberCard key={developer.name} member={developer} />
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
