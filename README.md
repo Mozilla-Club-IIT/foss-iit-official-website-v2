@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/60e43ae2-6974-46d6-aa1a-16d2d11c24fb/deploy-status)](https://app.netlify.com/projects/mozilla-iit-v2-preview/deploys)
+
 ## FOSS IIT Website
 
 ### Prerequisites
