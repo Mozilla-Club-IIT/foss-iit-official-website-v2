@@ -1,6 +1,6 @@
 import type { IconifyJSON } from "@iconify/types";
 import {
-    Awaitable,
+    type Awaitable,
     defineConfig,
     presetIcons,
     presetTypography,
