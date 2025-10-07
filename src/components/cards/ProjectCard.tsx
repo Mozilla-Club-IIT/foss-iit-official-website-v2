@@ -16,7 +16,7 @@ export default function ProjectCard({ name, imageURL, accent, date, link }: Prop
             })}
         >
             <span
-                className={clsx("inline-flex text-start p-4 text-xl w-full tracking-tight", {
+                className={clsx("w-full inline-flex p-4 text-start text-xl tracking-tight", {
                     "text-bg-dark": accent === "light",
                     "text-white": accent === "dark",
                 })}
@@ -41,7 +41,7 @@ const DetailsRow: FC<Pick<Project, "date" | "accent" | "link">> = ({ accent, dat
 
     return (
         <div
-            className={clsx("flex items-center border-t-1 w-full h-12 px-4", {
+            className={clsx("h-12 w-full flex items-center border-t-1 px-4", {
                 "b-t-border-separator text-bg-dark": accent === "light",
                 "b-t-border-separator/50 text-text-primary": accent === "dark",
             })}
@@ -53,7 +53,7 @@ const DetailsRow: FC<Pick<Project, "date" | "accent" | "link">> = ({ accent, dat
                 target={link?.external ? "_blank" : undefined}
                 aria-disabled={link === undefined}
                 className={clsx(
-                    "inline-flex items-center justify-center rounded-xl px-4 h-8 aria-disabled:opacity-10 aria-disabled:pointer-events-none",
+                    "h-8 inline-flex items-center justify-center rounded-xl px-4 aria-disabled:pointer-events-none aria-disabled:opacity-10",
                     {
                         "bg-bg-dark text-white": accent === "light",
                         "bg-white text-bg-dark": accent === "dark",

@@ -56,7 +56,7 @@ const Hero: FC = () => {
 const PastEvents: FC = () => {
     return (
         // NOTE(Curstantine): temp mt override, right now the event tree is a bit small.
-        <div id="pastevents" className="mb-24 mt-32 gap-4 container-content-block">
+        <div id="pastevents" className="container-content-block mb-24 mt-32 gap-4">
             <h1 className="text-style-heading">Past Events</h1>
             <div className="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] justify-items-center gap-4 2xl:grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] md:justify-items-start">
                 {PAST_EVENTS.map((event) => {

@@ -44,7 +44,7 @@ const Hero: FC = () => {
 
 const WhoAreWe: FC = () => {
     return (
-        <div className="flex flex-col container-content-block text-text-secondary prose">
+        <div className="container-content-block flex flex-col text-text-secondary prose">
             <h1 className="text-style-heading">Who are we</h1>
             <p>
                 FOSS (Free and Open-Source Software) community of IIT was initiated in our
@@ -53,8 +53,8 @@ const WhoAreWe: FC = () => {
             </p>
             <p>
                 Although the FOSS community is new to IIT, we have already conducted programs to
-                advance the club's progress and collaborated for events with the FOSS communities of
-                reputed universities to advocate and is responsible for.
+                advance the club&apos;s progress and collaborated for events with the FOSS
+                communities of reputed universities to advocate and is responsible for.
             </p>
             <p>
                 The Mozilla Campus Club of Informatics Institute of Technology (IIT) has been in a
@@ -68,7 +68,7 @@ const WhoAreWe: FC = () => {
 
 const Projects: FC = () => {
     return (
-        <div className="mb-24 gap-8 container-content-block">
+        <div className="container-content-block mb-24 gap-8">
             <h1 className="text-style-heading">Projects</h1>
             <div className="grid grid-cols-1 gap-8 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
                 {PROJECTS.map((project) => <ProjectCard key={project.name} {...project} />)}

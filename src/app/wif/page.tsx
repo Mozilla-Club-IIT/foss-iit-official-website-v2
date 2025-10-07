@@ -106,7 +106,7 @@ const OurVision: FC = () => {
 const BoardOfOfficials: FC = () => (
     <div
         id="officials"
-        className="my-24 max-w-full flex flex-col gap-8 text-text-secondary container-content-prose"
+        className="my-24 container-content-prose max-w-full flex flex-col gap-8 text-text-secondary"
     >
         <h1 className="text-text-primary leading-tight uppercase">Board Of Officials</h1>
         <div className="grid grid-cols-[repeat(auto-fill,16rem)] justify-center gap-6">

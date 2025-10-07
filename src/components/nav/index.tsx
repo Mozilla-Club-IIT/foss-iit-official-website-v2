@@ -10,7 +10,7 @@ import MOZCLogo from "@/assets/logos/mozc.svg";
 export default function Nav() {
     return (
         <header
-            className="fixed inset-x-6 top-6 z-50 w-full flex items-center gap-4 md:inset-x-6 md:gap-8 2xl:containerify"
+            className="fixed inset-x-6 top-6 z-50 w-full flex items-center gap-4 2xl:containerify md:inset-x-6 md:gap-8"
             style={{ maxWidth: "calc(100% - 3rem)" }}
         >
             <div className="h-16 flex flex-1 items-center justify-between rounded-2xl bg-black/[48%] px-6 shadow ring-2 ring-border-nav/[4%] backdrop-blur-sm 2xl:h-20 sm:justify-start xs:px-8 sm:pl-8">

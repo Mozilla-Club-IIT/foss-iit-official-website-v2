@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en" className={`${poppins.variable} max-w-full `}>
             <body className="relative h-[100vh] w-full">
                 <Nav />
-                <main className="relative max-w-full flex flex-col pt-24 containerify">
+                <main className="containerify relative max-w-full flex flex-col pt-24">
                     {children}
                 </main>
                 <Footer />

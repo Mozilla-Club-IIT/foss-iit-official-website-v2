@@ -59,7 +59,7 @@ const Hero: FC = () => {
 
 const TechnologiesUsed: FC = () => {
     return (
-        <section id="tech-used" className="gap-8 container-content-block">
+        <section id="tech-used" className="container-content-block gap-8">
             <h1 className="text-style-heading">Technologies Used</h1>
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-[repeat(5,12rem)] md:grid-cols-[repeat(5,9rem)] md:self-center">
                 <TechnologyCard name="Prismic" icon="i-logos-prismic-icon" />
@@ -78,7 +78,7 @@ const TechnologiesUsed: FC = () => {
 
 const Developers: FC = () => {
     return (
-        <section id="team" className="my-24 gap-8 container-content-block">
+        <section id="team" className="my-24 container-content-block gap-8">
             <h1 className="text-style-heading">Designers, Developers</h1>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 {DEVELOPERS.map((developer) => (

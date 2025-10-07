@@ -85,8 +85,6 @@ const components: JSXMapSerializer = {
             </a>
         );
     },
-    // @ts-expect-error - serializer does not support async functions,
-    // but it works so whatever
     preformatted: async (data) => {
         const text = data.text as unknown as string;
         const brkIndex = text.indexOf("\n");
