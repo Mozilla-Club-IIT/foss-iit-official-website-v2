@@ -44,7 +44,7 @@ const Hero: FC = () => {
 
 const WhoAreWe: FC = () => {
     return (
-        <div className="container-content-prose">
+        <div className="flex flex-col container-content-block text-text-secondary prose">
             <h1 className="text-style-heading">Who are we</h1>
             <p>
                 FOSS (Free and Open-Source Software) community of IIT was initiated in our
@@ -53,7 +53,7 @@ const WhoAreWe: FC = () => {
             </p>
             <p>
                 Although the FOSS community is new to IIT, we have already conducted programs to
-                advance the club’s progress and collaborated for events with the FOSS communities of
+                advance the club's progress and collaborated for events with the FOSS communities of
                 reputed universities to advocate and is responsible for.
             </p>
             <p>

@@ -320,6 +320,14 @@ const ALL_EVENTS = {
         startingDate: new Date("2025-01-03"),
         imageURL: "/projects/devdotme.png",
     },
+    CODEDROP: {
+        name: "CODEDROP",
+        imageURL: "/projects/codedrop.png",
+        description: [
+            "CODEDROP is an action-packed 6-hour hackathon where teams race against the clock to solve thriling coding challenges, collaborate, and win awesome prizes!",
+        ],
+        startingDate: new Date("2025-09-20"),
+    },
     OPENHACK_3: {
         name: "OpenHack 3.0",
         imageURL: "/projects/openhack3.png",
@@ -386,12 +394,12 @@ export const PAST_EVENTS: Event[] = [
 export const EVENT_TIMELINE: Event[] = [
     ALL_EVENTS.HER_EXE,
     ALL_EVENTS.DEV_ME,
-    ALL_EVENTS.OPENHACK_3,
+    ALL_EVENTS.CODEDROP,
 ];
 
 export const PROJECTS: Project[] = [
     {
-        accent: "dark",
+        accent: "light",
         name: ALL_EVENTS.HER_EXE.name,
         imageURL: ALL_EVENTS.HER_EXE.imageURL,
         date: ALL_EVENTS.HER_EXE.startingDate,
@@ -404,9 +412,9 @@ export const PROJECTS: Project[] = [
         date: ALL_EVENTS.DEV_ME.startingDate,
     },
     {
-        accent: "light",
-        name: ALL_EVENTS.OPENHACK_3.name,
-        imageURL: ALL_EVENTS.OPENHACK_3.imageURL,
-        date: ALL_EVENTS.OPENHACK_3.startingDate,
+        accent: "dark",
+        name: ALL_EVENTS.CODEDROP.name,
+        imageURL: ALL_EVENTS.CODEDROP.imageURL,
+        date: ALL_EVENTS.CODEDROP.startingDate,
     },
 ];
