@@ -10,6 +10,7 @@ import TechnologyCard from "@/components/cards/TechnologyCard";
 import HeroLayout from "@/components/hero/HeroLayout";
 
 import SourceCodeImage from "@/assets/decorations/code.png";
+import { GIT_REPO } from "@/constants/links";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -61,17 +62,22 @@ const TechnologiesUsed: FC = () => {
     return (
         <section id="tech-used" className="container-content-block gap-8">
             <h1 className="text-style-heading">Technologies Used</h1>
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-[repeat(5,12rem)] md:grid-cols-[repeat(5,9rem)] md:self-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:grid-cols-[repeat(5,12rem)] md:grid-cols-[repeat(5,9rem)] md:self-center">
                 <TechnologyCard name="Prismic" icon="i-logos-prismic-icon" />
                 <TechnologyCard name="React" icon="i-logos-react" />
                 <TechnologyCard name="NextJS" icon="i-logos-nextjs invert" />
                 <TechnologyCard name="Typescript" icon="i-logos-typescript-icon" />
                 <TechnologyCard name="UnoCSS" icon="i-logos-unocss invert" />
             </div>
-            <button className="mx-auto inline-flex text-center text-xl md:text-2xl">
+            <a
+                href={GIT_REPO}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mx-auto inline-flex text-center text-xl md:text-2xl"
+            >
                 Take a peek inside the code
                 <div className="i-mdi-arrow-top-right text-xl"></div>
-            </button>
+            </a>
         </section>
     );
 };

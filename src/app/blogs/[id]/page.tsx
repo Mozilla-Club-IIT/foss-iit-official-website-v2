@@ -41,7 +41,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         .catch(() => notFound())) as BlogDocument;
 
     return {
-        title: page.data.title,
+        title: page.data.title + " | Mozilla Campus Club of IIT",
         description: page.data.description,
         authors: page.data.authors.map((x) => ({ name: x.name?.toString() })),
         openGraph: {
@@ -58,10 +58,10 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 }
 
 const components: JSXMapSerializer = {
-    heading1: (data) => <h1>{data.text}</h1>,
-    heading2: (data) => <h2>{data.text}</h2>,
-    heading3: (data) => <h3>{data.text}</h3>,
-    heading4: (data) => <h4>{data.text}</h4>,
+    heading1: (data) => <h1 className="text-text-primary">{data.text}</h1>,
+    heading2: (data) => <h2 className="text-text-primary">{data.text}</h2>,
+    heading3: (data) => <h3 className="text-text-primary">{data.text}</h3>,
+    heading4: (data) => <h4 className="text-text-primary">{data.text}</h4>,
     image: (data) => {
         const src = asImageSrc(data.node);
         return (
@@ -80,7 +80,7 @@ const components: JSXMapSerializer = {
         const { target, url } = data.node.data as FilledLinkToWebField;
 
         return (
-            <a href={url} target={target} className="break-words underline">
+            <a href={url} target={target} className="break-words text-text-neutral  underline">
                 {data.text}
             </a>
         );
@@ -114,10 +114,10 @@ export default async function Page(props: Props) {
     return (
         <div className="mt-16 pb-8 text-sm prose md:max-w-[75ch] lg:self-center sm:text-base">
             <section className="mb-4">
-                <div className="inline-flex flex-wrap gap-2 text-xs text-text-secondary">
+                <div className="inline-flex flex-wrap gap-2 text-xs text-text-secondary mb-2">
                     {tags.map((x) => <TagChip key={x.label} value={x.label} />)}
                 </div>
-                <h1>{title}</h1>
+                <h1 className="text-text-primary">{title}</h1>
                 <div className="flex items-center justify-between">
                     <BlogCredits authors={authors} />
                     <span className="self-end text-xs text-text-secondary sm:self-center sm:text-sm">

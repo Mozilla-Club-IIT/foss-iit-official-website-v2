@@ -1,32 +1,41 @@
-import clsx from "clsx";
-import Image from "next/image";
+import cn from "@/utils/cn";
 
-import type { Member } from "@/types/internal";
+import Image, { type StaticImageData } from "next/image";
 
 const sizing = {
     "16": ["size-16", "size-8"],
     "8": ["size-8", "size-4"],
-    "fill": ["bg-center", "size-16"],
 };
 
-type Props = Pick<Member, "name" | "imageURL"> & {
+type Props = {
+    name: string;
+    imageURL: string | StaticImageData | null;
     size?: keyof typeof sizing;
+    className?: string;
+    height?: number;
+    width?: number;
 };
 
-export default function Avatar({ name, imageURL, size = "16" }: Props) {
+export default function Avatar({
+    name,
+    imageURL,
+    size = "16",
+    className,
+    height = 256,
+    width = 256,
+}: Props) {
     const [wrapperClass, innerClass] = sizing[size];
-    const fill = size === "fill";
 
     if (imageURL === null) {
         return (
             <div
-                className={clsx(
-                    "inline-flex items-center justify-center bg-bg-lighter text-surface-light",
-                    fill ? "size-full" : "rounded-full",
+                className={cn(
+                    "inline-flex items-center justify-center bg-bg-lighter text-surface-light rounded-full",
                     wrapperClass,
+                    className,
                 )}
             >
-                <div className={clsx("i-mdi-person-outline", innerClass)} />
+                <div className={cn("i-mdi-person-outline", innerClass)} />
             </div>
         );
     }
@@ -34,11 +43,10 @@ export default function Avatar({ name, imageURL, size = "16" }: Props) {
     return (
         <Image
             src={imageURL}
-            height={fill ? undefined : 256}
-            width={fill ? undefined : 256}
+            height={height}
+            width={width}
             alt={`${name}'s profile picture`}
-            fill={fill}
-            className={clsx(!fill && "rounded-full", wrapperClass)}
+            className={cn("rounded-full", wrapperClass, className)}
         />
     );
 }
