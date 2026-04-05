@@ -80,7 +80,7 @@ const components: JSXMapSerializer = {
         const { target, url } = data.node.data as FilledLinkToWebField;
 
         return (
-            <a href={url} target={target} className="break-words text-text-neutral  underline">
+            <a href={url} target={target} className="break-words text-text-neutral underline">
                 {data.text}
             </a>
         );
@@ -114,7 +114,7 @@ export default async function Page(props: Props) {
     return (
         <div className="mt-16 pb-8 text-sm prose md:max-w-[75ch] lg:self-center sm:text-base">
             <section className="mb-4">
-                <div className="inline-flex flex-wrap gap-2 text-xs text-text-secondary mb-2">
+                <div className="mb-2 inline-flex flex-wrap gap-2 text-xs text-text-secondary">
                     {tags.map((x) => <TagChip key={x.label} value={x.label} />)}
                 </div>
                 <h1 className="text-text-primary">{title}</h1>

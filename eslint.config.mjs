@@ -4,7 +4,7 @@ import unocss from "@unocss/eslint-config/flat";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 const eslintConfig = defineConfig([
-    ...unocss,
+    unocss,
     ...nextVitals,
     ...nextTs,
     // Override default ignores of eslint-config-next.

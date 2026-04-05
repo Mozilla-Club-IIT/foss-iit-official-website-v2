@@ -21,7 +21,7 @@ export default function WIFMemberCard(
             <Avatar
                 name={name}
                 imageURL={imageURL}
-                className="size-64 rounded-b-none rounded-t-6 my-0 "
+                className="my-0 size-64 rounded-b-none rounded-t-6"
             />
 
             <span className="mb-0 mt-3 text-center text-xl font-bold">{name}</span>

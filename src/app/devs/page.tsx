@@ -62,7 +62,7 @@ const TechnologiesUsed: FC = () => {
     return (
         <section id="tech-used" className="container-content-block gap-8">
             <h1 className="text-style-heading">Technologies Used</h1>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:grid-cols-[repeat(5,12rem)] md:grid-cols-[repeat(5,9rem)] md:self-center">
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-[repeat(5,12rem)] md:grid-cols-[repeat(5,9rem)] sm:grid-cols-3 md:self-center">
                 <TechnologyCard name="Prismic" icon="i-logos-prismic-icon" />
                 <TechnologyCard name="React" icon="i-logos-react" />
                 <TechnologyCard name="NextJS" icon="i-logos-nextjs invert" />
