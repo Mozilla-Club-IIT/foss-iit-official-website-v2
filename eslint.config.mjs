@@ -1,8 +1,10 @@
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import unocss from "@unocss/eslint-config/flat";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 const eslintConfig = defineConfig([
+    ...unocss,
     ...nextVitals,
     ...nextTs,
     // Override default ignores of eslint-config-next.
