@@ -3,6 +3,7 @@ import "./globals.css";
 import { PrismicPreview } from "@prismicio/next";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
 
 import { poppins } from "@/constants/fonts";
 import { repositoryName } from "@/prismicio";
@@ -21,9 +22,13 @@ export const viewport: Viewport = {
     themeColor: { color: "#E50013" },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
     return (
-        <html lang="en" className={`${poppins.variable} max-w-full `}>
+        <html
+            lang="en"
+            className={`${poppins.variable} max-w-full`}
+            data-scroll-behavior="smooth"
+        >
             <body className="relative h-[100vh] w-full">
                 <Nav />
                 <main className="containerify relative max-w-full flex flex-col pt-24">

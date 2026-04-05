@@ -7,8 +7,7 @@
     viewBox="0 0 1154.16 480.45"
 >
     <defs>
-        <style>
-        .cls-1 {
+        <style>.cls-1 {
             fill: none;
         }
 
@@ -85,8 +84,7 @@
             font-size: 59.55px;
             font-weight: 700;
             fill: currentColor;
-        }
-        </style>
+        }</style>
         <clipPath id="clippath">
             <circle
                 class="cls-1"
@@ -138,23 +136,35 @@
                 />
             </g>
         </g>
-        <text class="cls-19" transform="translate(0 466.87)"><tspan x="0" y="0">IN</tspan><tspan
+        <text class="cls-19" transform="translate(0 466.87)">
+            <tspan x="0" y="0">IN</tspan>
+            <tspan
                 class="cls-16"
                 x="58.95"
                 y="0"
-            >F</tspan><tspan x="92.12" y="0">ORM</tspan><tspan class="cls-14" x="221.63" y="0"
-            >A</tspan><tspan x="256.22" y="0">TICS IN</tspan><tspan class="cls-13" x="451.35" y="0"
-            >S</tspan><tspan x="487.73" y="0">TITUTE O</tspan><tspan class="cls-12" x="737.4" y="0"
-            >F</tspan><tspan class="cls-10" x="769.62" y="0"> </tspan><tspan x="780.63" y="0"
-            >T</tspan><tspan class="cls-15" x="814.99" y="0">E</tspan><tspan x="849.41" y="0"
-            >CHNO</tspan><tspan class="cls-11" x="1007.98" y="0">L</tspan><tspan
+            >F</tspan>
+            <tspan x="92.12" y="0">ORM</tspan>
+            <tspan class="cls-14" x="221.63" y="0">A</tspan>
+            <tspan x="256.22" y="0">TICS IN</tspan>
+            <tspan class="cls-13" x="451.35" y="0">S</tspan>
+            <tspan x="487.73" y="0">TITUTE O</tspan>
+            <tspan class="cls-12" x="737.4" y="0">F</tspan>
+            <tspan class="cls-10" x="769.62" y="0"></tspan>
+            <tspan x="780.63" y="0">T</tspan>
+            <tspan class="cls-15" x="814.99" y="0">E</tspan>
+            <tspan x="849.41" y="0">CHNO</tspan>
+            <tspan class="cls-11" x="1007.98" y="0">L</tspan>
+            <tspan
                 class="cls-18"
                 x="1038.46"
                 y="0"
-            >O</tspan><tspan class="cls-17" x="1078.84" y="0">G</tspan><tspan
+            >O</tspan>
+            <tspan class="cls-17" x="1078.84" y="0">G</tspan>
+            <tspan
                 class="cls-9"
                 x="1117.3"
                 y="0"
-            >Y</tspan></text>
+            >Y</tspan>
+        </text>
     </g>
 </svg>

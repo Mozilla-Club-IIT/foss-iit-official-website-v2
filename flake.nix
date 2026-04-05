@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -13,13 +13,15 @@
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = import nixpkgs {
-          inherit system;
-        };
+        pkgs = import nixpkgs { inherit system; };
+
+        nodeVersionStr = builtins.readFile ./.node-version;
+        nodeMajorVersion = builtins.head (builtins.match "v?([0-9]+).*" nodeVersionStr);
+        node = pkgs."nodejs_${nodeMajorVersion}";
 
         # Dependencies required at run-time.
         buildInputs = with pkgs; [
-          nodejs_22
+          node
           corepack
         ];
 

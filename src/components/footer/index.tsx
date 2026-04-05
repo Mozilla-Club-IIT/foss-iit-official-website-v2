@@ -43,11 +43,6 @@ export default function Footer() {
                 </div>
 
                 <div className="col-span-full flex flex-col md:col-span-2">
-                    {
-                        /* <CategoryHeader label="Subscribe" />
-                    <EmailInput /> */
-                    }
-
                     <span className="capitalize">Connect with us</span>
                     <div className="mt-1 flex gap-2">
                         <SocialLink type="facebook" href={FACEBOOK} />
@@ -58,7 +53,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="h-10 flex items-center justify-center gap-2 bg-bg-dark text-center text-sm font-medium uppercase md:text-base">
-                <span>Copyright © 2025</span>
+                <span>Copyright © 2026</span>
                 <span aria-hidden>|</span>
                 <Link href="/devs">
                     Meet the{"  "}
