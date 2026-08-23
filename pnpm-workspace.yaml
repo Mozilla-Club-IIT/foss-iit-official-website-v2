@@ -1,2 +1,4 @@
-onlyBuiltDependencies:
-  - dprint
+allowBuilds:
+  '@scarf/scarf': true
+  dprint: true
+  unrs-resolver: true
